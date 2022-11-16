@@ -12,7 +12,7 @@ servidor.use(express.static("public"))
 servidor.get(
     '/home',   // endereço ou caminho a receber requisição
     (req,res) =>{          // função a ser executada
-      return res.sendFile(__dirname + '/public/html/home.html')
+      return res.sendFile(__dirname + '/public/html/home-dois.html')
     }  
 )
 

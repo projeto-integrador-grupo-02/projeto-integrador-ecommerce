@@ -24,6 +24,6 @@ body {
     display: inline;
 }
 
-#menu-h a {
+#menu-h li a {
     text-decoration: none;
 }
