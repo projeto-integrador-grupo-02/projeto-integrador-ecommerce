@@ -10,8 +10,8 @@
 
 header{ 
     width: 100%; 
-    height: 100vh; 
-    background-color: #f7efef;
+    height: auto; 
+    background-color: #f6eddc;
  }
 
      .header_in { 
@@ -29,8 +29,19 @@ header{
 
     .header_in ul li a{
         text-decoration: none;
-        color: #3f51b5;
+        color: #586875;
+        
     }
     .logoheader{
-        width: 45px;
+        width: 200px;
+        
+    }
+    .carrinho{
+        width: 22px;
+    }
+
+    .buscar{
+        width: 300px;
+        height: 25px;
+        
     }
