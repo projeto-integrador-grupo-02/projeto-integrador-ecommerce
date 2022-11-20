@@ -7,13 +7,9 @@
 }
 
 body {
-    font-family: 'caviarDreams';
+    color:blueviolet;
 }
 
-@font-face {
-    font-family:'caviarDreams' ;
-    src: url('CaviarDreams.ttf') format('opentype');
-}
 
 #menu-h {
     list-style-type: none;

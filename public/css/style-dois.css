@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200&family=Tangerine&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200&family=Tangerine&display=swap%27');
 
 * {
     margin: 0%;
@@ -6,20 +6,67 @@
     box-sizing: border-box;
     list-style: none;
     text-decoration: none;
-    font-family: 'Dosis', sans-serif;
+    color: #586875;
+    font-family: 'Dosis', 'san-serif';
+    font-weight: 200;
 }
 
 header {
     width: 100%;
-    height: 80px;
-    display: block;
+    height: auto;
     background-color: #f6eddc;
-
+    color: #586875;
+    align-items: flex-start;
 }
 
-.inner_header {
-    width: 1000px;
-    height: 100%;
-    display: block;
-    margin: 0 auto; /*Centraliza*/
+
+
+.header_in {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px 0;
+}
+
+.header_in ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 10px 30px;
+}
+
+.header_in ul li a {
+    text-decoration: none;
+}
+
+/*o que afeta nav ser filho*/
+.nav {
+    width: 100%;
+    background-color: #bdd6d2;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    
+}
+
+.nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 10px 30px;
+    
+}
+
+.nav ul li a {
+    text-decoration: none;
+    color: #586875;
+    
+}
+
+.olho {
+    background-color: #f6eddc;
+    background-color: #e3e5d7;
+    background-color: #bdd6d2 ;
+    background-color: #a5c8ca;
+    background-color: #586875;
 }
