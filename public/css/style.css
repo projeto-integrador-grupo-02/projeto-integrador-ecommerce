@@ -96,18 +96,19 @@ ul {
     width: 100%;
 }
 
-.hero_slide_text {
+.hero__slide-text {
     text-align: center;
     position: relative;
 }
 
-.hero_slide_text h1, .hero_slide_text span {
+.hero__slide-text h1,
+.hero__slide-text span {
     font-family: var(--font-cursive);
     font-size: 200px;
     color: var(--secondary-color-alt);
 }
 
-.hero_slide_text span {
+.hero__slide-text span {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -115,17 +116,17 @@ ul {
     color: var(--primary-color);
 }
 
-.hero_slide_text p {
+.hero__slide-text p {
     font-family: var(--font-cursive);
     font-size: var(--h1-font-size);
     line-height: 52px;
     margin-top: var(--mb-1-5);
 }
 
-.hero_slide_img {
+.hero__slide-img {
     text-align: center;
 }
 
-.hero_slide_img img {
+.hero__slide-img img {
     width: 450px;
 }

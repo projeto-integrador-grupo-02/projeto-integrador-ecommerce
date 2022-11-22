@@ -5,9 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--  Style principal -->
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="shortcut-icon" href="/img/Design sem nome.png">
+    <!--  Ícone -->
+    <link rel="shortcut-icon" href="/img/Design sem nome.png" type="image/x-icon">
+    <!--  Link BoxIcons -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!--Link swiperjs-->
+    <link rel="stylesheet" href="/css/swipper-bundle.css">
+
     <title>Arome</title>
 </head>
 
@@ -32,39 +38,40 @@
 -->
 
     <!-- ----MAIN---- -->
-
-    <section class="hero container">
-        <div class="hero_content" id="hero">
-            <div>
-                <div class="hero_slide">
-                    <div class="hero_slide_text">
-                        <h1>Coleção</h1>
-                        <span>2023</span>
-                        <p>Arome-se com as nossas fragrâncias</p>
+    <main>
+        <!-- HERO -->
+        <section class="hero container">
+            <div class="hero__content swiper" id="hero">
+                <div class="swiper-wrapper">
+                    <div class="hero__slide swiper-slide">
+                        <div class="hero__slide-text">
+                            <h1>coleção</h1>
+                            <span>2023</span>
+                            <p>Arome-se com as nossas fragrâncias</p>
+                        </div>
+                        <div class="hero__slide-img">
+                            <img src="/img/herosfundo2.png" alt="">
+                        </div>
                     </div>
-                    <div class="hero_slide_img">
-                        <img src="/img/herosfundo2.png">
+
+                    <div class="hero__slide swiper-slide">
+                        <div class="hero__slide-text">
+                            <h1>40%</h1>
+                            <span>OFF</span>
+                            <p>Em toda linha de Aromatizadores</p>
+                        </div>
+                        <div class="hero__slide-img">
+                            <img src="/img/herosfundo3.png" alt="">
+                        </div>
                     </div>
                 </div>
-
-                <div class="hero_slide">
-                    <div class="hero_slide_text">
-                        <h1>40%</h1>
-                        <span>OFF</span>
-                        <p>Em todos aromatizadores</p>
-                    </div>
-                    <div class="hero_slide_img">
-                        <img src="/img/herosfundo3.png">
-                    </div>
-                </div>
-
             </div>
-        </div>
-    </section>
-
+        </section>
     <!--
     Terminando o home
 -->
+    <script src="/public/js/script.js"></script>
+    <script src="/public/js/swiper-bundle.js"></script>
 </body>
 
 </html>
