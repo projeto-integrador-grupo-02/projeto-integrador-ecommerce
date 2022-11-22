@@ -1,3 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200&family=Tangerine&display=swap%27');
+
+:root {
+    /*----COLORS----*/
+    --primary-color: #f6eddc;
+    --primary-color-alt: #e3e5d7;
+    --secondary-color: #bdd6d2;
+    --secondary-color-alt: #a5c8ca;
+    --terciary-color: #586875;
+    --black-color: black;
+    --white-color: white;
+
+    /*----FONTS SIZE AND TYPE----*/
+    --font-body: 'Dosis', 'sans-serif';
+    --font-cursive: 'Tangerine', 'sans-serif';
+    --big-font-size: 3rem;
+    /*48px*/
+    --h1-font-size: 2.25rem;
+    /*36px*/
+    --h2-font-size: 1.5rem;
+    /*24px*/
+    --h3-font-size: 1.25rem;
+    /*20px*/
+    --normal-font-size: 1rem;
+    /*16px*/
+    --small-font-size: 0.813rem;
+    /*12px  0.938rem  14*/
+
+    /*---------------FONT WEIGHT-------------------*/
+    --font-light: 300;
+    --font-regular: 400;
+    --font-medium: 500;
+    --font-semibold: 600;
+    --font-bold: 700;
+    --font-extrabold: 800;
+
+    /*---------------MARGINS-------------------*/
+    --mb-05: 0.5rem;
+    --mb-1: 1rem;
+    --mb-1-5: 1.5rem;
+    --mb-2: 2rem;
+    --mb-2-5: 2.5rem;
+    --mb-3: 3rem;
+
+}
+
+*,
+::before,
+::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 
 * {
     margin: 0 auto;
@@ -7,19 +60,17 @@
 }
 
 body {
-    color:blueviolet;
+    background-color: var(--white-color);
+    font-family: var(--font-body);
+    font-style: normal;
+    font-weight: 200;
 }
 
 
-#menu-h {
-    list-style-type: none;
-    padding: 0;
-}
-
-#menu-h li {
-    display: inline;
-}
-
-#menu-h li a {
+a {
     text-decoration: none;
+}
+
+ul {
+    list-style: none;
 }
