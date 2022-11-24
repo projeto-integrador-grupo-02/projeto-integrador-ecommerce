@@ -75,12 +75,13 @@ ul {
 }
 
 .container {
+    display: flex;
     max-width: 1200px;
     margin: auto 0%;
 }
 
 .section {
-    padding: 6rem 6%;
+    padding: 50%;
 }
 
 .section-title {
@@ -91,6 +92,24 @@ ul {
 }
 
 /*HERO*/
+
+/*--------------     COMO O SWIPER NÃO FUNCIONA...      ---------------*/
+.swiper-wrapper {
+    display: flex;
+    align-items: center;
+    
+    
+}
+
+.hero__slide {
+    align-self: center;
+    margin: 60px;
+}
+
+.hero__slide {
+    padding: 20px;
+}
+
 
 .hero {
     width: 100%;
