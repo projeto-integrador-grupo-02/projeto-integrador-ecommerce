@@ -80,16 +80,19 @@ ul {
 }
 
 .container {
-    
+
+    display: flex;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .section {
+
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 6rem 6%;
+    padding: 50%;
 }
 
 .section-title {
@@ -240,10 +243,10 @@ ul {
     margin-bottom: var(--mb-1-5);
 }
 
-.offer-item .offer-price span {
+/*.offer-item .offer-price span {
     
     
-}
+}*/
 
 .offer-parcel {
     width: 100%;
