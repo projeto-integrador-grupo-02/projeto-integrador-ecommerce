@@ -5,7 +5,7 @@ var swiper = new Swiper("#hero", {
     spaceBetween: 30,
     centeredSlides: true,
     autoplay: {
-        delay: 1500,
+        delay: 2500,
         disableOnInteraction: false,
     }
 });
