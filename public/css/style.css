@@ -130,21 +130,24 @@ ul {
 /*HERO*/
 
 /*--------------     COMO O SWIPER NÃO FUNCIONA...      ---------------*/
-.swiper-wrapper {
+
+.swiper-wrapper .hero__slide {
     display: flex;
     align-items: center;
-    
-    
+    justify-content: center;
+    justify-items: center;
 }
 
 .hero__slide {
-    align-self: center;
-    margin: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    padding-bottom: 150px;
+    
 }
 
-.hero__slide {
-    padding: 20px;
-}
+
 
 
 .hero {
@@ -176,6 +179,7 @@ ul {
     font-size: var(--h1-font-size);
     line-height: 52px;
     margin-top: var(--mb-1-5);
+    color: #586875;
 }
 
 .hero__slide-img {
@@ -195,8 +199,7 @@ ul {
 
 
 .offer-content {
-    display: flex;
-    flex-wrap: wrap;
+   
     margin-top: var(--mb-3);
     
 }
@@ -205,7 +208,7 @@ ul {
     border: 1px solid transparent;
     text-align: center;
     cursor: pointer;
-    position: relative;
+    /*position: relative;*/
     transition: all 400ms ease-in-out;
 }
 
@@ -226,8 +229,8 @@ ul {
 .offer-item .offer-img img {
     height: 300px;
     display: flex;
-    align-items: flex-end;
-    justify-content: center;
+    /*align-items: flex-end;*/
+    /*justify-content: center;*/
 }
 
 .offer-item .offer-desc p {
@@ -275,6 +278,22 @@ ul {
     opacity: 1;
 }
 
+.offer-all {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+}
+
+.offer-section-container h1 {
+    text-align: center;
+    color: var(--terciary-color);
+    font-family: var(--font-cursive);
+    font-weight: var(--font-light);
+    font-size: var(--h1-font-size);
+
+}
+
 /*.like img{
     width: 50px;
     height: 50px;
@@ -289,7 +308,6 @@ ul {
     background-color: white;
     border: none;
     cursor: pointer;
-
 }*/
 
 /*.offer-item .offer-img {

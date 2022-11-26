@@ -9,5 +9,3 @@ var swiper = new Swiper("#hero", {
         disableOnInteraction: false,
     }
 });
-
-let taAi = 'To'
