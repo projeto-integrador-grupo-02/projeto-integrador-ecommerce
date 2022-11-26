@@ -80,24 +80,17 @@ ul {
 }
 
 .container {
-<<<<<<< HEAD
-
-=======
->>>>>>> 94a8e7fee9f399de85a7af637e9ac2fb1ca1a2ea
     display: flex;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .section {
-<<<<<<< HEAD
 
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 6rem 6%;
-=======
->>>>>>> 94a8e7fee9f399de85a7af637e9ac2fb1ca1a2ea
     padding: 50%;
 }
 
