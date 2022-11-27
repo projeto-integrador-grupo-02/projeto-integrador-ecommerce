@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/edit-user.css">
+    <title>Arome - Alterar Cadastro</title>
+</head>
+
+<body>
+    <nav class="nav_tab">
+        <ul>
+            <li>
+                <input type="radio" class="tabs" id="tab1" name="tabs" checked>
+                <label for="tab1" class="tab">Ordens</label>
+                <div class="container">
+                    
+                    <div class="user">
+                    <img src="/img/user.png" alt="" srcset="">
+                    <p>Nome do usuário</p><br>
+                    <p>usuario@hotmail.com</p>
+                    </div>
+                    <ul>
+                        <li class="opt-orders">
+                            <input type="radio" class="tabs-order" id="tab-acaminho" name="ord"><label
+                                for="tab-acaminho">A caminho</label>
+                            <input type="radio" class="tabs-order" id="tab-concluido" name="ord"><label
+                                for="tab-concluido">Concluída</label>
+                            <input type="radio" class="tabs-order" id="tab-cancelado" name="ord"><label
+                                for="tab-cancelado">Canceladas</label>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            
+            <li>
+                <input type="radio" class="tabs" id="tab2" name="tabs">
+                <label for="tab2" class="tab">Alterar perfil</label>
+                <div class="container">
+                    
+                    <input type="text" name="reg" id="name">
+                    <label for="name">Alterar nome</label>
+                    <input type="email" name="reg" id="email">
+                    <label for="email">Alterar e-mail</label>
+                    <input type="password" name="reg" id="pass">
+                    <label for="pass">Alterar senha</label>
+                    <input type="password" name="reg" id="pass2">
+                    <label for="pass2">Confirmar senha</label>
+                    <img src="/img/user.png" alt="" srcset="">
+                </div>
+            </li>
+        </ul>
+    </nav>
+</body>
+
+</html>

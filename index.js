@@ -16,6 +16,13 @@ servidor.get(
     }  
 )
 
+servidor.get(
+  '/editarcadastro',   // endereço ou caminho a receber requisição
+  (req,res) =>{          // função a ser executada
+    return res.sendFile(__dirname + '/views/edit-user.html')
+  }  
+)
+
 // Fazer o servidor rodar
 
 servidor.listen(3002)
