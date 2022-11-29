@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:Helvetica;
+    color:#323232;
+    border: none;
+
+}
+textarea:focus, input:focus{
+    outline: none;
+}
+a{
+    font-size: .8rem;
+}
+a:hover{
+    color: #08558b;
+}
+#divcenter-container{
+    height: auto;
+    width: auto;
+    margin: 0 auto;
+    display:flex;
+    background-color: #fff;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    position: right;
+    padding: 20px,30px;
+    margin-top: 30vh;
+}
+#Cadastro-container{
+    height: auto;
+    width: auto;
+    margin-left: 200px;
+    margin-right: 100px;
+}
