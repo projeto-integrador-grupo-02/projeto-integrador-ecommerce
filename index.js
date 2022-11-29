@@ -6,14 +6,21 @@ const path = require('path')
 const servidor = express()
 
 //Definir a public como pasta de arquivos estáticos
-servidor.use(express.static("public"))
+servidor.use(express.static(path.join(__dirname, 'public')))
 
 //Definir as rotas
 servidor.get(
     '/home',   // endereço ou caminho a receber requisição
     (req,res) =>{          // função a ser executada
-      return res.sendFile(__dirname + '/public/html/home-dois.html')
+      return res.sendFile(__dirname + '/views/home.html')
     }  
+)
+
+servidor.get(
+  '/editarcadastro',   // endereço ou caminho a receber requisição
+  (req,res) =>{          // função a ser executada
+    return res.sendFile(__dirname + '/views/edituser.html')
+  }  
 )
 
 // Fazer o servidor rodar

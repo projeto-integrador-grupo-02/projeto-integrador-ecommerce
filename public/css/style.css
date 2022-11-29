@@ -1,29 +1,319 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200&family=Tangerine&display=swap%27');
 
-* {
-    margin: 0 auto;
+:root {
+
+    
+    /*----COLORS----*/
+    --primary-color: #f6eddc;
+    --primary-color-alt: #e3e5d7;
+    --secondary-color: #bdd6d2;
+    --secondary-color-alt: #a5c8ca;
+    --terciary-color: #586875;
+    --black-color: black;
+    --white-color: white;
+
+    /*----FONTS SIZE AND TYPE----*/
+    --font-body: 'Dosis', 'sans-serif';
+    --font-cursive: 'Tangerine', 'sans-serif';
+    --big-font-size: 3rem;
+    /*48px*/
+    --h1-font-size: 2.25rem;
+    /*36px*/
+    --h2-font-size: 1.5rem;
+    /*24px*/
+    --h3-font-size: 1.25rem;
+    /*20px*/
+    --normal-font-size: 1rem;
+    /*16px*/
+    --small-font-size: 0.813rem;
+    /*12px  0.938rem  14*/
+
+    /*---------------FONT WEIGHT-------------------*/
+    --font-light: 300;
+    --font-regular: 400;
+    --font-medium: 500;
+    --font-semibold: 600;
+    --font-bold: 700;
+    --font-extrabold: 800;
+
+    /*---------------MARGINS-------------------*/
+    --mb-05: 0.5rem;
+    --mb-1: 1rem;
+    --mb-1-5: 1.5rem;
+    --mb-2: 2rem;
+    --mb-2-5: 2.5rem;
+    --mb-3: 3rem;
+
+    --Z-fixed: 100;
+    --z-tooltip: 10;
+
+}
+html {
+    scroll-behavior: smooth;
+    font-size: 24px;
+}
+
+*,
+::before,
+::after {
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
-
 }
 
 body {
-    font-family: 'caviarDreams';
+    background-color: var(--white-color);
+    font-family: var(--font-body);
+    font-style: normal;
+    font-weight: 200;
+    overflow-x: hidden;
+
 }
 
-@font-face {
-    font-family:'caviarDreams' ;
-    src: url('CaviarDreams.ttf') format('opentype');
-}
 
-#menu-h {
-    list-style-type: none;
-    padding: 0;
-}
-
-#menu-h li {
-    display: inline;
-}
-
-#menu-h li a {
+a {
     text-decoration: none;
 }
+
+ul {
+    list-style: none;
+}
+
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6rem 6%;
+    padding: 50%;
+}
+
+.section-title {
+    font-size: var(--h1-font-size);
+    text-align: center;
+    font-weight: var(--font-medium);
+
+}
+
+/* BUTTON */
+
+.btn {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    background-color: var(--primary-color);
+    border: none;
+    color: #586875;
+    font-size: var(--small-font-size);
+    font-weight: var(--font-extrabold);
+    text-transform: uppercase;
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: all 400ms ease-in-out;
+
+}
+
+.btn:hover {
+    background-color: var(--secondary-color);
+}
+
+
+/*HERO*/
+
+/*--------------     COMO O SWIPER NÃO FUNCIONA...      ---------------*/
+
+.swiper-wrapper .hero__slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+}
+
+.hero__slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    padding-bottom: 150px;
+    
+}
+
+
+
+
+.hero {
+    width: 100%;
+}
+
+.hero__slide-text {
+    text-align: center;
+    position: relative;
+}
+
+.hero__slide-text h1,
+.hero__slide-text span {
+    font-family: var(--font-cursive);
+    font-size: 200px;
+    color: var(--secondary-color-alt);
+}
+
+.hero__slide-text span {
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-45%);
+    color: var(--primary-color);
+}
+
+.hero__slide-text p {
+    font-family: var(--font-cursive);
+    font-size: var(--h1-font-size);
+    line-height: 52px;
+    margin-top: var(--mb-1-5);
+    color: #586875;
+}
+
+.hero__slide-img {
+    text-align: center;
+}
+
+.hero__slide-img img {
+    width: 450px;
+}
+
+/*--------  OFFER  --------*/
+
+.offer {
+    width: 100%;
+}
+
+
+
+.offer-content {
+   
+    margin-top: var(--mb-3);
+    
+}
+
+.offer-item {
+    border: 1px solid transparent;
+    text-align: center;
+    cursor: pointer;
+    /*position: relative;*/
+    transition: all 400ms ease-in-out;
+}
+
+.offer-item:hover::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: var(--secondary-color);
+}
+
+.offer-item:hover {
+    border: 1px solid var(--secondary-color-alt);
+}
+
+.offer-item .offer-img img {
+    height: 300px;
+    display: flex;
+    /*align-items: flex-end;*/
+    /*justify-content: center;*/
+}
+
+.offer-item .offer-desc p {
+    font-family: var(--font-cursive);
+    font-weight: var(--font-light);
+    font-size: var(--h2-font-size);
+    line-height: 19px;
+    margin: var(--mb-1) 0;
+}
+
+.offer-item .offer-price {
+    margin-bottom: var(--mb-1-5);
+}
+
+/*.offer-item .offer-price span {
+    
+    
+}*/
+
+.offer-parcel {
+    width: 100%;
+    background-color: var(--primary-color);
+    border: 1px solid transparent;
+    padding: 0.5rem;
+    margin-bottom: var(--mb-05);
+}
+
+.offer-parcel a {
+    color: #586875;
+    font-size: var(--small-font-size);
+    line-height: 1.5rem;
+}
+
+.offer-parcel:hover {
+    background-color: var(--secondary-color);
+}
+
+.offer-item .btn {
+    width: 100%;
+    opacity: 0;
+    transition: all 400ms ease-in-out;
+}
+
+.offer-item:hover .btn {
+    opacity: 1;
+}
+
+.offer-all {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+}
+
+.offer-section-container h1 {
+    text-align: center;
+    color: var(--terciary-color);
+    font-family: var(--font-cursive);
+    font-weight: var(--font-light);
+    font-size: var(--h1-font-size);
+
+}
+
+/*.like img{
+    width: 50px;
+    height: 50px;
+}*/
+
+/*.offer-img .like {
+    
+    width: 100px;
+    height: 100px;
+    top: 145px;
+    left: 130px;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+}*/
+
+/*.offer-item .offer-img {
+    height: 200px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}*/
