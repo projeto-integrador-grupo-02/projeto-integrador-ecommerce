@@ -20,41 +20,62 @@ header{
         display: flex; 
         align-items: center; 
         justify-content: space-between; 
-        flex-wrap: wrap;
     }
     .header_in ul li{
         display: inline-block;
         list-style: none;
         margin: 10px 30px;
         padding: 20px 0;
+    
     }
 
     .header_in ul li a{
         text-decoration: none;
         color: #586875;
+      
         
     }
+    .header_in li a:hover{
+            color: white;
+            transition: all 0.4s ease 0s;
+    }
+
+
     .logoheader{
-        width: 300px;
+        position: relative;
+        width: 50px;  
+        top: 28px;
+        left: 120px;
     }
     .carrinho{
         width: 22px;
+       
     }
     .login{
        width: 22px;
+      
     }
     .cadastro{
         width: 22px;
+        
     }
     .lojas{
         width: 22px;
+        
     }
 
     .buscar{
         width: 300px;
-        height: 25px;
-        
+        height: 25px;   
     }
+    .buscarimg{
+        position: absolute;
+        top: 52px;
+        right: 542px;
+        cursor: pointer;
+        transition: .3s;
+    }
+    
 
     nav{
         width: 100%;
@@ -88,10 +109,6 @@ header{
 
     }
 
-   .class{
-    background-color: #f6eddc; background-color: #e3e5d7; background-color: #bdd6d2 ; background-color: #a5c8ca; background-color: #586875;
-   }
-
    .header_in .a{
     margin-left: 190px;
     position: absolute;
@@ -102,4 +119,136 @@ header{
     font-size: 50px;
     padding-bottom: 10px;
     color: #586875;
+    
+}
+
+footer{
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    background: #f6eddc;
+    font-family: 'Dosis', 'san-serif';
+}
+.main-content{
+    display: flex;
+}
+.main-content .box{
+    flex-basis: 50%;
+    padding: 10px 20px;
+}
+.box h2{
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.box .content{
+    margin: 20px 0 0 0;
+    position: relative;
+}
+.box .content:after{
+    position: absolute;
+    content: '';
+    width: 15%;
+    height: 2px;
+    background: #f6eddc;
+    top: -10px;
+}
+.box .content:before{
+    position: absolute;
+    content: '';
+    height: 2px;
+    width: 100%;
+    background: #f6eddc;
+    top: -10px;
+}
+.left .content .social{
+    margin: 20px 0 0 0;
+}
+.left .content .social a{
+    padding: 0 2px;
+}
+.left .content .social a span{
+    width: 40px;
+    height: 40px;
+    background: #f6eddc;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: 0.3s;
+}
+.left .content .social a span:hover{
+    background: #f6eddc;
+}
+
+.center .content .text{
+    font-size: 17px;
+    font-weight: 500;
+    padding-left: 10px;
+}
+.center .content .phone{
+    margin: 10px 0;
+}
+.center .content .msg{
+    margin-top: 10px;
+}
+.right form input, .right form textarea{
+    width: 100%;
+    font-size: 17px;
+    background: #f6eddc;
+    padding-left: 10px;
+    border: 1px solid #000;
+}
+.right form input{
+    height: 35px;
+}
+.right form input:focus,
+.right form textarea:focus{
+    outline-color: #f6eddc;
+}
+.right form .text{
+    font-size: 17px;
+    margin-bottom: 2px;
+    color: #656565;
+}
+.right form .btn{
+    margin-top: 10px;
+}
+.right form .btn button{
+    height: 40px;
+    width: 100%;
+    background: #f6eddc;
+    cursor: pointer;
+    transition: .3s;
+    border: none;
+}
+
+.bottom .center{
+    padding: 5px;
+    font-size: 15px;
+    background: #f6eddc;
+    text-align: center;
+}
+.bottom .center span{
+    color: #f6eddc;
+}
+.bottom .center a{
+    color: #bdd6d2;
+    text-decoration: none;
+}
+.bottom .center a:hover{
+    text-decoration: underline;
+}
+@media screen and (max-width: 900px){
+    footer{
+        position: fixed;
+        bottom: 0px;
+    }
+    .main-content{
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .main-content .box{
+        margin: 5px 0;
+    }
 }
