@@ -11,5 +11,13 @@ servidor.get(
   (req,res) =>{          // função a ser executada      
     return res.sendFile(__dirname + '/views/home-dois.html')    
   })
+
+  servidor.get(    
+    '/produtos',   // endereço ou caminho a receber requisição    
+    (req,res) =>{          // função a ser executada      
+      return res.sendFile(__dirname + '/views/products.html')    
+    })
+
+
 // Fazer o servidor rodar
 servidor.listen(3002)
