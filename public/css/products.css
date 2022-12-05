@@ -1,0 +1,23 @@
+body{
+    background-color: #f6eddc;
+    font-family:  'Dosis', sans-serif;
+    font-style: normal;
+    font-weight: 200;
+  }
+
+ img {
+    width: 200px;
+    text-align: center;
+}
+article {
+  color: rgb(91, 83, 83);
+  border: none;
+  padding: 10px 20px;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+}
+
+main {
+  text-align: center;
+}
