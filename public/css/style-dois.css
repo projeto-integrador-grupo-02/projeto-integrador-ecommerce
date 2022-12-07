@@ -30,13 +30,15 @@ header{
     }
 
     .header_in ul li a{
+        text-shadow: 0 0 #a5c8ca;
         text-decoration: none;
         color: #586875;
+        
       
         
     }
     .header_in li a:hover{
-            color: white;
+            color: #bdd6d2;
             transition: all 0.4s ease 0s;
     }
 
@@ -196,7 +198,7 @@ footer{
     width: 100%;
     font-size: 17px;
     background: #f6eddc;
-    padding-left: 10px;
+    padding-left: 5px;
     border: 1px solid #000;
 }
 .right form input{
@@ -251,4 +253,8 @@ footer{
     .main-content .box{
         margin: 5px 0;
     }
+}
+
+.colors{
+    background-color: #f6eddc; background-color: #e3e5d7; background-color: #bdd6d2 ; background-color: #a5c8ca; background-color: #586875;
 }
