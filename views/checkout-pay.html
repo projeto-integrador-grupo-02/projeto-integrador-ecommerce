@@ -8,60 +8,105 @@
   <title>Payment</title>
 </head>
 <body>
+  <!--  MAIN  --> 
   <main>
     <div class="page-title">
       <h1>Checkout - Forma de Pagamento</h1>
       <h2>Endereço - Pagamento</h2>
     </div>
-
+<!--  PAYMENT METHODS  -->
     <div class="payment-methods">
+<!--  PIX  -->      
       <div class="pix">
-        <h3>Pagar com Pix</h3>
-        <button name="pix">Ver dados para pagamento com Pix</button>
+        <div class="pixsect-title">
+          <h3>Pagar com Pix</h3>
+        </div>
+        <div class="pixbtn">
+          <button name="pix">Ver dados para pagamento com Pix</button>
+        </div>
       </div>
+<!--  CREDIT CARD  -->
       <div class="credit-card">
-        <h3>Pagar com Cartão de Crédito</h3>
+        <div class="cardsect-title">
+          <h3>Pagar com Cartão de Crédito</h3>
+        </div>
+        <div class="cardname"> 
           <input type="text" name="ntitular" id="ntitular" placeholder="Nome do Titular"><br>
+        </div>
+        <div class="cardnumber">
           <input type="text" name="ncartao" id="ncartao" placeholder="Número do Cartão"><br>
-          <input type="number" id="mesvcto" name="mesvcto" min= "1" max="12">
-          <!-- #region  <select id="mesvencto" name="mesvencto" placeholder="Número do Cartão">
-            <option value="0">Mês Venc</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-            <option value="11">11</option>
-            <option value="12">12</option>
-          </select> -->
-          <input type="number" id="anovcto" name="anovcto" min= "0" max= "99" placeholder="Ano Venc">
-          <input type="text" name="cvc" id="cvc" placeholder="CVC"><br>
+        </div>
+        <div class="mesanocvc">
+          <div class="mesvctonumber">
+            <input type="number" id="mesvcto" name="mesvcto" min= "1" max="12" placeholder="Mês Venc">
+              <!-- <select id="mesvencto" name="mesvencto" placeholder="Número do Cartão">
+                <option value="0">Mês Venc</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+              </select> -->
+          </div>  
+          <div class="anovctonumber">
+            <input type="number" id="anovcto" name="anovcto" min= "0" max= "99" placeholder="Ano Venc">
+          </div>
+          <div class=cvcnumber>
+            <input type="text" name="cvc" id="cvc" placeholder="CVC"><br>
+          </div>
+        </div>
+        <div class="infosave">  
           <label for="salvarinfo"> Salvar dados para uma compra futura</label>
           <input type="checkbox" name="salvarinfo" id="savarinfo"><br>
+        </div>
+        <div class="cardpaybutton">
           <button type="submit" name="pagarcartao">Pagar com cartão</button>
+        </div>
       </div>
     </div>
-
+<!--  CART  -->    
     <div class="cart">
       <h3>Seu Carrinho</h3>
-      <div class="produto-1">
-       <img src="img/VELA-BOTANIC.png">
-        <h4> Vela Botanic Garden</h4>
-        <h5> Quantidade: 1</h5>
-        <h5> R$ 29,90</h5>
-        <button class="remove">Remover</button>
+      <div class="product1">
+        <div class="product1-img">
+          <img src="img/VELA-BOTANIC.png">
+        </div>
+        <div class="product1-name"> 
+          <p> Vela Botanic Garden</p>
+        </div>
+        <div class="product1-qnt">
+          <span> Quantidade: 1</span>
+        </div>
+        <div class="product1-price">
+          <span> R$ 29,90</span>
+        </div>
+        <div class="product1-remove">
+          <button class="remove">Remover</button>
+        </div>
       </div><br>
-      <div class="produto-2">
-        <img src="img/DIFUSOR-SATURNO.jpg">
-        <h4> Difusor Saturno</h4>
-        <h5> Quantidade: 1</h5>
-        <h5> R$ 79,90</h5>
-        <button type="button" class="remove">Remover</button>
+      <div class="product2">
+        <div class="product2-img">
+          <img src="img/DIFUSOR-SATURNO.jpg">
+        </div>
+        <div class="product2-name"> 
+          <p> Vela Botanic Garden</p>
+        </div>
+        <div class="product2-qnt">
+          <span> Quantidade: 1</span>
+        </div>
+        <div class="product2-price">
+          <span> R$ 29,90</span>
+        </div>
+        <div class="product2-remove">
+          <button class="remove">Remover</button>
+        </div>
       </div><br>
     </div>
 
