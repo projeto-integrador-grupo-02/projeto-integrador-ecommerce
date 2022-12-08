@@ -30,32 +30,45 @@
         <div class="content">
             <h2>Ordens</h2>
             <div class="ordertab">
-                <input type="radio" name="ordertab" id="emandamento" checked>
-                <label for="emandamento">Em andamento</label>
-                <div class="status" id="demandamento">
-                    ppppppppppppppppppppp
+                <div class="sergio">
+                    <input type="radio" name="ordertab" id="emandamento" checked>
+                    <label for="emandamento">Em andamento</label>
+                    <div class="status" id="demandamento">
+                        <p>Ordem nº</p>
+                        <p>Acompanhar encomenda</p>
+                    </div>
                 </div>
-                <input type="radio" name="ordertab" id="concluidas">
-                <label for="concluidas">Concluídas</label>
-                <div class="status" id="dconcluidas">
-                    ppppppppppppppppppppp
+                <div class="sergio">
+                    <input type="radio" name="ordertab" id="concluidas">
+                    <label for="concluidas">Concluídas</label>
+                    <div class="status" id="dconcluidas">
+                        <p>Ordem nº</p>
+                        <p>Data de conclusão</p>
+                        
+                        
+                    </div>
                 </div>
-                <input type="radio" name="ordertab" id="canceladas">
-                <label for="canceladas">Canceladas</label>
-                <div class="status" id="dcanceladas">
-                    ppppppppppppppppppppp
+                <div class="sergio">
+                    <input type="radio" name="ordertab" id="canceladas">
+                    <label for="canceladas">Canceladas</label>
+                    <div class="status" id="dcanceladas">
+                        <p>Ordem nº</p>
+                        <p>Data de cancelamento</p>
+                        <a href="#">Mais detalhes</a>
+                        
+                    </div>
                 </div>
             </div>
         </div>
 
         <input type="radio" name="tabs" id="edituser">
         <label for="edituser" class="tabp">Alterar Perfil</label>
-        <div class="content">
+        <div class="content" id="contentu">
             <h2>Alterar usuário</h2>
             <form id="form-usuario" method="POST">
                 <label class="picture">
                     <span class="picturesp"></span>
-                    
+
                     <input type="file" accept="image/*" class="picturein" name="img" id="picturein">
                 </label>
                 <div class="campos">
@@ -87,6 +100,7 @@
 
     </div>
     <script src="/js/scriptuser.js"></script>
+  
 </body>
 
 </html>

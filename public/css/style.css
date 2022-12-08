@@ -151,6 +151,7 @@ ul {
 
 
 .hero {
+    padding-top: 60PX;
     width: 100%;
 }
 
@@ -195,6 +196,7 @@ ul {
 
 .offer {
     width: 100%;
+    padding-bottom: 80px;
 }
 
 
@@ -202,6 +204,7 @@ ul {
 .offer-content {
    
     margin-top: var(--mb-3);
+    padding-bottom: 80px;
     
 }
 

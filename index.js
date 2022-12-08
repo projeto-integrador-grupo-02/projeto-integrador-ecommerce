@@ -23,6 +23,21 @@ servidor.get(
   }  
 )
 
+servidor.get(
+  '/produtos',   // endereço ou caminho a receber requisição
+  (req,res) =>{          // função a ser executada
+    return res.sendFile(__dirname + '/views/products.html')
+  }  
+)
+
+servidor.get(
+  '/cadastro',   // endereço ou caminho a receber requisição
+  (req,res) =>{          // função a ser executada
+    return res.sendFile(__dirname + '/views/cadastro.html')
+  }  
+)
+
+
 // Fazer o servidor rodar
 
 servidor.listen(3002)
