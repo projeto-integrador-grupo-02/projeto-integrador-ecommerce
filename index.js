@@ -12,7 +12,12 @@ servidor.use(express.static(path.join(__dirname, 'public')))
 servidor.get(    
   '/home',   // endereço ou caminho a receber requisição    
   (req,res) =>{          // função a ser executada      
-    return res.sendFile(__dirname + '/views/home-dois.html')    
+    return res.sendFile(__dirname + '/views/home.html')    
   })
+  servidor.get(    
+    '/checkout',   // endereço ou caminho a receber requisição    
+    (req,res) =>{          // função a ser executada      
+      return res.sendFile(__dirname + '/views/checkout-pay.html')    
+    })
 // Fazer o servidor rodar
 servidor.listen(3002)
