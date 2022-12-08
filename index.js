@@ -7,9 +7,10 @@ const servidor = express()
 servidor.use(express.static(path.join(__dirname, 'public'))) 
 //Definir as rotas
 servidor.get(    
-  '/home',   // endereço ou caminho a receber requisição    
+  '/checkout-pay',   // endereço ou caminho a receber requisição    
   (req,res) =>{          // função a ser executada      
-    return res.sendFile(__dirname + '/views/home-dois.html')    
+   return res.sendFile(__dirname + '/views/checkout-pay.html')   
   })
+
 // Fazer o servidor rodar
 servidor.listen(3002)
