@@ -88,7 +88,11 @@
 
                     <label>
                         Senha:
-                        <input type="password" name="senha" id="senha" placeholder="Digite a nova senha" required>
+                        <input type="password" name="senha" id="senha" placeholder="Digite a nova senha" required
+                        pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[$*&@#])[0-9a-zA-Z$*&@#]{8,12}$"
+                        title="Sua senha precisa ter entre 8 e 12 caracteres, deve conter ao menos uma letra minúscula,
+                        deve conter ao menos uma letra maiúscula,
+                        deve conter ao menos um caractere especial">
                     </label>
 
                     <label>
