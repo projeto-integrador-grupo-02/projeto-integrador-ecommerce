@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="/js/edit-user.js" defer></script>
     <link rel="stylesheet" href="/css/edituser.css">
     <title>Arome - Área usuário</title>
 </head>
@@ -31,57 +30,70 @@
         <div class="content">
             <h2>Ordens</h2>
             <div class="ordertab">
-                <input type="radio" name="ordertab" id="emandamento" checked>
-                <label for="emandamento">Em andamento</label>
-                <div class="status" id="demandamento">
-                    ppppppppppppppppppppp
+                <div class="sergio">
+                    <input type="radio" name="ordertab" id="emandamento" checked>
+                    <label for="emandamento">Em andamento</label>
+                    <div class="status" id="demandamento">
+                        <p>Ordem nº</p>
+                        <p>Acompanhar encomenda</p>
+                    </div>
                 </div>
-                <input type="radio" name="ordertab" id="concluidas">
-                <label for="concluidas">Concluídas</label>
-                <div class="status" id="dconcluidas">
-                    ppppppppppppppppppppp
+                <div class="sergio">
+                    <input type="radio" name="ordertab" id="concluidas">
+                    <label for="concluidas">Concluídas</label>
+                    <div class="status" id="dconcluidas">
+                        <p>Ordem nº</p>
+                        <p>Data de conclusão</p>
+                        
+                        
+                    </div>
                 </div>
-                <input type="radio" name="ordertab" id="canceladas">
-                <label for="canceladas">Canceladas</label>
-                <div class="status" id="dcanceladas">
-                    ppppppppppppppppppppp
+                <div class="sergio">
+                    <input type="radio" name="ordertab" id="canceladas">
+                    <label for="canceladas">Canceladas</label>
+                    <div class="status" id="dcanceladas">
+                        <p>Ordem nº</p>
+                        <p>Data de cancelamento</p>
+                        <a href="#">Mais detalhes</a>
+                        
+                    </div>
                 </div>
             </div>
         </div>
 
         <input type="radio" name="tabs" id="edituser">
         <label for="edituser" class="tabp">Alterar Perfil</label>
-        <div class="content">
+        <div class="content" id="contentu">
             <h2>Alterar usuário</h2>
             <form id="form-usuario" method="POST">
                 <label class="picture">
                     <span class="picturesp"></span>
-                    
+
                     <input type="file" accept="image/*" class="picturein" name="img" id="picturein">
                 </label>
                 <div class="campos">
                     <label>
                         Alterar nome:
-                        <input type="text" name="nome" id="nome" placeholder="Digite o novo nome" minlength="3" required>
+                        <input type="text" name="nome" id="nome" placeholder="Digite o novo nome" required>
+                    </label>
+                    <label>
+                        Alterar Data de Nascimento:
+                        <input type="date" name="data" id="data">
                     </label>
 
                     <label>
                         E-mail:
-                        <input type="email" name="email" id="email" placeholder="Digite o novo e-mail" required>
+                        <input type="email" name="email" id="email" placeholder="Digite o novo e-mail">
                     </label>
 
                     <label>
                         Senha:
-                        <input type="password" name="senha" id="senha" placeholder="Digite a nova senha"
-                        required
-                        pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[$*&@#])[0-9a-zA-Z$*&@#]{6,8}$"
-                        title="A senha deve possuir entre 6 e 8 caracteres, conter pelo menos uma letra maiúscula e minúscula, deve conter ao menos um caractere especial"
-                        >
+                        <input type="password" name="senha" id="senha" placeholder="Digite a nova senha">
                     </label>
 
                     <label>
                         Confirme a Senha:
-                        <input type="password" name="conf" id="conf" placeholder="Confirme a nova senha" required>
+                        <input type="password" name="conf" id="conf" placeholder="Confirme a nova senha">
                     </label>
 
                     <button type="submit" class="btn">Salvar alterações</button>
@@ -92,6 +104,7 @@
 
     </div>
     <script src="/js/scriptuser.js"></script>
+  
 </body>
 
 </html>
