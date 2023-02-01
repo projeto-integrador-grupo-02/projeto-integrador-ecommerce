@@ -74,26 +74,26 @@
                 <div class="campos">
                     <label>
                         Alterar nome:
-                        <input type="text" name="nome" id="nome" placeholder="Digite o novo nome" required>
+                        <input type="text" name="nome" id="nome" placeholder="Digite o novo nome" minlength="3" required>
                     </label>
                     <label>
                         Alterar Data de Nascimento:
-                        <input type="date" name="data" id="data">
+                        <input type="date" name="data" id="data" required>
                     </label>
 
                     <label>
                         E-mail:
-                        <input type="email" name="email" id="email" placeholder="Digite o novo e-mail">
+                        <input type="email" name="email" id="email" placeholder="Digite o novo e-mail" required>
                     </label>
 
                     <label>
                         Senha:
-                        <input type="password" name="senha" id="senha" placeholder="Digite a nova senha">
+                        <input type="password" name="senha" id="senha" placeholder="Digite a nova senha" required>
                     </label>
 
                     <label>
                         Confirme a Senha:
-                        <input type="password" name="conf" id="conf" placeholder="Confirme a nova senha">
+                        <input type="password" name="conf" id="conf" placeholder="Confirme a nova senha" required>
                     </label>
 
                     <button type="submit" class="btn">Salvar alterações</button>

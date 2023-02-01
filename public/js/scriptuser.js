@@ -2,7 +2,7 @@
 
 const pictureIn = document.querySelector('#picturein')
 const pictureSp = document.querySelector('.picturesp')
-const pictureTxt = 'Escolha uma imagem'
+const  pictureTxt = 'Escolha uma imagem'
 
 const inputData = document.querySelector('#data')
 
@@ -19,16 +19,16 @@ function validaDataNascimento(input) {
     const dataRecebida = new Date(input.value)
     let mensagem = ''
 
-    if(!maiorIdade) {
-        mensagem = 'Você precisa ter maior de 18 anos para alterar o cadastro'
+    if(!maiorIdade(dataRecebida)) {
+        mensagem = 'Você precisa ser maior de 18 anos para alterar o cadastro'
     }
 
-    maiorIdade(dataRecebida)
+    inputData.setCustomValidity(mensagem)
 }
 
-function maiorIdade() {
+function maiorIdade(data) {
     const dataAtual = new Date()
-    const dataMais18 = new Date(data.getUTCFullYear()+ 18, data.getUTCMonth(), data.getUTCDate())
+    const dataMais18 = new Date(data.getUTCFullYear() + 18, data.getUTCMonth(), data.getUTCDate())
 
     return dataMais18 <= dataAtual
 }
