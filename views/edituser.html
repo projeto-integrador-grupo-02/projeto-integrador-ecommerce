@@ -74,22 +74,30 @@
                 <div class="campos">
                     <label>
                         Alterar nome:
-                        <input type="text" name="nome" id="nome" placeholder="Digite o novo nome">
+                        <input type="text" name="nome" id="nome" placeholder="Digite o novo nome" minlength="3" required>
+                    </label>
+                    <label>
+                        Alterar Data de Nascimento:
+                        <input type="date" name="data" id="data" required>
                     </label>
 
                     <label>
                         E-mail:
-                        <input type="email" name="email" id="email" placeholder="Digite o novo e-mail">
+                        <input type="email" name="email" id="email" placeholder="Digite o novo e-mail" required>
                     </label>
 
                     <label>
                         Senha:
-                        <input type="password" name="senha" id="senha" placeholder="Digite a nova senha">
+                        <input type="password" name="senha" id="senha" placeholder="Digite a nova senha" required
+                        pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[$*&@#])[0-9a-zA-Z$*&@#]{8,12}$"
+                        title="Sua senha precisa ter entre 8 e 12 caracteres, deve conter ao menos uma letra minúscula,
+                        deve conter ao menos uma letra maiúscula,
+                        deve conter ao menos um caractere especial">
                     </label>
 
                     <label>
                         Confirme a Senha:
-                        <input type="password" name="conf" id="conf" placeholder="Confirme a nova senha">
+                        <input type="password" name="conf" id="conf" placeholder="Confirme a nova senha" required>
                     </label>
 
                     <button type="submit" class="btn">Salvar alterações</button>
