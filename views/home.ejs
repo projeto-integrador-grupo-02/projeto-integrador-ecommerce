@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,105 +15,79 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <!--Link swiperjs-->
     <link rel="stylesheet" href="/css/swiper-bundle.css" type="text/css">
-     <!--Link footer-->
-     <link rel="stylesheet" href="/css/footer.css">
+    <!--Link footer-->
+    <link rel="stylesheet" href="/css/footer.css">
 
     <title>Arome</title>
 </head>
 
 <body>
-    <header>
-        <div class="header_in">
-            <img src="/img/logoArome2.png" class="logoheader" alt="logo header">
-            <h1 class="a">Arome</h1>
-            <ul>
-                <input type="text" placeholder="Buscar" class="buscar">
-				<button><img src="/img/search.png" alt="buscar" class="buscarimg"></button>
-                <li><a href="./edituser.html" class="active">Lojas <img src="/img/lojas.png" alt="lojas" class="lojas"></a></li>
-                <li><a href="http://localhost:3002/cadastro" class="active">Cadastre-se / Login <img src="/img/cadastro.png" alt="cadastro" class="cadastro"></a></li>
-                <li><a href="http://localhost:3002/edituser" class="active">Área do cliente <img src="/img/login.png" alt="login" class="login"></a></li>
-                <li><a href="#" class="active">Carrinho <img src="/img/carrinho.png" alt="carrinho" class="carrinho"></a></li>
-            </ul>
-        </div>
-
-    </header>
-    <nav>
-    
-        <ul id="menu-h">
-            <li><a href="http://">HOME</a></li>
-            <li><a href="http://">VELAS</a></li>
-            <li><a href="http://">AROMATIZADORES</a></li>
-            <li><a href="http://">ÁGUA PERFUMADA</a></li>
-            <li><a href="http://localhost:3002/produtos">COLEÇÕES</a></li>
-        </ul>
-    </nav>
-
-    <!-- ----MAIN---- -->
-    <main>
-        <!-- HERO -->
-        <section class="hero container">
-            <div class="hero__content swiper" id="hero">
-                <div class="swiper-wrapper">
-                    <div class="hero__slide swiper-slide">
-                        <div class="hero__slide-text">
-                            <h1>Coleção</h1>
-                            <span>2023</span>
-                            <p>Arome-se com as nossas fragrâncias</p>
+    <%- include("partials/header.ejs") %>
+        <main>
+            <!-- HERO -->
+            <section class="hero container">
+                <div class="hero__content swiper" id="hero">
+                    <div class="swiper-wrapper">
+                        <div class="hero__slide swiper-slide">
+                            <div class="hero__slide-text">
+                                <h1>Coleção</h1>
+                                <span>2023</span>
+                                <p>Arome-se com as nossas fragrâncias</p>
+                            </div>
+                            <div class="hero__slide-img">
+                                <img src="/img/herosfundo2.png" alt="">
+                            </div>
                         </div>
-                        <div class="hero__slide-img">
-                            <img src="/img/herosfundo2.png" alt="">
+
+                        <div class="hero__slide swiper-slide">
+                            <div class="hero__slide-text">
+                                <h1>40%</h1>
+                                <span>OFF</span>
+                                <p>Em toda linha de Aromatizadores</p>
+                            </div>
+                            <div class="hero__slide-img">
+                                <img src="/img/herosfundo3.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="hero__slide swiper-slide">
+                            <div class="hero__slide-text">
+                                <h1>Coleção</h1>
+                                <span>Pastel</span>
+                                <p>Aroma e estilo</p>
+                            </div>
+                            <div class="hero__slide-img">
+                                <img src="/img/hero-removebg-preview.png" alt="">
+                            </div>
                         </div>
                     </div>
-
-                    <div class="hero__slide swiper-slide">
-                        <div class="hero__slide-text">
-                            <h1>40%</h1>
-                            <span>OFF</span>
-                            <p>Em toda linha de Aromatizadores</p>
-                        </div>
-                        <div class="hero__slide-img">
-                            <img src="/img/herosfundo3.png" alt="">
-                        </div>
-                    </div>
-
-                    <div class="hero__slide swiper-slide">
-                        <div class="hero__slide-text">
-                            <h1>Coleção</h1>
-                            <span>Pastel</span>
-                            <p>Aroma e estilo</p>
-                        </div>
-                        <div class="hero__slide-img">
-                            <img src="/img/hero-removebg-preview.png" alt="">
-                        </div>
-                    </div>
+                    <div class=""><button>Compre agora</button></div>
                 </div>
-                <div class=""><button>Compre agora</button></div>
-            </div>
-        </section>
-        <!--FIM HERO-->
+            </section>
+            <!--FIM HERO-->
 
-        <!--            COMEÇO OFFERS         -->
+            <!--            COMEÇO OFFERS         -->
 
-        <section class="offer-section-container">
-            <h1 class="title-container">Encontre o seu produto favorito</h1>
-            <div class="offer-content" id="offer">
-                <div class="offer-all">
-                    <div class="offer-item">
-                        <div class="offer-img">
-                            <img src="/img/offers (1).png" alt="" srcset="">
+            <section class="offer-section-container">
+                <h1 class="title-container">Encontre o seu produto favorito</h1>
+                <div class="offer-content" id="offer">
+                    <div class="offer-all">
+                        <div class="offer-item">
+                            <div class="offer-img">
+                                <img src="/img/offers (1).png" alt="" srcset="">
+                            </div>
+                            <div class="offer-desc">
+                                <p>Ambientador com varetas</p>
+                            </div>
+                            <div class="offer-price">
+                                <span>R$ 350,00</span>
+                            </div>
+                            <div class="offer-parcel">
+                                <a href="#">7 X R$ 50,00</a>
+                            </div>
+                            <a href="#" class="btn">Adicione ao Carrinho</a>
                         </div>
-                        <div class="offer-desc">
-                            <p>Ambientador com varetas</p>
-                        </div>
-                        <div class="offer-price">
-                            <span>R$ 350,00</span>
-                        </div>
-                        <div class="offer-parcel">
-                            <a href="#">7 X R$ 50,00</a>
-                        </div>
-                        <a href="#" class="btn">Adicione ao Carrinho</a>
-                    </div>
-                     <div class="offer-item">
+                        <div class="offer-item">
                             <div class="offer-img">
                                 <img src="/img/offers (2).png" alt="" srcset="">
                             </div>
@@ -128,86 +103,89 @@
                             <a href="#" class="btn">Adicione ao Carrinho</a>
                         </div>
 
-    
-                            <div class="offer-item">
-                                <div class="offer-img">
-                                    <img src="/img/offers (3).png" alt="" srcset="">
-                                </div>
-                                <div class="offer-desc">
-                                    <p>Vela perfumada</p>
-                                </div>
-                                <div class="offer-price">
-                                    <span>R$ 250,00</span>
-                                </div>
-                                <div class="offer-parcel">
-                                    <a href="#">5 X R$ 50,00</a>
-                                </div>
-                                <a href="#" class="btn">Adicione ao Carrinho</a>
+
+                        <div class="offer-item">
+                            <div class="offer-img">
+                                <img src="/img/offers (3).png" alt="" srcset="">
                             </div>
-                        
+                            <div class="offer-desc">
+                                <p>Vela perfumada</p>
+                            </div>
+                            <div class="offer-price">
+                                <span>R$ 250,00</span>
+                            </div>
+                            <div class="offer-parcel">
+                                <a href="#">5 X R$ 50,00</a>
+                            </div>
+                            <a href="#" class="btn">Adicione ao Carrinho</a>
+                        </div>
+
                     </div>
-        </section>
+            </section>
 
 
 
 
-        <!--
+            <!--
     Terminando o home
 -->
 
-        <script src="/js/swiper-bundle.js"></script>
-        <script src="/js/script.js"></script>
-        <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-        <footer>
-            <div class="main-content">
-                <div class="left box">
-                    <h2> Redes Sociais</h2>
-                    <div class="content">
-                    
-                        <div class="social">
-                            <a href="http://facebook.com"><span class="facebook"> <img src="/img/facebook.png" alt="logo facebook"></span></a>
-                            <a href="http://twitter.com"><span class="twitter"><img src="/img/twitter.png" alt="logo twitter"></span></a>
-                            <a href="http://instagram.com"><span class="instagram"> <img src="/img/instagram.png" alt="logo instagram"></span></a>
+            <script src="/js/swiper-bundle.js"></script>
+            <script src="/js/script.js"></script>
+            <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+            <footer>
+                <div class="main-content">
+                    <div class="left box">
+                        <h2> Redes Sociais</h2>
+                        <div class="content">
+
+                            <div class="social">
+                                <a href="http://facebook.com"><span class="facebook"> <img src="/img/facebook.png"
+                                            alt="logo facebook"></span></a>
+                                <a href="http://twitter.com"><span class="twitter"><img src="/img/twitter.png"
+                                            alt="logo twitter"></span></a>
+                                <a href="http://instagram.com"><span class="instagram"> <img src="/img/instagram.png"
+                                            alt="logo instagram"></span></a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="center box">
-                    <h2>Contatos</h2>
-                    <div class="content">
-                        <div class="place">
-                            <span class="img"><img src="/img/map.png" alt="map"></span>
-                            <span class="text">Av. Brasília nº 5 loja 6A, Rio de Janeiro</span>
-                        </div>
-    
-                        <div class="phone">
-                            <span class="img"><img src="/img/phone.png" alt="phone"></span>
-                            <span class="text">+351 918576154</span>
-                        </div>
-    
-                        <div class="email">
-                            <span class="img"><img src="/img/email.png" alt="email"></span>
-                            <span class="text">Arome@gmail.com</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="right box">
-                    <h2>Receba novidades por Email</h2>
-                    <div class="content">
-                        <form action="#">
+                    <div class="center box">
+                        <h2>Contatos</h2>
+                        <div class="content">
+                            <div class="place">
+                                <span class="img"><img src="/img/map.png" alt="map"></span>
+                                <span class="text">Av. Brasília nº 5 loja 6A, Rio de Janeiro</span>
+                            </div>
+
+                            <div class="phone">
+                                <span class="img"><img src="/img/phone.png" alt="phone"></span>
+                                <span class="text">+351 918576154</span>
+                            </div>
+
                             <div class="email">
-                                <input type="email" required>
+                                <span class="img"><img src="/img/email.png" alt="email"></span>
+                                <span class="text">Arome@gmail.com</span>
                             </div>
-                            
-                            <div class="btn">
-                                <button type="button"><img src="/img/enviar.png" alt="enviar"></button>
-                            </div>
-                        </form>
+                        </div>
+                    </div>
+                    <div class="right box">
+                        <h2>Receba novidades por Email</h2>
+                        <div class="content">
+                            <form action="#">
+                                <div class="email">
+                                    <input type="email" required>
+                                </div>
+
+                                <div class="btn">
+                                    <button type="button"><img src="/img/enviar.png" alt="enviar"></button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="bottom">
-            </div>
-        </footer>
+                <div class="bottom">
+                </div>
+            </footer>
 
 </body>
 
