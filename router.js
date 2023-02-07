@@ -7,5 +7,6 @@ const router = express.Router()
 router.get('/', PagesController.showIndex);
 router.get('/edituser', PagesController.showUser);
 router.get('/products', PagesController.showProducts)
+router.get('/cadastro', PagesController.registerUser)
 
 module.exports = router
