@@ -1,156 +1,199 @@
-@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200&family=Tangerine&display=swap%27');
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@200&family=Tangerine&display=swap%27");
 
 :root {
+  /*----COLORS----*/
+  --primary-color: #f6eddc;
+  --primary-color-alt: #e3e5d7;
+  --secondary-color: #bdd6d2;
+  --secondary-color-alt: #a5c8ca;
+  --terciary-color: #586875;
+  --black-color: black;
+  --white-color: white;
 
-    
-    /*----COLORS----*/
-    --primary-color: #f6eddc;
-    --primary-color-alt: #e3e5d7;
-    --secondary-color: #bdd6d2;
-    --secondary-color-alt: #a5c8ca;
-    --terciary-color: #586875;
-    --black-color: black;
-    --white-color: white;
+  /*----FONTS SIZE AND TYPE----*/
+  --font-body: "Dosis", "sans-serif";
+  --font-cursive: "Tangerine", "sans-serif";
+  --big-font-size: 3rem;
+  /*48px*/
+  --h1-font-size: 2.25rem;
+  /*36px*/
+  --h2-font-size: 1.5rem;
+  /*24px*/
+  --h3-font-size: 1.25rem;
+  /*20px*/
+  --normal-font-size: 1rem;
+  /*16px*/
+  --small-font-size: 0.813rem;
+  /*12px  0.938rem  14*/
 
-    /*----FONTS SIZE AND TYPE----*/
-    --font-body: 'Dosis', 'sans-serif';
-    --font-cursive: 'Tangerine', 'sans-serif';
-    --big-font-size: 3rem;
-    /*48px*/
-    --h1-font-size: 2.25rem;
-    /*36px*/
-    --h2-font-size: 1.5rem;
-    /*24px*/
-    --h3-font-size: 1.25rem;
-    /*20px*/
-    --normal-font-size: 1rem;
-    /*16px*/
-    --small-font-size: 0.813rem;
-    /*12px  0.938rem  14*/
+  /*---------------FONT WEIGHT-------------------*/
+  --font-light: 300;
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+  --font-extrabold: 800;
 
-    /*---------------FONT WEIGHT-------------------*/
-    --font-light: 300;
-    --font-regular: 400;
-    --font-medium: 500;
-    --font-semibold: 600;
-    --font-bold: 700;
-    --font-extrabold: 800;
+  /*---------------MARGINS-------------------*/
+  --mb-05: 0.5rem;
+  --mb-1: 1rem;
+  --mb-1-5: 1.5rem;
+  --mb-2: 2rem;
+  --mb-2-5: 2.5rem;
+  --mb-3: 3rem;
 
-    /*---------------MARGINS-------------------*/
-    --mb-05: 0.5rem;
-    --mb-1: 1rem;
-    --mb-1-5: 1.5rem;
-    --mb-2: 2rem;
-    --mb-2-5: 2.5rem;
-    --mb-3: 3rem;
-
-    --Z-fixed: 100;
-    --z-tooltip: 10;
-
+  --Z-fixed: 100;
+  --z-tooltip: 10;
 }
 html {
-    scroll-behavior: smooth;
-    font-size: 24px;
+  scroll-behavior: smooth;
+  font-size: 24px;
 }
 
 *,
 ::before,
 ::after {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background-color: var(--white-color);
-    font-family: var(--font-body);
-    font-style: normal;
-    font-weight: 200;
-    overflow-x: hidden;
-    min-height: 100vh;
+  background-color: var(--white-color);
+  font-family: var(--font-body);
+  font-style: normal;
+  font-weight: 200;
+  overflow-x: hidden;
+  min-height: 100vh;
 }
 
-
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 ul {
-    list-style: none;
+  list-style: none;
 }
 
-
 .section-title {
-    font-size: var(--h1-font-size);
-    text-align: center;
-    font-weight: var(--font-medium);
-
+  font-size: var(--h1-font-size);
+  text-align: center;
+  font-weight: var(--font-medium);
 }
 
 /* BUTTON */
 
 .btn {
-    width: 100%;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    outline: none;
-    background-color: var(--primary-color);
-    border: none;
-    color: #586875;
-    font-size: var(--small-font-size);
-    font-weight: var(--font-extrabold);
-    text-transform: uppercase;
-    padding: 0.5rem;
-    cursor: pointer;
-    transition: all 400ms ease-in-out;
-
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  background-color: var(--primary-color);
+  border: none;
+  color: #586875;
+  font-size: var(--small-font-size);
+  font-weight: var(--font-extrabold);
+  text-transform: uppercase;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: all 400ms ease-in-out;
 }
 
 .btn:hover {
-    background-color: var(--secondary-color);
+  background-color: var(--secondary-color);
 }
-
-
-
 
 /* NAV */
 
-
-
 nav {
-    position: fixed;
-    top: 0%;
-    left: 0%;
-    height: 100%;
-    width: 250px;
-    padding: 10px 14px;
-    background-color: var(--primary-color);
-
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  height: 100%;
+  width: 250px;
+  padding: 10px 14px;
+  background-color: var(--primary-color);
 }
 
 nav .logo-image {
-    background-color: red;
-    display: flex;
-    justify-content: center;
-    min-width: 45px;
+  min-width: 45px;
 }
 
-.logo_name, h2 {
-    font-family: 'Tangerine';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 40px;
-    color: #586875;
+nav .logo-name {
+  display: flex;
+  justify-content: center;
+}
+
+nav .logo-name .logo_name {
+  font-family: "Tangerine";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  color: #586875;
+  margin-top: 10px;
 }
 
 nav .logo-image img {
-    width: 45px;
-    object-fit: cover;
-    background-color: aqua;
+  display: flex;
+  width: 45px;
+  object-fit: cover;
 }
 
-nav .logo-name .logo_name{
+nav .menu-items {
+  display: flex;
+  margin-top: 40px;
+  height: calc(100% - 100px);
+  flex-direction: column;
+  justify-content: space-between;
+}
 
+/* MENU ITEMS */
+
+.menu-items li {
+  list-style: none;
+}
+
+/* .menu-items .nav-links li a {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  text-decoration: none;} */
+
+.menu-items ul {
+  list-style: none;
+}
+
+.menu-items .nav-links li a:hover {
+    color: #bdd6d2;
+    transition: all 0.4s ease 0s;
+}
+
+.menu-items .nav-links li a {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  text-decoration: none;
+}
+
+i {
+  font-size: 24px;
+  min-width: 45px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  padding-left: 10px;
+  color: #586875;
+}
+
+.menu-items li a .link-name {
+    color: #586875;
+}
+
+.menu-items li a .link-name:hover {
+    color: #bdd6d2;
+    transition: all 0.4s ease 0s;
 }
