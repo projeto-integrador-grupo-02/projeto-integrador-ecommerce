@@ -1,85 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@200&family=Tangerine&display=swap%27");
 
-:root {
-  /*----COLORS----*/
-  --primary-color: #f6eddc;
-  --primary-color-alt: #e3e5d7;
-  --secondary-color: #bdd6d2;
-  --secondary-color-alt: #a5c8ca;
-  --terciary-color: #586875;
-  --black-color: black;
-  --white-color: white;
-
-  /*----FONTS SIZE AND TYPE----*/
-  --font-body: "Dosis", "sans-serif";
-  --font-cursive: "Tangerine", "sans-serif";
-  --big-font-size: 3rem;
-  /*48px*/
-  --h1-font-size: 2.25rem;
-  /*36px*/
-  --h2-font-size: 1.5rem;
-  /*24px*/
-  --h3-font-size: 1.25rem;
-  /*20px*/
-  --normal-font-size: 1rem;
-  /*16px*/
-  --small-font-size: 0.813rem;
-  /*12px  0.938rem  14*/
-
-  /*---------------FONT WEIGHT-------------------*/
-  --font-light: 300;
-  --font-regular: 400;
-  --font-medium: 500;
-  --font-semibold: 600;
-  --font-bold: 700;
-  --font-extrabold: 800;
-
-  /*---------------MARGINS-------------------*/
-  --mb-05: 0.5rem;
-  --mb-1: 1rem;
-  --mb-1-5: 1.5rem;
-  --mb-2: 2rem;
-  --mb-2-5: 2.5rem;
-  --mb-3: 3rem;
-
-  --Z-fixed: 100;
-  --z-tooltip: 10;
-}
-html {
-  scroll-behavior: smooth;
-  font-size: 24px;
-}
-
-*,
-::before,
-::after {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-body {
-  background-color: var(--white-color);
-  font-family: var(--font-body);
-  font-style: normal;
-  font-weight: 200;
-  overflow-x: hidden;
-  min-height: 100vh;
-}
-
-a {
-  text-decoration: none;
-}
-
-ul {
-  list-style: none;
-}
-
-.section-title {
-  font-size: var(--h1-font-size);
-  text-align: center;
-  font-weight: var(--font-medium);
-}
 
 /* BUTTON */
 
@@ -122,9 +41,6 @@ nav {
   transition: all 0.4s ease 0s;
 }
 
-nav.close {
-  width: 73px;
-}
 
 nav .logo-image {
   display: flex;
@@ -137,15 +53,6 @@ nav .logo-name {
   justify-content: center;
 }
 
-nav.close .logo_name {
-    opacity: 0;
-    pointer-events: none;
-  }
-
-  nav.close .logo-image {
-    margin-left: 80px;
-  }
-  
 
 nav .logo-name .logo_name {
   font-family: "Tangerine";
@@ -196,12 +103,6 @@ nav .menu-items {
   position: relative;
 }
 
-.menu-items li a:hover::before {
-  content: "";
-  position: absolute;
-  left: -7px;
-  height: 5px;
-}
 
 i {
   font-size: 24px;
@@ -219,11 +120,6 @@ i {
   transition: all 0.4s ease 0s;
 }
 
-nav.close .menu-items li a .link-name {
-  opacity: 0;
-  pointer-events: none;
-}
-
 .nav-links li a:hover i,
 .nav-links li a:hover span,
 .logout-mod li a:hover i,
@@ -232,83 +128,143 @@ nav.close .menu-items li a .link-name {
   transition: all 0.4s ease 0s;
 }
 
-/* SECTION TOP*/
-
-/* .dashboard {
-  position: relative;
-  left: 250px;
-  height: 100vh;
-  width: calc(100%-250px);
-  transition: all 0.4s ease 0s;
-}
-
-nav.close ~ .dashboard .top {
-    left: 73px;
-    width: calc(100% - 73px);
-} */
-
-/* .dashboard .top {
-  position: fixed;
-  left: 250px;
-  padding: 10px 14px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: calc(100% - 250px);
-  background-color: var(--primary-color);
-  border-bottom: 1px solid var(--secondary-color-alt);
-  box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px,
-    rgba(255, 255, 255, 0.8) 0px 0px 0px 20px;
-}
-
-.dashboard .top .sidebar-toggle {
-  font-size: 24px;
-  color: #586875;
-  cursor: pointer;
-}
-
-.dashboard .top .sidebar-toggle:hover {
-  color: #bdd6d2;
-  transition: all 0.4s ease 0s;
-}
-
-.dashboard .top .search-box {
-    position: relative;
-    height: 45px;
-    max-width: 600px;
-    width: 100%;
-    margin: 0 30px;
-} */
-
 
 /*  DASHBOARD CONTENT  */
 .dashboard {
-  display: flex ;
+  display: flex;
   justify-content: center;
- font-family: --font-body;
-  background-color: cyan;
+  font-family: var(--font-body);
 }
 
 .dashboard .dash-content {
-    padding: 50px;
-    margin: 150px;
-    font-family: --font-body;
-    background-color: red;
+  padding: 50px;
+  margin: 150px;
+  font-family: --font-body;
+ 
 }
 
 .dashboard .dash-content .title {
-
+  display: inline;
+  padding-right: 35px;
   font-family: "Tangerine";
-    font-style: normal;
-    font-size: 105px;
+  font-style: normal;
+  font-size: 105px;
+  color: #586875;
+}
 
+.dashboard .dash-content input {
+  margin: 15px;
+  border-radius: 4px;
+  font-size: 22px;
 }
 
 .dashboard .dash-content .container-products {
-  background-color: purple;
-  
+ 
 }
 
 .dashboard .dash-content .container-products tbody img {
   width: 23px;
+}
+
+/* TABELA */
+.dashboard .dash-content .container-products .table {
+  font-family: var(--font-body);
+  color: var(--secondary-color);
+}
+
+.dashboard .dash-content .container-products .table tbody tr i {
+  cursor: pointer;
+}
+
+.dashboard .dash-content .container-products .table tbody tr i:hover {
+  color: #bdd6d2;
+  transition: all 0.4s ease 0s;
+}
+
+/* PAGINAÇÃO */
+
+.dashboard .dash-content .pagination {
+  display: flex !important;
+  justify-content: center;
+}
+
+.dashboard .dash-content .pagination li {
+  align-items: center;
+}
+
+.dashboard .dash-content .pagination .page-item .active {
+  background-color: #586875 !important;
+} 
+
+.dashboard .dash-content .pagination .page-item .active {
+  background-color: var(--secondary-color-alt) !important;
+}
+
+.dashboard .dash-content .pagination .page-item a {
+  font-family: var(--font-body);
+  color: var(--secondary-color);
+}
+
+/* MODAL */
+
+.modal {
+  width: 90%!important;
+}
+
+.modal label {
+  font-size: 12px!important;
+}
+
+.modal-container {
+width: 100vw;
+height: 100vh;
+position: fixed;
+top: 0;
+left: 0;
+background-color: rgba(0, 0, 0, 0.5);
+display: none;
+z-index: 999;
+align-items: center;
+justify-content: center;
+}
+
+.modal {
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 40px;
+background-color: white;
+border-radius: 10px;
+width: 50%;
+}
+
+.modal label {
+font-size: 14px;
+width: 100%;
+}
+
+.modal input {
+width: 100%;
+outline: none;
+padding: 5px 10px; 
+width: 100%;
+margin-bottom: 20px;
+border-top: none;
+border-left: none;
+border-right: none;
+}
+
+.active .modal {
+  animation: modal .4s;
+}
+
+@keyframes modal {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -60px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
 }

@@ -1,9 +1,26 @@
-const itens = document.querySelectorAll('.page-item')
-const itensMenu = document.querySelectorAll('i')
+const data = require('databases/products.json')
 
-itensMenu.addEventListener('click', () => {
-    console.log(funciona);
-})
+let itens = document.querySelectorAll('.page-item');
+const modal = document.querySelector('.modal-container')
+const tbody = document.querySelector('tbody')
+const sNome = document.querySelector('#m-nome')
+const sDescricao = document.querySelector('#m-descricao')
+const sImage = document.querySelector('#m-image')
+const sValor = document.querySelector('#m-valor')
+const sQnt = document.querySelector('#m-quantidade')
+const btnSalvar = document.querySelector('#btnSalvar')
 
-console.log('funciona')
-console.log(itens);
+/* Paginação */
+
+for (let i = 0; i < itens.length; i++) {
+    itens[i].addEventListener('click', (event) => {
+        for (let j = 0; j < itens.length; j++) {
+            itens[j].classList.remove('active');
+        }
+        event.target.parentElement.classList.add('active');
+    });
+}
+
+/* PRODUTOS JSON */
+
+console.log(data)
