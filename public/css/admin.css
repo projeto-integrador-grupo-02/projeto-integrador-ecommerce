@@ -116,13 +116,19 @@ nav {
   padding: 10px 14px;
   background-color: var(--primary-color);
   border-right: 1px solid var(--secondary-color-alt);
-  box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) 0px 0px 16px 0px;
+  box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px,
+    rgba(255, 255, 255, 0.8) 0px 0px 16px 0px;
   z-index: 5;
+  transition: all 0.4s ease 0s;
+}
+
+nav.close {
+  width: 73px;
 }
 
 nav .logo-image {
   display: flex;
-  justify-content: center;  
+  justify-content: center;
   min-width: 45px;
 }
 
@@ -130,6 +136,16 @@ nav .logo-name {
   display: flex;
   justify-content: center;
 }
+
+nav.close .logo_name {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  nav.close .logo-image {
+    margin-left: 80px;
+  }
+  
 
 nav .logo-name .logo_name {
   font-family: "Tangerine";
@@ -165,12 +181,12 @@ nav .menu-items {
 }
 
 .menu-items .nav-links li a:hover {
-    color: #bdd6d2;
-    transition: all 0.4s ease 0s;
+  color: #bdd6d2;
+  transition: all 0.4s ease 0s;
 }
 
 .menu-items .nav-links li a,
-.menu-items .logout-mod li a  {
+.menu-items .logout-mod li a {
   display: flex;
   align-items: center;
   height: 40px;
@@ -181,10 +197,10 @@ nav .menu-items {
 }
 
 .menu-items li a:hover::before {
-    content: "";
-    position: absolute;
-    left: -7px;
-    height: 5px;
+  content: "";
+  position: absolute;
+  left: -7px;
+  height: 5px;
 }
 
 i {
@@ -198,39 +214,101 @@ i {
 }
 
 .menu-items li a .link-name {
-    color: #586875;
+  font-size: 18px;
+  color: #586875;
+  transition: all 0.4s ease 0s;
+}
+
+nav.close .menu-items li a .link-name {
+  opacity: 0;
+  pointer-events: none;
 }
 
 .nav-links li a:hover i,
 .nav-links li a:hover span,
 .logout-mod li a:hover i,
 .logout-mod li a:hover span {
-    color: #bdd6d2;
-    transition: all 0.4s ease 0s;
+  color: #bdd6d2;
+  transition: all 0.4s ease 0s;
 }
 
-/* SECTION */
+/* SECTION TOP*/
 
-.dashboard {
+/* .dashboard {
+  position: relative;
+  left: 250px;
+  height: 100vh;
+  width: calc(100%-250px);
+  transition: all 0.4s ease 0s;
+}
+
+nav.close ~ .dashboard .top {
+    left: 73px;
+    width: calc(100% - 73px);
+} */
+
+/* .dashboard .top {
+  position: fixed;
+  left: 250px;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: calc(100% - 250px);
+  background-color: var(--primary-color);
+  border-bottom: 1px solid var(--secondary-color-alt);
+  box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px,
+    rgba(255, 255, 255, 0.8) 0px 0px 0px 20px;
+}
+
+.dashboard .top .sidebar-toggle {
+  font-size: 24px;
+  color: #586875;
+  cursor: pointer;
+}
+
+.dashboard .top .sidebar-toggle:hover {
+  color: #bdd6d2;
+  transition: all 0.4s ease 0s;
+}
+
+.dashboard .top .search-box {
     position: relative;
-    left: 250px;
-    height: 100vh;
-    width: calc(100%-250px);
-    
+    height: 45px;
+    max-width: 600px;
+    width: 100%;
+    margin: 0 30px;
+} */
+
+
+/*  DASHBOARD CONTENT  */
+.dashboard {
+  display: flex ;
+  justify-content: center;
+ font-family: --font-body;
+  background-color: cyan;
 }
 
-.dashboard .top {
-    /* width: 100%; */
-    position: fixed;
-    /* top: 0%; */
-    left: 250px;
-    /* margin: 0%; */
-    padding: 10px 14px;
-    display: flex;
-    justify-content: space-between;
-    width: calc(100% - 250px);
-    background-color: var(--primary-color);
-    border-bottom: 1px solid var(--secondary-color-alt);
-    box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) 0px 0px 0px 20px;
+.dashboard .dash-content {
+    padding: 50px;
+    margin: 150px;
+    font-family: --font-body;
+    background-color: red;
 }
 
+.dashboard .dash-content .title {
+
+  font-family: "Tangerine";
+    font-style: normal;
+    font-size: 105px;
+
+}
+
+.dashboard .dash-content .container-products {
+  background-color: purple;
+  
+}
+
+.dashboard .dash-content .container-products tbody img {
+  width: 23px;
+}
