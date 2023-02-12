@@ -122,9 +122,6 @@ ul {
     grid-template-columns: 200px 100px;
 }
 
-#contentu .picture {
-    
-}
 .tabs input[type='radio']:checked + label + .content {
     display: block;
 }
@@ -189,7 +186,7 @@ ul {
     padding: 5px;
 }
 
-img {
+#imguser {
     width: 100px;
 }
 
