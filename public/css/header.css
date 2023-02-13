@@ -62,7 +62,7 @@ header{
     .buscarimg{
         position: absolute;
         top: 54px;
-        right: 650px;
+        right: 800px;
         cursor: pointer;
         transition: .3s;
     } 

@@ -22,34 +22,34 @@
                             <h3>Endereço fiscal</h3>
                     <span class="name"><img src ="/img/pessoa.png"></span>
                     <label for="fname"><i class= "fa-user" id="fname"> </i>Nome completo</label>
-                        <input type="text" id="fname" name="firstname" placeholder="João Joaquim">
+                        <input type="text" id="fname" name="firstname" placeholder="João Joaquim" required>
                         
                         <span class="email"><img src ="/img/envelope.png"></span>
                     <label for="email"><i class= "fa fa-envelope"> </i>Email</label>
                         <input type="email" id="email" name="email" 
-                    placeholder="joaojoaquim@gmail.com">
+                    placeholder="joaojoaquim@gmail.com" required>
 
                     <span class="address"><img src ="/img/endereco.png"></span>
                     <label for="adr"><i class= "fa fa-address"> </i>Endereço</label>
                         <input type="text" id="adr" name="address" 
-                        placeholder="Rua Eça de Queiroz nº 30">
+                        placeholder="Rua Eça de Queiroz nº 30" required>
                         <span class="city"><img src ="/img/city.png"></span>
                     <label for="city"><i class= "fa fa-institution"> </i>Cidade</label>
                         <input type="text" id="city" name="city" 
-                        placeholder="São Paulo">
+                        placeholder="São Paulo" required>
                     </div>
                            <div class="row">
                            <div class="col-50">
                             <span class="state"><img src ="/img/state.png"></span>
                     <label for="state">Estado</label>
                         <input type="text" id="state" name="State" 
-                        placeholder="São Paulo">
+                        placeholder="São Paulo" required>
                        <div class="row">
                         <div class="col-50">
                             <span class="postal-code"><img src ="/img/postal.png"></span>
                         <label for="postal-code">Código Postal</label>
                          <input type="text" id="postalcode" name="code" 
-                         placeholder="5230-852">
+                         placeholder="5230-852" required>
                          <div class="col-50">
                             <h3>Pagamento</h3>
                             <label for="fname">Formas de pagamento</label>
@@ -61,24 +61,24 @@
                             <span class="namecc"><img src ="/img/credit-card.png"></span>
                             <label for="namecc">Nome no cartão</label>
                             <input type="text" id="cname" name= "cname" 
-                            placeholder="João Joaquim">
+                            placeholder="João Joaquim" required>
                             
                             <span class="numcc"><img src ="/img/credit-card.png"></span>
                             <label for="numcc">Número do cartão</label>
                             <input type="text" id="numcc" name="cardnumber"
-                             placeholder="xxxx-xxxx-xxxx-xxxx">
+                             placeholder="xxxx-xxxx-xxxx-xxxx" minlength ="16" required>
 
 
                              <span class="expdate"><img src ="/img/date.png"></span>
                              <label for="expmonth">Data de expiração</label>
                             <input type="text" id="expmonth" name="expmonth"
-                             placeholder="11/23">
+                             placeholder="11/23" required>
 
                              <div class="row">
                                 <div class="col-50">
                                     <span class="cvv"><img src ="/img/cvv.png"></span>
                                 <label for="cvv"> CVV </label>
-                                <input type="text" id="cvv" name="cvv" placeholder="888">
+                                <input type="text" id="cvv" name="cvv" minlength ="3" maxlength="3" placeholder="888" required>
                 
                             </div>
                         </div>
