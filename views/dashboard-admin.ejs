@@ -61,54 +61,42 @@
                             <th>Imagem</th>
                             <th>Nome</th>
                             <th>Descrição</th>
-                            <th>Valor</th>
+                            <th>Preço</th>
                             <th>Quantidade</th>
                             <th>Ações</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td> <img src="/public/img/hero.png" alt="" srcset=""> </td>
-                            <td>Aroma Canela, Cor Caramelo</td>
-                            <td>Velas</td>
-                            <td>50</td>
-                            <td>49</td>
-                            <td>
-                                <i class="fa-solid fa-pen-to-square"></i>
-                                <i class="fa-solid fa-trash"></i>
+                            <td> 
+                                <% for (const produto of produtos) {  %>
+                                <li><img src="<%= produto.image %>"></li>
+                            <% } %>
                             </td>
-                        </tr>
-                        <tr>
-                            <td> <img src="/public/img/heross.png" alt="" srcset=""> </td>
-                            <td>Aroma Canela, Cor Caramelo</td>
-                            <td>Velas</td>
-                            <td>49</td>
-                            <td>49</td>
                             <td>
-                                <i class="fa-solid fa-pen-to-square"></i>
-                                <i class="fa-solid fa-trash"></i>
+                                <% for (const produto of produtos) {  %>
+                                    <li><%= produto.name %></li>
+                                <% } %>
                             </td>
-                        </tr>
-                        <tr>
-                            <td> <img src="/public/img/herosfundo.png" alt="" srcset=""> </td>
-                            <td>Aroma Canela, Cor Caramelo</td>
-                            <td>Velas</td>
-                            <td>49</td>
-                            <td>49</td>
                             <td>
-                                <i class="fa-solid fa-pen-to-square"></i>
-                                <i class="fa-solid fa-trash"></i>
+                                <% for (const produto of produtos) {  %>
+                                <li><%= produto.description %></li>
+                            <% } %>
                             </td>
-                        </tr>
-                        <tr>
-                            <td> <img src="/public/img/heross.png" alt="" srcset=""> </td>
-                            <td>Aroma Canela, Cor Caramelo</td>
-                            <td>Velas</td>
-                            <td>49</td>
-                            <td>49</td>
                             <td>
-                                <i class="fa-solid fa-pen-to-square"></i>
-                                <i class="fa-solid fa-trash"></i>
+                                <% for (const produto of produtos) {  %>
+                                <li><%= produto.price %></li>
+                                <% } %>
+                            </td>
+                            <td>
+                                <% for (const produto of produtos) {  %>
+                                <li><%= produto.quantity %></li>
+                            <% } %>
+                            </td>
+                            <td>
+                                <% for( let index = 0; index < produtos.length; index++ ) { %>
+                                                   
+                                <% } %>
                             </td>
                         </tr>
                     </tbody>

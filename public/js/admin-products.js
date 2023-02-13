@@ -1,5 +1,3 @@
-const data = require('databases/products.json')
-
 let itens = document.querySelectorAll('.page-item');
 const modal = document.querySelector('.modal-container')
 const tbody = document.querySelector('tbody')
@@ -9,6 +7,11 @@ const sImage = document.querySelector('#m-image')
 const sValor = document.querySelector('#m-valor')
 const sQnt = document.querySelector('#m-quantidade')
 const btnSalvar = document.querySelector('#btnSalvar')
+
+
+let produto
+let id
+
 
 /* Paginação */
 
@@ -21,6 +24,4 @@ for (let i = 0; i < itens.length; i++) {
     });
 }
 
-/* PRODUTOS JSON */
 
-console.log(data)

@@ -1,5 +1,5 @@
 const express = require('express')
-const path = require('path');
+
 const PagesController = require('./src/app/Controllers/PagesController.js')
 const AdminProductsController = require('./src/app/Controllers/AdminProductsController.js')
 //Criar roteador
@@ -11,6 +11,8 @@ router.get('/products', PagesController.showProducts)
 router.get('/cadastro', PagesController.registerUser)
 
 /* Admin */
-router.get('/admin', AdminProductsController.showIndex)
+/* router.get('/admin', AdminProductsController.showIndex) */
+router.get('/admin', AdminProductsController.showProducts)
+
 
 module.exports = router
