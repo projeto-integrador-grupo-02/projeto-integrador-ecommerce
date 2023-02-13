@@ -1,19 +1,18 @@
+const ProdutosServices = require('../../../services/ProdutosServices')
+
 const AdminProductsController = {
   /* showIndex: (req, res) => {res.render('dashboard-admin.ejs')}, */
-  
-  showProducts: (req,res) => {
-  
-  let produtos = require('../../../databases/products.json')
 
-  let editarExcluir = 
-  `<i class="fa-solid fa-pen-to-square"></i>
-  <i class="fa-solid fa-trash"></i>`
-  
-  
-  console.log(produtos)
-  
-  res.render('dashboard-admin.ejs', {produtos, editarExcluir})
-}
+    showProducts: (req, res) => {
+      const produtos = ProdutosServices.showProdutos()
+
+    res.render('dashboard-admin.ejs', { produtos })
+  },
+    createProduct: (req, res) => {
+      const createProduct = ProdutosServices.createProduct()
+
+      res.render('create-admin.ejs')
+  }
 }
 
 

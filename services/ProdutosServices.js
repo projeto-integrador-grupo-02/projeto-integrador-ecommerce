@@ -1,35 +1,30 @@
-const dataP = '../../databases/products.json';
+let produtos = require('../databases/products.json')
+const path = require('path')
+const fs = require('fs')
 
-
-/* PRODUTOS JSON */
-const loadProducts = () => {
-    fetch(dataP)
-        .then(res => res.json())
-        .then(data => {
-            tbody.innerHTML = '';
-            data.forEach(produto => {
-                insertProduto(produto);
-            });
-        });
-};
-
-loadProducts();
-
-
-
-function insertProduto(produto, id) {
-    let tr = document.createElement('tr')
-
-    tr.innerHTML = `
-    <td><%=${produto.image}%></td>
-    <td><%=${produto.name}%></td>
-    <td><%=${produto.description}%></td>
-    <td><%=${produto.price}%></td>
-    <td><%=${produto.quantidade}%></td>
-    <td>
-        <i class="fa-solid fa-pen-to-square"></i>
-        <i class="fa-solid fa-trash"></i>
-    </td>
-    `
-    tbody.appendChild(tr)
+function showProdutos() {
+    return produtos
 }
+
+function adicionarProduto(produto) {
+    produtos.push(produto)
+}
+
+function createProduct(produto) {
+    produtos.push(produto)
+
+    salvar()
+}
+
+function salvar(){
+    const produtosData = path.resolve(__dirname + "/../databases/products.json");
+
+    fs.writeFileSync(produtosData, JSON.stringify(produtos, null, 4));
+}
+
+const ProdutosServices = {
+    adicionarProduto,
+    showProdutos,
+    createProduct
+}
+module.exports = ProdutosServices
