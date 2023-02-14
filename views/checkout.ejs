@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" 
+    href="https://fonts.googleapis.com/css2?family=Dosis:wght@200&family=Tangerine&display=swap%27">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/checkout.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/style.css">
+<body>
+    <%- include("partials/header.ejs") %>
+    <div class="container-form">
+    <h2>Formulário de checkout da compra</h2>
+    <div class="row">
+        <div class="col-75">
+                <form action="/checkout/sucess" method="post">
+                    <div class="row">
+                        <div class="col-50">
+                            <h3>Endereço fiscal</h3>
+                    <span class="name"><img src ="/img/pessoa.png"></span>
+                    <label for="fname"><i class= "fa-user" id="fname"> </i>Nome completo</label>
+                        <input type="text" id="fname" name="firstname" placeholder="João Joaquim" required>
+                        
+                        <span class="email"><img src ="/img/envelope.png"></span>
+                    <label for="email"><i class= "fa fa-envelope"> </i>Email</label>
+                        <input type="email" id="email" name="email" 
+                    placeholder="joaojoaquim@gmail.com" required>
+
+                    <span class="address"><img src ="/img/endereco.png"></span>
+                    <label for="adr"><i class= "fa fa-address"> </i>Endereço</label>
+                        <input type="text" id="adr" name="address" 
+                        placeholder="Rua Eça de Queiroz nº 30" required>
+                        <span class="city"><img src ="/img/city.png"></span>
+                    <label for="city"><i class= "fa fa-institution"> </i>Cidade</label>
+                        <input type="text" id="city" name="city" 
+                        placeholder="São Paulo" required>
+                    </div>
+                           <div class="row">
+                           <div class="col-50">
+                            <span class="state"><img src ="/img/state.png"></span>
+                    <label for="state">Estado</label>
+                        <input type="text" id="state" name="State" 
+                        placeholder="São Paulo" required>
+                       <div class="row">
+                        <div class="col-50">
+                            <span class="postal-code"><img src ="/img/postal.png"></span>
+                        <label for="postal-code">Código Postal</label>
+                         <input type="text" id="postalcode" name="code" 
+                         placeholder="5230-852" required>
+                         <div class="col-50">
+                            <h3>Pagamento</h3>
+                            <label for="fname">Formas de pagamento</label>
+                            <div class="icon-container">
+                                <span class="visa"><img src ="/img/fa-cc-visa.png"></span>
+                                <span class="mastercard"> <img src ="/img/fa-mastercard.png"></span>
+                            </div>
+
+                            <span class="namecc"><img src ="/img/credit-card.png"></span>
+                            <label for="namecc">Nome no cartão</label>
+                            <input type="text" id="cname" name= "cname" 
+                            placeholder="João Joaquim" required>
+                            
+                            <span class="numcc"><img src ="/img/credit-card.png"></span>
+                            <label for="numcc">Número do cartão</label>
+                            <input type="text" id="numcc" name="cardnumber"
+                             placeholder="xxxx-xxxx-xxxx-xxxx" minlength ="16" required>
+
+
+                             <span class="expdate"><img src ="/img/date.png"></span>
+                             <label for="expmonth">Data de expiração</label>
+                            <input type="text" id="expmonth" name="expmonth"
+                             placeholder="11/23" required>
+
+                             <div class="row">
+                                <div class="col-50">
+                                    <span class="cvv"><img src ="/img/cvv.png"></span>
+                                <label for="cvv"> CVV </label>
+                                <input type="text" id="cvv" name="cvv" minlength ="3" maxlength="3" placeholder="888" required>
+                
+                            </div>
+                        </div>
+                        <label>
+                            <input type="checkbox" checked = "checked"
+                            name="sameadr"> Endereço de entrega igual ao fiscal
+
+                        </label>
+                        <input type="submit" value="Continuar Checkout"
+                        class="btn">
+                    </div>
+                        </div>
+                       </div>
+                      </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <script type="text/javascript" src="/js/checkout.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    
+    <%- include("partials/footer.ejs") %>
+</body>
+
+</html>

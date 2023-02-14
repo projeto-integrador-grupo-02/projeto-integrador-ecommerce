@@ -1,0 +1,41 @@
+.container-sucess{
+    background-color: #f6eddc;
+    padding: 5px 20px 15px 20px;
+    border: 1px solid lightgrey;
+    border-radius: 3px;
+    width: 1000px;
+    margin-left: 25%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.container-sucess h1{
+    font-family: 'Tangerine';
+    font-style: normal;
+    font-weight: 200;
+    padding-left: 200px;
+
+}
+
+.container-sucess h3{
+    font-family: Dosis;
+    font-style: normal;
+    font-weight: 200;
+}
+
+.btn{
+    background-color: #e3e5d7;
+    color: white;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    width: 100%;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+.btn hover{
+    background-color: #bdd6d2;
+}
+
