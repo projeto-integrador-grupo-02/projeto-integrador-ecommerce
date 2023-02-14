@@ -14,6 +14,7 @@ router.get('/cadastro', PagesController.registerUser)
 /* router.get('/admin', AdminProductsController.showIndex) */
 router.get('/admin/products', AdminProductsController.showProducts)
 router.get('/admin/products/create', AdminProductsController.createProduct)
+router.post('/admin/products/store', AdminProductsController.registerProduct)
 
 
 module.exports = router

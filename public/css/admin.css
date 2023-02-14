@@ -158,8 +158,8 @@ i {
   font-size: 22px;
 }
 
-.dashboard .dash-content .container-products {
- 
+.container-products {
+  margin: 80px;
 }
 
 .dashboard .dash-content .container-products tbody img {
@@ -205,4 +205,47 @@ i {
   color: var(--secondary-color);
 }
 
-/* MODAL */
+/* Form */
+.container-products {
+  position: relative;
+  padding: 50px;
+
+}
+
+.create-products {
+  display: flex;
+    flex-direction: column;
+    font-family: var(--font-body);
+    width: 600px;
+}
+
+.image {
+  width: 150px;
+  height: 200px;
+  background-color: var(--secondary-color);
+  position: absolute;
+  bottom: 200px;
+  right: 60px;
+  color: #586875;
+  font-size: 16px;
+  text-align: center;
+  font-family: var(--font-body);
+  border: 2px dashed var(--secondary-color-alt);
+  cursor: pointer;
+  transition: all 400ms ease-in-out;
+  
+}
+
+.image:hover {
+  background-color: var(--secondary-color);
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+#btnSalvar {
+  margin-top: 20px;
+}
+
+form label {
+  margin-left: 15px;
+  margin-bottom: 0%;
+}

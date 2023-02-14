@@ -9,9 +9,21 @@ const AdminProductsController = {
     res.render('dashboard-admin.ejs', { produtos })
   },
     createProduct: (req, res) => {
-      const createProduct = ProdutosServices.createProduct()
-
       res.render('create-admin.ejs')
+    },
+    
+    registerProduct: (req,res) => {
+      console.log(req.body)
+      let produto = {
+        image: req.body.image,
+        name: req.body.name,
+        description: req.body.description,
+        price: Number(req.body.price),
+        quantity: Number(req.body.quantity)
+    }
+      ProdutosServices.createProduct(produto)
+      res.redirect('/admin/products')
+
   }
 }
 
