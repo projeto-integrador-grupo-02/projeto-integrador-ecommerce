@@ -48,6 +48,9 @@
     --z-tooltip: 10;
 
 }
+h1 {
+    font-family: var(--font-cursive);
+}
 html {
     scroll-behavior: smooth;
     font-size: 24px;

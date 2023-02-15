@@ -1,6 +1,8 @@
 // Importar o express
 const express = require('express')
+const services = require('./services/users')
 const path = require('path')
+
 
 // Criar o servidor
 const servidor = express()
@@ -36,7 +38,10 @@ servidor.get(
     return res.sendFile(__dirname + '/views/cadastro.html')
   }  
 )
-
+//novo
+servidor.get('/login',(req,res)=>{
+  return res.sendFile(__dirname + '/views/login.html')
+})
 
 // Fazer o servidor rodar
 
