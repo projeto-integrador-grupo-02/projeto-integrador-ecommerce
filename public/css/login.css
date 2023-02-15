@@ -59,7 +59,7 @@
 }
 body {
     width: 100vw;
-    padding: 50px;
+    /* padding: 50px; */
     background-color:var(--primary-color-alt);
 }
 textarea:focus, input:focus{
@@ -68,16 +68,16 @@ textarea:focus, input:focus{
 
 #divcenter-container{
 
-    margin: 0 auto;
+    
     display:flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: baseline;
     /* width: 70%; */
-
-    width: 100%;
+    margin: 30vh 50px 30vh 50px;
+    
     padding: 120px 120px;
-    margin-top: 30vh;
+    
     text-align: center;
     background-color: var(--primary-color-alt);
     
