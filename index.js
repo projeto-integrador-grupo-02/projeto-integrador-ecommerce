@@ -1,5 +1,6 @@
 // Importar o express
 const express = require('express')
+const services = require('./services/users')
 const path = require('path')
 const router = require('./router')
 const bodyParser = require('body-parser');
@@ -7,6 +8,7 @@ const servidor = express()
 
 servidor.use(bodyParser.json());
 servidor.use(bodyParser.urlencoded({ extended: false }));
+
 
 // Criar o servidor
 
@@ -20,38 +22,10 @@ servidor.use(router)
 
 
 
-
-
-
-//Definir as rotas
-/* servidor.get(
-    '/home',   // endereço ou caminho a receber requisição
-    (req,res) =>{          // função a ser executada
-      return res.sendFile(__dirname + '/views/home.html')
-    }  
-)
-
-servidor.get(
-  '/editarcadastro',   // endereço ou caminho a receber requisição
-  (req,res) =>{          // função a ser executada
-    return res.sendFile(__dirname + '/views/edituser.html')
-  }  
-)
-
-servidor.get(
-  '/produtos',   // endereço ou caminho a receber requisição
-  (req,res) =>{          // função a ser executada
-    return res.sendFile(__dirname + '/views/products.html')
-  }  
-)
-
-servidor.get(
-  '/cadastro',   // endereço ou caminho a receber requisição
-  (req,res) =>{          // função a ser executada
-    return res.sendFile(__dirname + '/views/cadastro.html')
-  }  
-) */
-
+//novo
+servidor.get('/login',(req,res)=>{
+  return res.sendFile(__dirname + '/views/login.html')
+})
 
 // Fazer o servidor rodar
 

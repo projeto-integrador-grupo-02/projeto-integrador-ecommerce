@@ -54,7 +54,7 @@ header{
         
     }
 
-    .buscar{
+     .buscar{
         width: 300px;
         height: 25px;
         text-align: center;   
@@ -62,11 +62,11 @@ header{
     .buscarimg{
         position: absolute;
         top: 54px;
-        right: 650px;
+        right: 800px;
         cursor: pointer;
         transition: .3s;
-    }
-    
+    } 
+
 
     nav{
         width: 100%;
