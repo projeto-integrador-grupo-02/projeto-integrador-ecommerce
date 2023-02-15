@@ -216,7 +216,7 @@ i {
   display: flex;
     flex-direction: column;
     font-family: var(--font-body);
-    width: 600px;
+    width: 700px;
 }
 
 .image {
@@ -225,7 +225,7 @@ i {
   background-color: var(--secondary-color);
   position: absolute;
   bottom: 200px;
-  right: 60px;
+  right: 150px;
   color: #586875;
   font-size: 16px;
   text-align: center;
@@ -248,4 +248,9 @@ i {
 form label {
   margin-left: 15px;
   margin-bottom: 0%;
+}
+
+form input {
+  margin-left: 60px;
+  width: 60%;
 }

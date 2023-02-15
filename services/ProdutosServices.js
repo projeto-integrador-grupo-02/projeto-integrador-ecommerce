@@ -19,7 +19,7 @@ function createProduct(produto) {
 function salvar(){
     const produtosData = path.resolve(__dirname + "/../databases/products.json");
 
-    fs.writeFileSync(produtosData, JSON.stringify(produtos));
+    fs.appendFileSync(produtosData, JSON.stringify(produtos));
 }
 
 const ProdutosServices = {

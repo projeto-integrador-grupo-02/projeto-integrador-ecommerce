@@ -2,9 +2,14 @@
 const express = require('express')
 const path = require('path')
 const router = require('./router')
+const bodyParser = require('body-parser');
+const servidor = express()
+
+servidor.use(bodyParser.json());
+servidor.use(bodyParser.urlencoded({ extended: false }));
 
 // Criar o servidor
-const servidor = express()
+
 servidor.set('view engine', 'ejs')
 
 //Definir a public como pasta de arquivos estáticos

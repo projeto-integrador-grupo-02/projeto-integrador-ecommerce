@@ -13,9 +13,7 @@ const AdminProductsController = {
     },
     
     registerProduct: (req,res) => {
-      console.log(req.body)
       let produto = {
-        image: req.body.image,
         name: req.body.name,
         description: req.body.description,
         price: Number(req.body.price),
