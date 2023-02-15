@@ -13,13 +13,13 @@
     --font-cursive: 'Tangerine', 'sans-serif';
 }
 
-a,input[type="submit"]{
+input[type="submit"]{
     font-weight: bold;
     border: none;
     color: #ffff;
     
 }
-div{
+#form-cadastro{
     height: auto;
     width: auto;
     margin: 0 auto;
@@ -35,7 +35,7 @@ div{
     text-align: center;
     
 }
-a,input{
+input{
     display: block;
     width: 100%;
     text-align: left,center, #c2bfbf;
@@ -49,7 +49,7 @@ a,input{
     
     
 }
-a,input[type="submit"]{
+input[type="submit"]{
     font-weight: bold;
     border: none;
     color: #ffff;

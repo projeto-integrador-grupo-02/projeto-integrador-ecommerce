@@ -5,11 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/cadastro.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
     <link rel="stylesheet" href="/css/style.css">
     <title>Cadastro</title>
 </head>
 <body>
-    <div>
+    <%- include("partials/header.ejs") %>
+    <div id="form-cadastro">
         
     <form id="cadastro" >
         <h1>Cadastre seus dados</h1>
@@ -33,7 +36,7 @@
            
             </form>    
     </div>
-    
+    <%- include("partials/footer.ejs") %>
     <script src="./js/cadastroValidate.js">
         
     </script>
