@@ -47,12 +47,12 @@ servidor.get(
   }  
 ) */
 
-servidor.get(
+/*servidor.get(
   '/produto',   // endereço ou caminho a receber requisição
   (req,res) =>{          // função a ser executada
     return res.sendFile(__dirname + '/views/produto.html')
   }  
-)
+)*/
 
 
 // Fazer o servidor rodar
