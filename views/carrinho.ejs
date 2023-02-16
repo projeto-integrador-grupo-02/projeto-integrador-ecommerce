@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--  Style principal -->
+    <link rel="stylesheet" href="/css/carrinho.css">
+    <!-- Style header -->
+    <link rel="stylesheet" href="/css/header.css">
+    <!--  Ícone -->
+    <link rel="shortcut-icon" href="/img/Design sem nome.png" type="image/x-icon">
+    <!--  Link BoxIcons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!--Link swiperjs-->
+    <link rel="stylesheet" href="/css/swiper-bundle.css" type="text/css">
+    <!--Link footer-->
+    <link rel="stylesheet" href="/css/footer.css">
+
+    <title>Arome</title>
+</head>
+
+  <body>
+    <%- include("partials/header.ejs") %>
+
+  <main>
+    <h1>Meu Carrinho</h1>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Produto</th>
+          <th>Preço</th>
+          <th>Quantidade</th>
+          <th>Subtotal</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Vela Perfumada</td>
+          <td>R$ 250,00</td>
+          <td>
+            <input type="number" value="1" min="1">
+          </td>
+          <td>R$ 250,00</td>
+          <td>
+            <button>Remover</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="producto-card1">
+      <div class="producto-card1-img">
+        <img src="/img/AA6250C23_1V01 (1).png" alt="produto">
+      </div>
+      <div class="producto-card1-text">
+        <h3>Vela Perfumada</h3>
+        <p>Vela perfumada com aroma de rosa branca</p>
+        <p>R$ 250,00</p>
+        <button class="btn-comprar">Finalizar Compra</button>
+      </div>
+    </div>
+
+  </main>
+
+  <%- include("partials/footer.ejs") %>
+</body>
+
+</html>
+
