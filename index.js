@@ -1,7 +1,9 @@
 // Importar o express
 const express = require('express')
+const services = require('./services/users')
 const path = require('path')
 const router = require('./router')
+
 
 // Criar o servidor
 const servidor = express()
