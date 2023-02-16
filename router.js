@@ -17,9 +17,14 @@ router.get('/login',PagesController.showLogin);
 
 /* Admin */
 /* router.get('/admin', AdminProductsController.showIndex) */
+router.get('/admin', AdminProductsController.showHomeAdmin)
 router.get('/admin/products', AdminProductsController.showProducts)
 router.get('/admin/products/create', AdminProductsController.createProduct)
 router.post('/admin/products/store', AdminProductsController.registerProduct)
+router.get('/admin/products/:id/edit', AdminProductsController.editProduct)
+router.post('/admin/products/:id/update', AdminProductsController.updateProduct)
+router.get('/admin/products/:id/delete', AdminProductsController.deleteProduct)
+
 
 
 module.exports = router

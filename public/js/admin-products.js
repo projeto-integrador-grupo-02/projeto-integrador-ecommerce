@@ -14,7 +14,6 @@ console.log("sNome: " + sNome)
 let produto
 let id
 
-form.addEventListener('submit', (event) => {})
     
 
 /* Paginação */

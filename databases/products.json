@@ -1,2 +1,66 @@
-[{
-    "id":1,"image":" ","name":"Vela caramelo","description":"Vela com cheiro de caramelo, cor #33422","price":"R$ 99,99","quantity":5,"available":true},{"id":2,"image":"/public/img/A000001255_0.png","name":"Vela caramelo","description":"Vela com cheiro de caramelo, cor #33422","price":"R$ 99,99","quantity":5,"available":true},{"id":3,"image":" ","name":"Vela caramelo","description":"Vela com cheiro de caramelo, cor #33422","price":"R$ 99,99","quantity":5,"available":true},{"id":4,"image":" ","name":"Vela caramelo","description":"Vela com cheiro de caramelo, cor #33422","price":"R$ 99,99","quantity":5,"available":true},{"id":5,"image":" ","name":"Vela bruxa","description":"Vela com cheiro de caramelo, cor #33422","price":"R$ 99,99","quantity":5,"available":true},{"id":6,"image":" ","name":"Aromatizante lavanda","description":"Vela com cheiro de caramelo, cor #33422","price":"R$ 99,99","quantity":5,"available":true},{"id":7,"image":" ","name":"Vela Babosa","description":"Vela com cheiro de caramelo, cor #33422","price":"R$ 99,99","quantity":5,"available":true},{"price":null,"quantity":null}]
+[
+    {
+        "id": 1,
+        "image": " ",
+        "name": "Vela caramelo e pirulito",
+        "description": "Vela com cheiro de caramelo, cor #33422",
+        "price": 89.99,
+        "quantity": 5,
+        "available": true
+    },
+    {
+        "id": 3,
+        "image": " ",
+        "name": "Vela caramelo",
+        "description": "Vela com cheiro de caramelo, cor #33422",
+        "price": "R$ 99,99",
+        "quantity": 5,
+        "available": true
+    },
+    {
+        "id": 5,
+        "image": " ",
+        "name": "Vela bruxa",
+        "description": "Vela com cheiro de caramelo, cor #33422",
+        "price": "R$ 99,99",
+        "quantity": 5,
+        "available": true
+    },
+    {
+        "id": 7,
+        "image": " ",
+        "name": "Vela Babosa",
+        "description": "Vela com cheiro de caramelo, cor #33422",
+        "price": "R$ 99,99",
+        "quantity": 5,
+        "available": true
+    },
+    {
+        "name": "vela cu",
+        "description": "vela com cheiro de cu",
+        "price": 1,
+        "quantity": 2,
+        "id": 8
+    },
+    {
+        "name": "vela diabo",
+        "description": "vela do demo",
+        "price": 666,
+        "quantity": 666,
+        "id": 9
+    },
+    {
+        "name": "vela thiago",
+        "description": "vela do irmão",
+        "price": 100000,
+        "quantity": 0,
+        "id": 10
+    },
+    {
+        "name": "vela linda e maravillhosa",
+        "description": "ela é linda e maravilhosa",
+        "price": 500,
+        "quantity": 250,
+        "id": 11
+    }
+]
