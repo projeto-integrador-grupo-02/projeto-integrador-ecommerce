@@ -174,7 +174,7 @@ tbody img {
 .container-products .table {
   font-family: var(--font-body);
   font-weight: 500;
-  color: var(--secondary-color);
+  color: #586875;
 }
 
 .container-products .table tbody tr i {
