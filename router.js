@@ -20,7 +20,8 @@ router.get('/login',PagesController.showLogin);
 /* Admin */
 /* router.get('/admin', AdminProductsController.showIndex) */
 router.get('/admin', AdminProductsController.showHomeAdmin)
-router.get('/admin/products', AdminProductsController.showProducts)
+router.get('/admin/products', AdminProductsController.listProducts)
+/* router.get('/admin/products/:page', AdminProductsController.pagesProducts) */
 router.get('/admin/products/create', AdminProductsController.createProduct)
 router.post('/admin/products/store', AdminProductsController.registerProduct)
 router.get('/admin/products/:id/edit', AdminProductsController.editProduct)

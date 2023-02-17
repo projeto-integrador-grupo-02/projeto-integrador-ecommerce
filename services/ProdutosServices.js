@@ -6,13 +6,28 @@ function showProdutos() {
     return produtos
 }
 
+function listProducts(page, perPage) {
+    const startIndex = (page - 1) * perPage;
+    const endIndex = page * perPage;
+    const produtosData = fs.readFileSync(path.resolve(__dirname, "../databases/products.json"));
+    const produtos = JSON.parse(produtosData);
+    let produtosPaginados = produtos.slice(startIndex, endIndex);
+    const totalPages = Math.ceil(produtos.length / perPage);
+
+    return {
+        produtosPaginados,
+        totalPages
+    }
+}
+
+
 function adicionarProduto(produto) {
     produtos.push(produto)
 }
 
 function createProduct(produto) {
 
-    if(produtos.length > 0) {
+    if (produtos.length > 0) {
         produto.id = produtos[produtos.length - 1].id + 1
     } else {
         produtos.id = 1
@@ -32,7 +47,7 @@ function loadProduct(idP) {
     return produto
 }
 
-function salvar(){
+function salvar() {
     const produtosData = path.resolve(__dirname + "/../databases/products.json");
 
     fs.writeFileSync(produtosData, JSON.stringify(produtos, null, 4));
@@ -41,7 +56,7 @@ function salvar(){
 function updateProduct(idP, productData) {
     let produto = produtos.find(p => p.id == idP)
 
-    if(produto == undefined) {
+    if (produto == undefined) {
         throw new Error('Não existe esse produto')
     }
 
@@ -55,7 +70,7 @@ function updateProduct(idP, productData) {
 
 function eraseProduct(idP) {
     let posicao = produtos.findIndex(p => p.id == idP)
-    if(posicao == -1) {
+    if (posicao == -1) {
         throw new Error('Não existe esse produto')
     }
     produtos.splice(posicao, 1)
@@ -69,6 +84,7 @@ const ProdutosServices = {
     createProduct,
     loadProduct,
     updateProduct,
-    eraseProduct
+    eraseProduct,
+    listProducts
 }
 module.exports = ProdutosServices
