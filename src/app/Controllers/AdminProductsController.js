@@ -31,10 +31,8 @@ const AdminProductsController = {
   },
   editProduct: (req, res) => {
     let id = req.params.id
-    console.log(id);
 
     let produto = ProdutosServices.loadProduct(id)
-    console.log(produto);
     res.render('edit-admin.ejs', { produto })
   },
   updateProduct: (req, res) => {

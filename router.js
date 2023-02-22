@@ -1,36 +1,37 @@
 const express = require('express')
+//Criar roteador
+const app = express.Router()
+const path = require('path')
 
-
-const PagesController = require('./src/app/Controllers/PagesController.js')
 const AdminProductsController = require('./src/app/Controllers/AdminProductsController.js')
 const AdminClientsController = require('./src/app/Controllers/AdminClientsController.js')
+const PagesController = require('./src/app/Controllers/PagesController.js')
 
-//Criar roteador
-const router = express.Router()
 
-router.get('/', PagesController.showIndex);
-router.get('/edituser', PagesController.showUser);
-router.get('/products', PagesController.showProducts)
-router.get('/produto', PagesController.showProduto)
-router.get('/carrinho', PagesController.showCarrinho)
-router.get('/cadastro', PagesController.registerUser)
-router.get('/checkout', PagesController.checkoutUser)
-router.post('/checkout/sucess', PagesController.checkoutSucess)
 
-router.get('/login',PagesController.showLogin);
+app.get('/', PagesController.showIndex);
+app.get('/edituser', PagesController.showUser);
+app.get('/products', PagesController.showProducts)
+app.get('/produto', PagesController.showProduto)
+app.get('/carrinho', PagesController.showCarrinho)
+app.get('/cadastro', PagesController.registerUser)
+app.get('/checkout', PagesController.checkoutUser)
+app.post('/checkout/sucess', PagesController.checkoutSucess)
+
+app.get('/login',PagesController.showLogin);
 
 /* Admin */
-/* router.get('/admin', AdminProductsController.showIndex) */
-router.get('/admin', AdminProductsController.showHomeAdmin)
-router.get('/admin/products', AdminProductsController.listProducts)
-/* router.get('/admin/products/:page', AdminProductsController.pagesProducts) */
-router.get('/admin/products/create', AdminProductsController.createProduct)
-router.post('/admin/products/store', AdminProductsController.registerProduct)
-router.get('/admin/products/:id/edit', AdminProductsController.editProduct)
-router.post('/admin/products/:id/update', AdminProductsController.updateProduct)
-router.get('/admin/products/:id/delete', AdminProductsController.deleteProduct)
+/* app.get('/admin', AdminProductsController.showIndex) */
+app.get('/admin', AdminProductsController.showHomeAdmin)
+app.get('/admin/products', AdminProductsController.listProducts)
+/* app.get('/admin/products/:page', AdminProductsController.pagesProducts) */
+app.get('/admin/products/create', AdminProductsController.createProduct)
+app.post('/admin/products/store', AdminProductsController.registerProduct)
+app.get('/admin/products/:id/edit', AdminProductsController.editProduct)
+app.post('/admin/products/:id/update', AdminProductsController.updateProduct)
+app.get('/admin/products/:id/delete', AdminProductsController.deleteProduct)
 
 /*Admin clients */
-router.get('/admin/clients', AdminClientsController.listClients)
+app.get('/admin/clients', AdminClientsController.listClients)
 
-module.exports = router
+module.exports = app

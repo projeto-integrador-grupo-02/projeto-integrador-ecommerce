@@ -19,7 +19,7 @@
 
             <div class="container-products">
                 <h2 class="title">Controle de Clientes</h2>
-                <input type="search" class="busca" placeholder="Buscar produto">
+                <input type="search" class="busca" placeholder="Buscar cliente" oninput="search()">
                 <table class="table table-hover">
                     <thead>
                         <tr>
@@ -33,22 +33,22 @@
                     <tbody>
                         <% for (const client of clients) { %>
                             <tr>
-                                <li>
+                                <li id="id">
                                     <td>
                                         <%= client?.id %>
                                     </td>
                                 </li>
-                                <li id="#m-nome">
+                                <li id="name">
                                     <td>
                                         <%= client?.name %>
                                     </td>
                                 </li>
-                                <li id="#m-balance">
+                                <li id="balance">
                                     <td>
                                         <%= client?.balance %>
                                     </td>
                                 </li>
-                                <li id="#m-email">
+                                <li id="#email">
                                     <td>
                                         <%= client?.email %>
                                     </td>

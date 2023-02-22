@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "image": " ",
+        "image": "/img/Velas-19.avif",
         "name": "Vela caramelo e pirulito",
         "description": "Vela com cheiro de caramelo, cor #33422",
         "price": 89.99,
@@ -10,7 +10,7 @@
     },
     {
         "id": 3,
-        "image": " ",
+        "image": "/img/Velas-1.avif",
         "name": "Vela caramelo",
         "description": "Vela com cheiro de caramelo, cor #33422",
         "price": "R$ 99,99",
@@ -19,7 +19,7 @@
     },
     {
         "id": 5,
-        "image": " ",
+        "image": "/img/Velas-18.avif",
         "name": "Vela bruxa",
         "description": "Vela com cheiro de caramelo, cor #33422",
         "price": "R$ 99,99",
@@ -28,7 +28,7 @@
     },
     {
         "id": 7,
-        "image": " ",
+        "image": "/img/Velas-16.avif",
         "name": "Vela Babosa",
         "description": "Vela com cheiro de caramelo, cor #33422",
         "price": "R$ 99,99",
@@ -37,6 +37,7 @@
     },
     {
         "name": "vela cu",
+        "image": "/img/Velas-15.avif",
         "description": "vela com cheiro de cu",
         "price": 1,
         "quantity": 2,
@@ -44,6 +45,7 @@
     },
     {
         "name": "vela diabo",
+        "image": "/img/Velas-3.avif",
         "description": "vela do demo",
         "price": 666,
         "quantity": 666,
@@ -55,12 +57,4 @@
         "price": 100000,
         "quantity": 0,
         "id": 10
-    },
-    {
-        "name": "vela linda e maravillhosa",
-        "description": "ela é linda e maravilhosa",
-        "price": 500,
-        "quantity": 250,
-        "id": 11
-    }
-]
+    }]
