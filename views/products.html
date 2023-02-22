@@ -36,55 +36,92 @@
   <br></br>
   
     <main>
+      <html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Filter And Search</title>
+    
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div id="search-container">
+        <input
+          type="search"
+          id="search-input"
+          placeholder="Procure pelo nome do produto aqui"
+        />
+        <button id="search">Search</button>
+      </div>
+      <div id="buttons">
+        <button class="button-value" onclick="filterProduct('all')">All</button>
+        <button class="button-value" onclick="filterProduct('Água Perfumada')">
+          Água Perfumada
+        </button>
+        <button class="button-value" onclick="filterProduct('Aromatizadores')">
+          Aromatizadores
+        </button>
+        <button class="button-value" onclick="filterProduct('Velas')">
+          Velas 
+        </button>
+      </div>
+      <div id="products"></div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
         <h3>Produtos</h3>
         <article>
-            <img src="/img/Velas-1.avif" alt="Velas">
-            <h5>Rosa Vermelha</h5>
+            <a href="https://www.netflix.com/browse" target="_blank"><img src="/img/Velas-1.avif" alt="Velas"></a>
+            <a href="https://www.netflix.com/browse" target="_blank"><h5>Rosa Vermelha</h5></a>
             <span>R$ 40,50</span>
          </article>
          <article>
-            <img src="/img/Velas-2.avif" alt="Velas">
-            <h5>Chá de lima</h5>
+            <a href="https://www.netflix.com/browse" target="_blank"><img src="/img/Velas-2.avif" alt="Velas"></a>
+            <a href="https://www.netflix.com/browse" target="_blank"><h5>Chá de lima</h5></a>
             <span>R$ 40,50</span>
          </article>
          <article>
-            <img src="/img/Velas-3.avif" alt="Velas">
-            <h5>Capim Limão</h5>
+            <a href="https://www.netflix.com/browse" target="_blank"><img src="/img/Velas-3.avif" alt="Velas"></a>
+            <a href="https://www.netflix.com/browse" target="_blank"><h5>Capim Limão</h5></a>
             <span>R$ 40,50</span>
          </article>
          <article>
-            <img src="/img/Velas-13.avif" alt="Velas">
-            <h5>Flor de Cerejeira</h5>
+            <a href="https://www.netflix.com/browse" target="_blank"><img src="/img/Velas-13.avif" alt="Velas"></a>
+            <a href="https://www.netflix.com/browse" target="_blank"><h5>Flor de Cerejeira</h5></a>
             <span>R$ 40,50</span>
          </article>
          <article>
-            <img src="/img/Velas-14.avif" alt="Velas">
-            <h5>Baby Talco</h5>
+            <a href="https://www.netflix.com/browse" target="_blank"></a> <img src="/img/Velas-14.avif" alt="Velas"></a>
+            <a href="https://www.netflix.com/browse" target="_blank"><h5>Baby Talco</h5></a>
             <span>R$ 40,50</span>
          </article>
          <article>
-            <img src="/img/Velas-15.avif" alt="Velas">
-            <h5>Bamboo</h5>
+            <a href="https://www.netflix.com/browse" target="_blank"><img src="/img/Velas-15.avif" alt="Velas"></a>
+            <a href="https://www.netflix.com/browse" target="_blank"><h5>Bamboo</h5></a>
             <span>R$ 40,50</span>
          </article>
          <article>
-            <img src="/img/Velas-16.avif" alt="Velas">
-            <h5>Vanilla</h5>
+            <a href="https://www.netflix.com/browse" target="_blank"><img src="/img/Velas-16.avif" alt="Velas"></a>
+            <a href="https://www.netflix.com/browse" target="_blank"><h5>Vanilla</h5></a>
             <span>R$ 40,50</span>
          </article>
          <article>
-            <img src="/img/Velas-18.avif" alt="Velas">
-            <h5>Lavanda</h5>
+            <a href="https://www.netflix.com/browse" target="_blank"><img src="/img/Velas-18.avif" alt="Velas"></a>
+            <a href="https://www.netflix.com/browse" target="_blank"><h5>Lavanda</h5></a>
             <span>R$ 40,50</span>
          </article>
          <article>
-            <img src="/img/Velas-19.avif" alt="Velas">
-            <h5>Sem aroma</h5>
+            <a href="https://www.netflix.com/browse" target="_blank"><img src="/img/Velas-19.avif" alt="Velas"></a>
+            <a href="https://www.netflix.com/browse" target="_blank"><h5>Sem aroma</h5></a>
             <span>R$ 40,50</span>
          </article>
 
         
 </body>
 </html>
-
-
