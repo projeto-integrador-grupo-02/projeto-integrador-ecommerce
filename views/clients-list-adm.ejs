@@ -26,39 +26,48 @@
                             <th>Id_Cliente</th>
                             <th>Nome</th>
                             <th>Total em compras</th>
+                            <th>Ordens</th>
                             <th>E-mail</th>
                             <th>Ações</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <% for (const client of clients) { %>
+                        <% for (const cliente of clients) { %>
                             <tr>
                                 <li id="id">
                                     <td>
-                                        <%= client?.id %>
+                                        <%= cliente?.id %>
                                     </td>
                                 </li>
                                 <li id="name">
                                     <td>
-                                        <%= client?.name %>
+                                        <%= cliente?.name %>
                                     </td>
                                 </li>
                                 <li id="balance">
                                     <td>
-                                        <%= client?.balance %>
+                                        <%= cliente?.balance %>
                                     </td>
                                 </li>
-                                <li id="#email">
+                                <li id="pedidos">
                                     <td>
-                                        <%= client?.email %>
+                                        <% const clientePedidos = pedidos.filter(pedido => pedido.contactPerson === cliente.id); %>
+                                        <% for (const pedido of clientePedidos) { %>
+                                            <a href=""><%= pedido?.id %></a>
+                                        <% } %>
+                                    </td>
+                                </li>
+                                <li id="email">
+                                    <td>
+                                        <%= cliente?.email %>
                                     </td>
                                 </li>
                                 <li>
                                     <td>
-                                        <a href="http://localhost:3002/admin/clients/<%= client.id %>/edit">
+                                        <a href="http://localhost:3002/admin/clients/<%= cliente.id %>/edit">
                                             <i class="fa-solid fa-pen-to-square"></i>
                                         </a>
-                                        <a href="http://localhost:3002/admin/clients/<%= client.id %>/delete">
+                                        <a href="http://localhost:3002/admin/clients/<%= cliente.id %>/delete">
                                             <i class="fa-solid fa-trash"></i>
                                         </a>
                                     </td>

@@ -5,6 +5,7 @@ const path = require('path')
 
 const AdminProductsController = require('./src/app/Controllers/AdminProductsController.js')
 const AdminClientsController = require('./src/app/Controllers/AdminClientsController.js')
+const AdminOrdersController = require('./src/app/Controllers/AdminOrdersController.js')
 const PagesController = require('./src/app/Controllers/PagesController.js')
 
 
@@ -33,5 +34,14 @@ app.get('/admin/products/:id/delete', AdminProductsController.deleteProduct)
 
 /*Admin clients */
 app.get('/admin/clients', AdminClientsController.listClients)
+app.get('/admin/clients/:id/edit', AdminClientsController.editClients)
+app.post('/admin/clients/:id/update', AdminClientsController.updateClients)
+app.get('/admin/clients/:id/delete', AdminClientsController.deleteClients)
+
+/*Admin orders */
+app.get('/admin/orders', AdminOrdersController.listOrders)
+app.get('/admin/orders/:id/edit', AdminOrdersController.editOrders)
+app.post('/admin/orders/:id/update', AdminOrdersController.updateOrders)
+app.get('/admin/orders/:id/delete', AdminOrdersController.deleteOrders)
 
 module.exports = app

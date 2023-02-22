@@ -36,14 +36,6 @@
         "available": true
     },
     {
-        "name": "vela cu",
-        "image": "/img/Velas-15.avif",
-        "description": "vela com cheiro de cu",
-        "price": 1,
-        "quantity": 2,
-        "id": 8
-    },
-    {
         "name": "vela diabo",
         "image": "/img/Velas-3.avif",
         "description": "vela do demo",
@@ -57,4 +49,5 @@
         "price": 100000,
         "quantity": 0,
         "id": 10
-    }]
+    }
+]

@@ -1,18 +1,11 @@
 const ProdutosServices = require('../../../services/ProdutosServices')
 
 const AdminProductsController = {
-  /* showIndex: (req, res) => {res.render('dashboard-admin.ejs')}, */
 
   showHomeAdmin: (req, res) => {
     res.render('dashboard-admin.ejs')
   },
 
-  /* showProducts: (req, res) => {
-    const produtos = ProdutosServices.showProdutos()
-
-  res.render('products-list-admin.ejs', { produtos })
-
-}, */
   createProduct: (req, res) => {
     res.render('create-admin.ejs')
   },
