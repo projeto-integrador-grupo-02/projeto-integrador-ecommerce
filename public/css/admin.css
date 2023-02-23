@@ -260,3 +260,7 @@ form input {
   margin-left: 60px;
   width: 60%;
 }
+
+#detalhes-pedidos > a{
+  font-size: 16px;
+}

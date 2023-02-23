@@ -40,8 +40,8 @@ app.get('/admin/clients/:id/delete', AdminClientsController.deleteClients)
 
 /*Admin orders */
 app.get('/admin/orders', AdminOrdersController.listOrders)
-app.get('/admin/orders/:id/edit', AdminOrdersController.editOrders)
-app.post('/admin/orders/:id/update', AdminOrdersController.updateOrders)
-app.get('/admin/orders/:id/delete', AdminOrdersController.deleteOrders)
+
+/* Admin orders id client */
+app.get('/admin/orders/:id/list', AdminOrdersController.listOrderClient)
 
 module.exports = app

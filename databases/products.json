@@ -1,5 +1,14 @@
 [
     {
+        "id": 2,
+        "image": "/img/Velas-1.avif",
+        "name": "Vela Cabra",
+        "description": "Vela com cheiro de campo",
+        "price": 59.99,
+        "quantity": 5,
+        "available": true
+    },
+    {
         "id": 1,
         "image": "/img/Velas-19.avif",
         "name": "Vela caramelo e pirulito",
@@ -14,6 +23,15 @@
         "name": "Vela caramelo",
         "description": "Vela com cheiro de caramelo, cor #33422",
         "price": "R$ 99,99",
+        "quantity": 5,
+        "available": true
+    },
+    {
+        "id": 4,
+        "image": "/img/Velas-14.avif",
+        "name": "Vela nenê",
+        "description": "Vela para nenê",
+        "price": 109.99,
         "quantity": 5,
         "available": true
     },
@@ -36,6 +54,24 @@
         "available": true
     },
     {
+        "id": 8,
+        "image": "/img/Velas-13.avif",
+        "name": "Fragrância",
+        "description": "Aromatizante para roupa",
+        "price": "R$ 69,99",
+        "quantity": 9,
+        "available": true
+    },
+    {
+        "id": 6,
+        "image": "/img/Velas-19.avif",
+        "name": "Aromatizador Centeio",
+        "description": "Calmante de centeio",
+        "price": "R$ 199,99",
+        "quantity": 5,
+        "available": true
+    },
+    {
         "name": "vela diabo",
         "image": "/img/Velas-3.avif",
         "description": "vela do demo",
@@ -46,8 +82,9 @@
     {
         "name": "vela thiago",
         "description": "vela do irmão",
-        "price": 100000,
+        "price": 100,
         "quantity": 0,
+        "image": "/img/Velas-15.avif",
         "id": 10
     }
 ]

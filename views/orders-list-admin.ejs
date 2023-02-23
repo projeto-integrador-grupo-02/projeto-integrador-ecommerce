@@ -29,55 +29,39 @@
                         <th>Data do pedido</th>
                         <th>Total</th>
                         <th>Status</th>
-                        <th>Itens</th>
-                        <th>Ações</th>
                     </tr>
                 </thead>
                 <tbody>
                     <% for (const order of orders) { %>
                         <tr>
                             <li>
-                                <td>
+                                <td id="id-pedido">
                                     <%= order?.id %>
+                                    <span id="detalhes-pedidos"><a href="http://localhost:3002/admin/orders/<%= order.id %>/list">Ver detalhes</a></span>
                                 </td>
                             </li>
-                            <li id="m-nome">
+                            <li id="contact-person">
                                 <td>
-                                    <%= order?.contactPerson %> 
+                                    <%= order?.contactPerson %>
                                 </td>
                             </li>
-                            <li id="#m-descricao">
+                            <li id="data">
                                 <td>
                                     <%= order?.dataOrder %>
                                 </td>
                             </li>
-                            <li id="#m-valor">
+                            <li id="amount">
                                 <td>
                                     <%= order?.amount %>
                                 </td>
                             </li>
-                            <li id="m-quantidade'">
+                            <li id="status">
                                 <td>
                                     <%= order?.status %>
                                 </td>
                             </li>
-                            <li id="m-quantidade'">
-                                <td>
-                                    <a href="#" >Verificar Itens<%= order?.items %></a>
-                                </td>
-                            </li>
-                            <li>
-                                <td>
-                                    <a href="http://localhost:3002/admin/products/<%= order.id %>/edit">
-                                        <i class="fa-solid fa-pen-to-square"></i>
-                                    </a>
-                                    <a href="http://localhost:3002/admin/products/<%= order.id %>/delete">
-                                        <i class="fa-solid fa-trash"></i>
-                                    </a>
-                                </td>
-                            </li>
-                            <% } %>
                         </tr>
+                        <% }%>
                 </tbody>
             </table>
 

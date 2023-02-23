@@ -26,11 +26,12 @@ const AdminProductsController = {
     let id = req.params.id
 
     let produto = ProdutosServices.loadProduct(id)
+
     res.render('edit-admin.ejs', { produto })
   },
   updateProduct: (req, res) => {
     let id = req.params.id
-
+    
     let produto = {
       name: req.body.name,
       description: req.body.description,
@@ -58,7 +59,6 @@ const AdminProductsController = {
     const currentPage = parseInt(page)
     const produtos = ProdutosServices.listProducts(currentPage, perPage)
     const { produtosPaginados, totalPages } = ProdutosServices.listProducts(page, perPage);
-
     res.render('products-list-admin.ejs', { produtos: produtosPaginados, totalPages, currentPage: page })
 
   }
