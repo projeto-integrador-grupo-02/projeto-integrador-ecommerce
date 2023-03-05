@@ -7,6 +7,7 @@ const AdminProductsController = require('./src/app/Controllers/AdminProductsCont
 const AdminClientsController = require('./src/app/Controllers/AdminClientsController.js')
 const AdminOrdersController = require('./src/app/Controllers/AdminOrdersController.js')
 const PagesController = require('./src/app/Controllers/PagesController.js')
+const AdminPagesController = require('./src/app/Controllers/AdminPagesController')
 
 
 
@@ -20,6 +21,10 @@ app.get('/checkout', PagesController.checkoutUser)
 app.post('/checkout/sucess', PagesController.checkoutSucess)
 
 app.get('/login',PagesController.showLogin);
+
+/* Admin Login */
+app.get('/admin/login', AdminPagesController.showLogin)
+app.get('/admin/register', AdminPagesController.showRegister)
 
 /* Admin */
 /* app.get('/admin', AdminProductsController.showIndex) */
