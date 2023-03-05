@@ -51,7 +51,7 @@ function loadItemsClient(idP) {
     return items
 }
 
-console.log(loadItemsClient(9))
+
 module.exports = {
     listOrders,
     loadOrder,

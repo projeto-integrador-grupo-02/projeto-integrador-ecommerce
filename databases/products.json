@@ -22,7 +22,7 @@
         "image": "/img/Velas-1.avif",
         "name": "Vela caramelo",
         "description": "Vela com cheiro de caramelo, cor #33422",
-        "price": "R$ 99,99",
+        "price": "99.99",
         "quantity": 5,
         "available": true
     },
@@ -40,7 +40,7 @@
         "image": "/img/Velas-18.avif",
         "name": "Vela bruxa",
         "description": "Vela com cheiro de caramelo, cor #33422",
-        "price": "R$ 99,99",
+        "price": "99.99",
         "quantity": 5,
         "available": true
     },
@@ -49,7 +49,7 @@
         "image": "/img/Velas-16.avif",
         "name": "Vela Babosa",
         "description": "Vela com cheiro de caramelo, cor #33422",
-        "price": "R$ 99,99",
+        "price": "99.99",
         "quantity": 5,
         "available": true
     },
@@ -58,7 +58,7 @@
         "image": "/img/Velas-13.avif",
         "name": "Fragrância",
         "description": "Aromatizante para roupa",
-        "price": "R$ 69,99",
+        "price": "69.99",
         "quantity": 9,
         "available": true
     },
@@ -67,7 +67,7 @@
         "image": "/img/Velas-19.avif",
         "name": "Aromatizador Centeio",
         "description": "Calmante de centeio",
-        "price": "R$ 199,99",
+        "price": "199.99",
         "quantity": 5,
         "available": true
     },
