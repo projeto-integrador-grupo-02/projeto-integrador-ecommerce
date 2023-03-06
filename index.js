@@ -22,6 +22,6 @@ servidor.use(router)
 
 
 
-servidor.listen(3000, () => { 
+servidor.listen(3002, () => { 
     console.log('ouvindo na porta')
 });

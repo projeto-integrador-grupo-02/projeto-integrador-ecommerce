@@ -1,9 +1,14 @@
 let produtos = require('../databases/products.json')
+let categorias = require('../databases/categorias.json')
 const path = require('path')
 const fs = require('fs')
 
 function showProdutos() {
     return produtos
+}
+
+function showCategorias() {
+    return categorias
 }
 
 function listProducts(page, perPage) {
@@ -38,6 +43,12 @@ function createProduct(produto) {
     salvar()
 }
 
+function loadCategoria(idP) {
+    let categoria = categorias.find(p => p.id == idP)
+
+    return categoria
+}
+
 function loadProduct(idP) {
     let produto = produtos.find(p => p.id == idP)
 
@@ -62,6 +73,7 @@ function updateProduct(idP, productData) {
 
     produto.name = productData.name
     produto.description = productData.description
+    produto.categoria = productData.categoria
     produto.price = productData.price
     produto.quantity = productData.quantity
 
@@ -85,6 +97,8 @@ const ProdutosServices = {
     loadProduct,
     updateProduct,
     eraseProduct,
-    listProducts
+    listProducts,
+    loadCategoria,
+    showCategorias
 }
 module.exports = ProdutosServices

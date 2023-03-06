@@ -17,6 +17,13 @@ const AdminPagesController = {
     },
     controlEdit:(req,res) => {
         let id = req.params.id
+
+        let adm = AdminServices.loadAdm(id)
+
+        res.render('admin-control-edit.ejs', {adm})
+        
+    },
+    updateAdmin:(req,res)=> {
         let admin = {
             name: req.body.name,
             email: req.body.email

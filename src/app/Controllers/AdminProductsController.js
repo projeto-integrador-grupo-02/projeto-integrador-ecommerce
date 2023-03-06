@@ -26,8 +26,9 @@ const AdminProductsController = {
     let id = req.params.id
 
     let produto = ProdutosServices.loadProduct(id)
+    let categorias = ProdutosServices.showCategorias()
 
-    res.render('edit-admin.ejs', { produto })
+    res.render('edit-admin.ejs', { produto, categorias: categorias })
   },
   updateProduct: (req, res) => {
     let id = req.params.id
@@ -35,12 +36,13 @@ const AdminProductsController = {
     let produto = {
       name: req.body.name,
       description: req.body.description,
+      categoria: req.body.categoria,
       price: Number(req.body.price),
       quantity: Number(req.body.quantity)
     }
 
     ProdutosServices.updateProduct(id, produto)
-
+console.log(produto);
 
     res.redirect('/admin/products')
 

@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "name": "Vela"
+    },
+    {
+        "id": 2,
+        "name": "Aromatizante"
+    },
+    {
+        "id": 3,
+        "name": "Água Perfumada"
+    },
+    {
+        "id": 4,
+        "name": "Sabonete Líquido"
+    },
+    {
+        "id": 5,
+        "name": "Sais de Banho"
+    },
+    {
+        "id": 6,
+        "name": "Óleo bifásico"
+    }
+]

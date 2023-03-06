@@ -27,6 +27,7 @@
                             <th>Imagem</th>
                             <th>Nome</th>
                             <th>Descrição</th>
+                            <th>Categoria</th>
                             <th>Preço</th>
                             <th>Quantidade</th>
                             <th>Ações</th>
@@ -45,17 +46,22 @@
                                         <img src="<%= produto?.image %>">
                                     </td>
                                 </li>
-                                <li id="#m-nome">
+                                <li id="m-nome">
                                     <td>
                                         <%= produto?.name %>
                                     </td>
                                 </li>
-                                <li id="#m-descricao">
+                                <li id="m-descricao">
                                     <td>
                                         <%= produto?.description %>
                                     </td>
                                 </li>
-                                <li id="#m-valor">
+                                <li id="categoria">
+                                    <td>
+                                        <%= produto?.categoria %>
+                                    </td>
+                                </li>
+                                <li id="m-valor">
                                     <td>
                                         <%= produto?.price %>
                                     </td>
@@ -67,10 +73,10 @@
                                 </li>
                                 <li>
                                     <td>
-                                        <a href="http://localhost:3002/admin/products/<%= produto.id %>/edit">
+                                        <a href="/admin/products/<%= produto.id %>/edit">
                                             <i class="fa-solid fa-pen-to-square"></i>
                                         </a>
-                                        <a href="http://localhost:3002/admin/products/<%= produto.id %>/delete">
+                                        <a href="/admin/products/<%= produto.id %>/delete">
                                             <i class="fa-solid fa-trash"></i>
                                         </a>
                                     </td>
@@ -79,7 +85,7 @@
                             </tr>
                     </tbody>
                 </table>
-                <a href="http://localhost:3002/admin/products/create">
+                <a href="/admin/products/create">
                     <button type="button" class="btn">
                         Cadastrar Produto
                     </button>

@@ -21,6 +21,12 @@ function listAdmin(page, perPage) {
     }
 }
 
+function loadAdm(idP) {
+    let adm = admin.find(p => p.id == idP)
+
+    return adm
+}
+
 function editAdmin() {
     
 }
@@ -36,5 +42,6 @@ function updateAdmin(idP, admData) {
 
 module.exports = {
     listAdmin,
-    updateAdmin
+    updateAdmin,
+    loadAdm
 }

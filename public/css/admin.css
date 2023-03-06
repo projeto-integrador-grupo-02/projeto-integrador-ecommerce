@@ -164,7 +164,6 @@ i {
 }
 
 .container-products {
-  margin: 150px;
   margin-left: 250px;
   padding: 50px;
   font-family: var(--font-body);
@@ -268,3 +267,4 @@ form input {
 #detalhes-pedidos > a{
   font-size: 16px;
 }
+
