@@ -25,6 +25,8 @@ app.get('/login',PagesController.showLogin);
 /* Admin Login */
 app.get('/admin/login', AdminPagesController.showLogin)
 app.get('/admin/register', AdminPagesController.showRegister)
+app.get('/admin/admin-user', AdminPagesController.showControl)
+app.get('/admin/admin-user/:id', AdminPagesController.controlEdit)
 
 /* Admin */
 /* app.get('/admin', AdminProductsController.showIndex) */

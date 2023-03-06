@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "picture": "http://placehold.it/32x32",
+        "name": "Jaqueline Copello",
+        "email": "jaquecopello@nimon.com"
+    },
+    {
+        "id": 2,
+        "picture": "http://placehold.it/32x32",
+        "name": "Thiago Viana",
+        "email": "thiagojose@nimon.com"
+    },
+    {
+        "id": 3,
+        "picture": "http://placehold.it/32x32",
+        "name": "Eric Azevedo",
+        "email": "azevedoeric@nimon.com"
+    }
+]
