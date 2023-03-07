@@ -97,5 +97,13 @@
         "quantity": 0,
         "image": "/img/Velas-15.avif",
         "id": 10
+    },
+    {
+        "name": "a",
+        "description": "a",
+        "price": 1,
+        "quantity": 2,
+        "image": "/img/a.jpg",
+        "id": 11
     }
 ]

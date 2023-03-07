@@ -1,3 +1,4 @@
+const fs = require('fs')
 const ProdutosServices = require('../../../services/ProdutosServices')
 
 const AdminProductsController = {
@@ -11,11 +12,15 @@ const AdminProductsController = {
   },
 
   registerProduct: (req, res) => {
+    let novoNome = req.body.name.replace(' ', '-').toLowerCase() + '.jpg';
+    fs.renameSync(req.file.path, `public/img/${novoNome}`)
+
     let produto = {
       name: req.body.name,
       description: req.body.description,
       price: Number(req.body.price),
-      quantity: Number(req.body.quantity)
+      quantity: Number(req.body.quantity),
+      image: `/img/${novoNome}`
     }
     //salvar obj no array de produtos
     ProdutosServices.createProduct(produto)

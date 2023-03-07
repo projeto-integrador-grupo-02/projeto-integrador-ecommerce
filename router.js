@@ -1,7 +1,10 @@
+const multer = require('multer');
 const express = require('express')
 //Criar roteador
 const app = express.Router()
 const path = require('path')
+
+const multerMid = multer({dest:'public/img'});
 
 const AdminProductsController = require('./src/app/Controllers/AdminProductsController.js')
 const AdminClientsController = require('./src/app/Controllers/AdminClientsController.js')
@@ -33,8 +36,8 @@ app.get('/admin/admin-user/:id/edit', AdminPagesController.controlEdit)
 app.get('/admin', AdminProductsController.showHomeAdmin)
 app.get('/admin/products', AdminProductsController.listProducts)
 /* app.get('/admin/products/:page', AdminProductsController.pagesProducts) */
-app.get('/admin/products/create', AdminProductsController.createProduct)
-app.post('/admin/products/store', AdminProductsController.registerProduct)
+app.get('/admin/products/create',AdminProductsController.createProduct)
+app.post('/admin/products/store',  multerMid.single('image'), AdminProductsController.registerProduct)
 app.get('/admin/products/:id/edit', AdminProductsController.editProduct)
 app.post('/admin/products/:id/update', AdminProductsController.updateProduct)
 app.get('/admin/products/:id/delete', AdminProductsController.deleteProduct)
