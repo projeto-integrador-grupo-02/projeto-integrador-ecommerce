@@ -43,6 +43,7 @@ app.post('/admin/products/:id/update', multerMid.single('image'), AdminProductsC
 app.get('/admin/products/:id/delete', AdminProductsController.deleteProduct)
 
 app.get('/admin/products/categorias', AdminProductsController.showCategorias)
+app.get('/admin/products/categorias/create', AdminProductsController.createCategorias)
 app.get('/admin/products/categorias/:id/edit', AdminProductsController.editCategoria)
 app.post('/admin/products/categorias/:id/update', AdminProductsController.updateCategoria)
 app.get('/admin/products/categorias/:id/delete', AdminProductsController.deleteCategoria)
