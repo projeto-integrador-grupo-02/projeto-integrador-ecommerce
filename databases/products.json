@@ -41,16 +41,6 @@
         "categoria": "Aromatizante"
     },
     {
-        "id": 5,
-        "image": "/img/Velas-18.avif",
-        "name": "Vela bruxa",
-        "description": "Vela com cheiro de caramelo, cor #33422",
-        "categoria": "Vela",
-        "price": "99.99",
-        "quantity": 5,
-        "available": true
-    },
-    {
         "id": 7,
         "image": "/img/Velas-16.avif",
         "name": "Vela Babosa",
@@ -92,18 +82,28 @@
     {
         "name": "vela thiago",
         "description": "vela do irmão",
-        "categoria": "vela",
+        "categoria": "Vela",
         "price": 100,
-        "quantity": 0,
-        "image": "/img/Velas-15.avif",
+        "quantity": 1,
+        "image": "/img/vela-thiago.jpg",
         "id": 10
     },
     {
-        "name": "a",
-        "description": "a",
-        "price": 1,
-        "quantity": 2,
-        "id": 11,
-        "categoria": "Vela"
+        "name": "Vela de Antonio",
+        "description": "Vela mais cheirosa",
+        "price": 10000,
+        "quantity": 1,
+        "categoria": "Vela",
+        "image": "/img/vela-de antonio.jpg",
+        "id": 11
+    },
+    {
+        "name": "Vela Alice",
+        "description": "Linda vela cheirosa",
+        "price": 20000000,
+        "quantity": 1,
+        "categoria": "Água Perfumada",
+        "image": "/img/vela-alice.jpg",
+        "id": 12
     }
 ]

@@ -34,6 +34,13 @@
                     <label for="m-valor">Valor</label>
                     <input type="text" id="price" name="price">
 
+                    <label for="m-valor">Categoria</label>
+                    <select name="categoria" id="categoria">
+                        <% for( categoria of categorias ) { %>
+                            <option name="categoria" value="<%= categoria.name %>"><%= categoria.name %></option>
+                        <% } %>
+                    </select>
+
                     <label for="m-quantidade">Quantidade</label>
                     <input type="text" id="quantity" name="quantity">
 

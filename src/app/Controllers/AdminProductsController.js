@@ -1,4 +1,5 @@
 const fs = require('fs')
+
 const ProdutosServices = require('../../../services/ProdutosServices')
 
 const AdminProductsController = {
@@ -8,7 +9,8 @@ const AdminProductsController = {
   },
 
   createProduct: (req, res) => {
-    res.render('create-admin.ejs')
+    let categorias = ProdutosServices.showCategorias()
+    res.render('create-admin.ejs', {categorias})
   },
 
   registerProduct: (req, res) => {
@@ -20,6 +22,7 @@ const AdminProductsController = {
       description: req.body.description,
       price: Number(req.body.price),
       quantity: Number(req.body.quantity),
+      categoria: req.body.categoria,
       image: `/img/${novoNome}`
     }
     //salvar obj no array de produtos
@@ -35,7 +38,7 @@ const AdminProductsController = {
 
     res.render('edit-admin.ejs', { produto, categorias: categorias })
   },
-  
+
   updateProduct: (req, res) => {
     let novoNome = req.body.name.replace(' ', '-').toLowerCase() + '.jpg';
     fs.renameSync(req.file.path, `public/img/${novoNome}`)
@@ -52,7 +55,6 @@ const AdminProductsController = {
     }
 
     ProdutosServices.updateProduct(id, produto)
-console.log(produto);
 
     res.redirect('/admin/products')
 
@@ -60,7 +62,7 @@ console.log(produto);
 
   deleteProduct: (req, res) => {
     let id = req.params.id
-    let produto = ProdutosServices.eraseProduct(id)
+    ProdutosServices.eraseProduct(id)
 
     res.redirect('/admin/products')
   },
@@ -73,7 +75,46 @@ console.log(produto);
     const { produtosPaginados, totalPages } = ProdutosServices.listProducts(page, perPage);
     res.render('products-list-admin.ejs', { produtos: produtosPaginados, totalPages, currentPage: page })
 
+  },
+
+  showCategorias: (req,res) => {
+    const page = parseInt(req.query.page) || 1
+    const perPage = 5
+    const currentPage = parseInt(page)
+    const categorias = ProdutosServices.listCategorias(currentPage, perPage)
+    const { categoriasPaginados, totalPages } = ProdutosServices.listCategorias(page, perPage);
+    res.render('categorias-list-admin.ejs', { categorias: categoriasPaginados, totalPages, currentPage: page })
+  },
+
+  editCategoria:(req,res) => {
+    let id = req.params.id
+
+    let categoria = ProdutosServices.loadCategoria(id)
+
+    res.render('edit-categoria-admin.ejs', {id, categoria})
+  },
+
+  updateCategoria: (req,res) => {
+    let id = req.params.id
+
+    let categoria = {
+      name: req.body.name
+    }
+
+    ProdutosServices.updateCategoria(id, categoria)
+
+    res.redirect('categorias-list-admin.ejs')
+  },
+
+  deleteCategoria: (req,res) => {
+    let id = req.params.id
+
+    ProdutosServices.eraseCategoria(id)
+
+    res.redirect('categorias-list-admin.ejs')
+
   }
+
 }
 
 

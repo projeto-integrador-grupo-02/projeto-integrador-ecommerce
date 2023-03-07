@@ -25,6 +25,19 @@ function listProducts(page, perPage) {
     }
 }
 
+function listCategorias(page, perPage) {
+    const startIndex = (page - 1) * perPage;
+    const endIndex = page * perPage;
+    const categoriasData = fs.readFileSync(path.resolve(__dirname, "../databases/categorias.json"));
+    const categorias = JSON.parse(categoriasData);
+    let categoriasPaginados = categorias.slice(startIndex, endIndex);
+    const totalPages = Math.ceil(categorias.length / perPage);
+
+    return {
+        categoriasPaginados,
+        totalPages
+    }
+}
 
 function adicionarProduto(produto) {
     produtos.push(produto)
@@ -39,6 +52,23 @@ function createProduct(produto) {
     }
 
     produtos.push(produto)
+
+    salvar()
+}
+
+function adicionarCategoria(categoria) {
+    categorias.push(categoria)
+}
+
+function createCategoria(categoria) {
+
+    if (categorias.length > 0) {
+        categoria.id = categorias[categorias.length - 1].id + 1
+    } else {
+        categorias.id = 1
+    }
+
+    categorias.push(categoria)
 
     salvar()
 }
@@ -81,12 +111,30 @@ function updateProduct(idP, productData) {
     salvar()
 }
 
+function updateCategoria(idP, categoriaData) {
+    let categoria = categorias.find(p => p.id == idP)
+
+    categoria.name = categoriaData.name
+
+    salvar()
+}
+
 function eraseProduct(idP) {
     let posicao = produtos.findIndex(p => p.id == idP)
     if (posicao == -1) {
         throw new Error('Não existe esse produto')
     }
     produtos.splice(posicao, 1)
+
+    salvar()
+}
+
+function eraseCategoria(idP) {
+    let posicao = categorias.findIndex(p => p.id == idP)
+    if (posicao == -1) {
+        throw new Error('Não existe esse produto')
+    }
+    categorias.splice(posicao, 1)
 
     salvar()
 }
@@ -100,6 +148,11 @@ const ProdutosServices = {
     eraseProduct,
     listProducts,
     loadCategoria,
-    showCategorias
+    showCategorias,
+    listCategorias,
+    updateCategoria,
+    adicionarCategoria,
+    createCategoria,
+    eraseCategoria
 }
 module.exports = ProdutosServices
