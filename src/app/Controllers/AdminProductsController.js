@@ -40,6 +40,7 @@ const AdminProductsController = {
   },
 
   updateProduct: (req, res) => {
+
     let novoNome = req.body.name.replace(' ', '-').toLowerCase() + '.jpg';
     fs.renameSync(req.file.path, `public/img/${novoNome}`)
 
@@ -103,7 +104,7 @@ const AdminProductsController = {
 
     ProdutosServices.updateCategoria(id, categoria)
 
-    res.redirect('categorias-list-admin.ejs')
+    res.redirect('/admin/products/categorias')
   },
 
   deleteCategoria: (req,res) => {
@@ -111,7 +112,7 @@ const AdminProductsController = {
 
     ProdutosServices.eraseCategoria(id)
 
-    res.redirect('categorias-list-admin.ejs')
+    res.redirect('/admin/products/categorias')
 
   }
 

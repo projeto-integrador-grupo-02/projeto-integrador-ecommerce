@@ -94,6 +94,12 @@ function salvar() {
     fs.writeFileSync(produtosData, JSON.stringify(produtos, null, 4));
 }
 
+function salvarCategoria() {
+    const categoriasData = path.resolve(__dirname + "/../databases/categorias.json");
+
+    fs.writeFileSync(categoriasData, JSON.stringify(categorias, null, 4));
+}
+
 function updateProduct(idP, productData) {
     let produto = produtos.find(p => p.id == idP)
 
@@ -116,7 +122,7 @@ function updateCategoria(idP, categoriaData) {
 
     categoria.name = categoriaData.name
 
-    salvar()
+    salvarCategoria()
 }
 
 function eraseProduct(idP) {
@@ -136,7 +142,7 @@ function eraseCategoria(idP) {
     }
     categorias.splice(posicao, 1)
 
-    salvar()
+    salvarCategoria()
 }
 
 const ProdutosServices = {
