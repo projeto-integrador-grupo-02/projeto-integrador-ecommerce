@@ -61,7 +61,6 @@ function adicionarCategoria(categoria) {
 }
 
 function createCategoria(categoria) {
-
     if (categorias.length > 0) {
         categoria.id = categorias[categorias.length - 1].id + 1
     } else {
@@ -70,7 +69,7 @@ function createCategoria(categoria) {
 
     categorias.push(categoria)
 
-    salvar()
+    salvarCategoria()
 }
 
 function loadCategoria(idP) {

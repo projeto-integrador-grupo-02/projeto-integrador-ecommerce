@@ -114,6 +114,21 @@ const AdminProductsController = {
 
     res.redirect('/admin/products/categorias')
 
+  },
+  createCategorias: (req,res) => {
+    let categorias = ProdutosServices.showCategorias()
+
+    res.render('create-categoria-admin.ejs', {categorias})
+  },
+
+  registerCategorias: (req,res) => {
+    let categoria = {
+      name: req.body.name
+    }
+
+    ProdutosServices.createCategoria(categoria)
+
+    res.redirect('/admin/products/categorias')
   }
 
 }

@@ -1,8 +1,12 @@
 const multer = require('multer');
 const express = require('express')
+const bodyParser = require('body-parser')
+
 //Criar roteador
 const app = express.Router()
 const path = require('path')
+
+app.use(bodyParser.urlencoded({ extended: false }))
 
 const multerMid = multer({dest:'public/img'});
 
@@ -44,6 +48,7 @@ app.get('/admin/products/:id/delete', AdminProductsController.deleteProduct)
 
 app.get('/admin/products/categorias', AdminProductsController.showCategorias)
 app.get('/admin/products/categorias/create', AdminProductsController.createCategorias)
+app.post('/admin/products/categorias/store', AdminProductsController.registerCategorias)
 app.get('/admin/products/categorias/:id/edit', AdminProductsController.editCategoria)
 app.post('/admin/products/categorias/:id/update', AdminProductsController.updateCategoria)
 app.get('/admin/products/categorias/:id/delete', AdminProductsController.deleteCategoria)
