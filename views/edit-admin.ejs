@@ -21,9 +21,9 @@
             <div class="content">
             <div class="container-products">
                 <h2 class="title">Editar Produto</h2>
-                <form action="/admin/products/<%= produto.id %>/update" method="post" class="create-products">
+                <form action="/admin/products/<%= produto.id %>/update" method="post" class="create-products" enctype="multipart/form-data">
                     
-                    <input type="image" id="image" value="<%= produto.image %>" name="image" class="image">
+                    <input type="file" id="image" value="<%= produto.image %>" name="image" class="image">
 
                     <label for="m-nome">Nome</label>
                     <input type="text" id="name" value="<%= produto.name %>" name="name">

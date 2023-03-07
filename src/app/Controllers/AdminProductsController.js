@@ -35,7 +35,11 @@ const AdminProductsController = {
 
     res.render('edit-admin.ejs', { produto, categorias: categorias })
   },
+  
   updateProduct: (req, res) => {
+    let novoNome = req.body.name.replace(' ', '-').toLowerCase() + '.jpg';
+    fs.renameSync(req.file.path, `public/img/${novoNome}`)
+
     let id = req.params.id
     
     let produto = {
@@ -43,7 +47,8 @@ const AdminProductsController = {
       description: req.body.description,
       categoria: req.body.categoria,
       price: Number(req.body.price),
-      quantity: Number(req.body.quantity)
+      quantity: Number(req.body.quantity),
+      image: `/img/${novoNome}`
     }
 
     ProdutosServices.updateProduct(id, produto)

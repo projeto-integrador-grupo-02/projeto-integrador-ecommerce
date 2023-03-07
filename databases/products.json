@@ -1,7 +1,7 @@
 [
     {
         "id": 2,
-        "image": "/img/Velas-1.avif",
+        "image": "/img/vela-cabra.jpg",
         "name": "Vela Cabra",
         "description": "Vela com cheiro de campo",
         "categoria": "Vela",
@@ -103,7 +103,7 @@
         "description": "a",
         "price": 1,
         "quantity": 2,
-        "image": "/img/a.jpg",
-        "id": 11
+        "id": 11,
+        "categoria": "Vela"
     }
 ]

@@ -76,6 +76,7 @@ function updateProduct(idP, productData) {
     produto.categoria = productData.categoria
     produto.price = productData.price
     produto.quantity = productData.quantity
+    produto.image = productData.image
 
     salvar()
 }

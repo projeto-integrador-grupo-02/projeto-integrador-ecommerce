@@ -39,7 +39,7 @@ app.get('/admin/products', AdminProductsController.listProducts)
 app.get('/admin/products/create',AdminProductsController.createProduct)
 app.post('/admin/products/store',  multerMid.single('image'), AdminProductsController.registerProduct)
 app.get('/admin/products/:id/edit', AdminProductsController.editProduct)
-app.post('/admin/products/:id/update', AdminProductsController.updateProduct)
+app.post('/admin/products/:id/update', multerMid.single('image'), AdminProductsController.updateProduct)
 app.get('/admin/products/:id/delete', AdminProductsController.deleteProduct)
 
 /*Admin clients */
