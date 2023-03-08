@@ -33,7 +33,8 @@ app.get('/login',PagesController.showLogin);
 app.get('/admin/login', AdminPagesController.showLogin)
 app.get('/admin/register', AdminPagesController.showRegister)
 app.get('/admin/admin-user', AdminPagesController.showControl)
-app.get('/admin/admin-user/:id/edit', AdminPagesController.controlEdit)
+app.get('/admin/admin-user/:id/edit', AdminPagesController.controlEdit) 
+app.get('/admin/admin-user/store', AdminPagesController.registerControl) 
 
 /* Admin */
 

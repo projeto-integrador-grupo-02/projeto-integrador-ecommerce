@@ -7,6 +7,12 @@ const AdminPagesController = {
     showRegister: (req,res) => {
         res.render('admin-register.ejs')
     },
+    registerControl: (req,res) => {
+        let administrador = {
+            name: req.body.name
+        }
+    },
+
     showControl: (req,res) => {
         const page = parseInt(req.query.page) || 1
         const perPage = 5

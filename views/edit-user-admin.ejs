@@ -16,18 +16,19 @@
 </head>
 
 <body>
+    <%- include('partials/menu-admin.ejs')%>
     <section class="dashboard">
         <div class="dash-content">
             <div class="content">
             <div class="container-products">
                 <h2 class="title">Editar Cliente</h2>
-                <form action="/admin/clients/<%= client.id %>/update" method="post" class="create-products">
+                <form action="/admin/clients/<%= cliente.id %>/update" method="post" class="create-products">
             
                     <label for="m-nome">Nome</label>
-                    <input type="text" id="name" value="<%= client.name %>" name="name">
+                    <input type="text" id="name" value="<%= cliente.name %>" name="name">
 
                     <label for="m-nome">E-mail</label>
-                    <input type="text" id="email" value="<%= client.email %>" name="email">
+                    <input type="text" id="email" value="<%= cliente.email %>" name="email">
 
                     <button class="btn" id="btnSalvar" type="submit">Salvar</button>
                 </form>

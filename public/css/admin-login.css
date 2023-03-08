@@ -69,13 +69,12 @@ textarea:focus, input:focus{
 }
 
 #divcenter-container{
-
-    margin: auto;
+    margin-left: 450px;
+    margin-right: 250px;
     padding: 20px;
     display:flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 100%;
     text-align: center;
     background-color: var(--primary-color-alt);
     

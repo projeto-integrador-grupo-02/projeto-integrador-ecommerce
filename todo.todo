@@ -1,4 +1,10 @@
 ✔  Adicionar categoria @done(23-03-06 21:37)
 ✔ Adicionar imagem em produto @done(23-03-07 10:44)
-☐ p q o partials não funciona em edit-user-admin.ejs ???
-☐ adicionar uma p]agina onde liste as categorias e seja possivel editar, excluir ou adicionar
+✔ p q o partials não funciona em edit-user-admin.ejs ??? @done(23-03-08 11:56)
+✔ adicionar uma p]agina onde liste as categorias e seja possivel editar, excluir, adicionar @done(23-03-08 11:56)
+✔ fazer uma parte no menu de categorias @done(23-03-08 11:56)
+☐ consertar o css de categorias
+
+☐ Uma página para cadastrar um usuário admin, onde terá um formulário para preencher as informações (Dados básicos - Nome, e-mail, senha).
+☐ Uma página que liste todos os usuários cadastrados e que seja possível excluir os usuários por meio de um botão excluir.
+☐ Uma página que permita alterar as informações de um usuário já cadastrado.
