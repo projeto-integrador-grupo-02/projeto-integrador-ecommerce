@@ -64,7 +64,7 @@ function createCategoria(categoria) {
     if (categorias.length > 0) {
         categoria.id = categorias[categorias.length - 1].id + 1
     } else {
-        categorias.id = 1
+        categoria.id = 1
     }
 
     categorias.push(categoria)

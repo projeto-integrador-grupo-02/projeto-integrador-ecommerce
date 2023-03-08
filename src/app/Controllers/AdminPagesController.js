@@ -1,4 +1,5 @@
 const AdminServices = require('../../../services/AdminServices')
+const bcrypt = require('bcrypt')
 
 const AdminPagesController = {
     showLogin: (req,res) => {
@@ -9,8 +10,14 @@ const AdminPagesController = {
     },
     registerControl: (req,res) => {
         let administrador = {
-            name: req.body.name
+            name: req.body.name,
+            email: req.body.email,
+            password: bcrypt.hashSync(req.body.password, 10)
         }
+
+        AdminServices.createAdmin(administrador)
+
+        res.redirect('/admin/admin-user')
     },
 
     showControl: (req,res) => {
@@ -29,12 +36,26 @@ const AdminPagesController = {
         res.render('admin-control-edit.ejs', {adm})
         
     },
+
+    controlDelete:(req,res) => {
+        let id = req.params.id
+
+        AdminServices.eraseControl(id)
+
+        res.redirect('/admin/admin-user')
+    },
+
     updateAdmin:(req,res)=> {
-        let admin = {
+        let id = req.params.id
+
+        let adm = {
             name: req.body.name,
             email: req.body.email
         }
-        res.redirect('admin-control.ejs')
+
+        AdminServices.updateAdmin(id, adm)
+
+        res.redirect('/admin/admin-user')
     }
 } 
 

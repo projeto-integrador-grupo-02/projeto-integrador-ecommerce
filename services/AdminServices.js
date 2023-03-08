@@ -21,6 +21,18 @@ function listAdmin(page, perPage) {
     }
 }
 
+function createAdmin(adm) {
+    if(admin.length > 0) {
+        adm.id = admin[admin.length - 1].id + 1
+    } else {
+        adm.id = 1
+    }
+
+    admin.push(adm)
+
+    salvar()
+}
+
 function loadAdm(idP) {
     let adm = admin.find(p => p.id == idP)
 
@@ -29,6 +41,16 @@ function loadAdm(idP) {
 
 function editAdmin() {
     
+}
+
+function eraseControl(idP) {
+    let adm = admin.findIndex(p => p.id == idP)
+
+    admin.splice(adm,1)
+
+    salvar()
+
+
 }
 
 function updateAdmin(idP, admData) {
@@ -43,5 +65,7 @@ function updateAdmin(idP, admData) {
 module.exports = {
     listAdmin,
     updateAdmin,
-    loadAdm
+    loadAdm,
+    createAdmin,
+    eraseControl
 }

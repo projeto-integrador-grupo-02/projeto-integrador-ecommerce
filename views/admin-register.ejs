@@ -19,11 +19,11 @@
         <div id="login-container">
             <img class='admin-package' src="/img/pngegg.png" alt="" srcset="">
             <h1>Cadastro de administrador</h1>
-            <form id="login">
+            <form id="login" action='/admin/admin-user/store' method="post" class="create-products">
                 <input type="text" name="name" id="name" placeholder="Nome Completo" autocomplete="off">
                 <input type="email" name="email" id="email" placeholder="E-mail" autocomplete="off">
-                <input type="password" id="password" placeholder="Senha" autocomplete="off">
-                <input type="password" id="password" placeholder="Confirmar senha" autocomplete="off">
+                <input type="password" id="password" name ="password" placeholder="Senha" autocomplete="off">
+                <!-- <input type="password" id="password" name ="password" placeholder="Confirmar senha" autocomplete="off"> -->
                 <button type="submit" class="btn">Registrar</button>
                 <br>
             </form>

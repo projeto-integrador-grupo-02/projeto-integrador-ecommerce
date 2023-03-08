@@ -16,5 +16,11 @@
         "picture": "http://placehold.it/32x32",
         "name": "Eric Azevedo",
         "email": "azevedoeric@nimon.com"
+    },
+    {
+        "name": "teste massa",
+        "email": "teste@gmail.com",
+        "password": "$2b$10$vMh4SelyoQg7HP.im1OhHOZfYYaHkTqmsiqbHz.LC9lYkYtzCvFsu",
+        "id": 4
     }
 ]
