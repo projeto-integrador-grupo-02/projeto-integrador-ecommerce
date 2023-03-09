@@ -9,4 +9,3 @@ var swiper = new Swiper("#hero", {
         disableOnInteraction: false,
     }
 });
-

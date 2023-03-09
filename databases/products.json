@@ -86,5 +86,13 @@
         "quantity": 0,
         "image": "/img/Velas-15.avif",
         "id": 10
+    },
+    {
+        "name": "ambientador com varetas",
+        "image": "/img/offers (1).png",
+        "description": "vela do demo",
+        "price": 150,
+        "quantity": 666,
+        "id": 12
     }
 ]

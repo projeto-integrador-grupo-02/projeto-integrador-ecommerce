@@ -27,8 +27,8 @@
   <main>
     <h1>Meu Carrinho</h1>
 
-    <table>
-      <thead>
+    <table id="cart-table">
+<!--       <thead>
         <tr>
           <th>Produto</th>
           <th>Preço</th>
@@ -36,9 +36,10 @@
           <th>Subtotal</th>
           <th>Ações</th>
         </tr>
-      </thead>
-      <tbody>
-        <tr>
+      </thead> -->
+
+      <tbody id="cart-body">
+<!--         <tr>
           <td>Vela Perfumada</td>
           <td>R$ 250,00</td>
           <td>
@@ -48,11 +49,11 @@
           <td>
             <button>Remover</button>
           </td>
-        </tr>
+        </tr> -->
       </tbody>
     </table>
 
-    <div class="producto-card1">
+<!--     <div class="producto-card1">
       <div class="producto-card1-img">
         <img src="/img/AA6250C23_1V01 (1).png" alt="produto">
       </div>
@@ -62,9 +63,53 @@
         <p>R$ 250,00</p>
         <button class="btn-comprar">Finalizar Compra</button>
       </div>
-    </div>
+    </div> -->
 
   </main>
+
+  <script>
+    window.addEventListener('load', showCart);
+    
+    function showCart() {
+      const cartBody = document.getElementById('cart-body');
+      cartBody.innerHTML = '';
+
+      let cartItems = JSON.parse(localStorage.getItem('carrinho')) || [];
+
+      cartItems.forEach(item => {
+        const row = document.createElement('tr');
+        const nameTd = document.createElement('td');
+        const priceTd = document.createElement('td');
+        const quantityTd = document.createElement('td');
+        const subtotalTd = document.createElement('td');
+        const actionsTd = document.createElement('td');
+        const removeBtn = document.createElement('button');
+
+        nameTd.textContent = item.nome;
+        priceTd.textContent = `R$ ${parseFloat(item.preco || 0).toFixed(2)}`;
+        quantityTd.innerHTML = `<input type="number" value="${item.quantidade}" min="1" data-name="${item.nome}">`;
+        subtotalTd.textContent = item ? (item.preco * item.quantidade).toFixed(2) : '';
+        removeBtn.textContent = 'Remover';
+        removeBtn.addEventListener('click', () => removeItem(item.nome));
+
+        row.appendChild(nameTd);
+        row.appendChild(priceTd);
+        row.appendChild(quantityTd);
+        row.appendChild(subtotalTd);
+        actionsTd.appendChild(removeBtn);
+        row.appendChild(actionsTd);
+        cartBody.appendChild(row);
+     });
+    }
+
+    function removeItem(name) {
+      let cartItems = JSON.parse(localStorage.getItem('carrinho')) || [];
+      cartItems = cartItems.filter(item => item.nome !== name);
+      localStorage.setItem('carrinho', JSON.stringify(cartItems));
+      showCart();
+    }
+
+  </script>
 
   <%- include("partials/footer.ejs") %>
 </body>
