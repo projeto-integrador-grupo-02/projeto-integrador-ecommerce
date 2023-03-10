@@ -18,9 +18,9 @@
             <div id="login-container">
                 <img class='admin-package' src="/img/pngegg.png" alt="" srcset="">
                 <h1>Área de administrador</h1>
-                <form id="login">
+                <form id="login" method="post" action="/admin/login">
                     <input type="email" name="email" id="email" placeholder="E-mail" autocomplete="off">
-                    <input type="password" id="password" placeholder="Senha" autocomplete="off">
+                    <input type="password" name="password" id="password" placeholder="Senha" autocomplete="off">
                     <button type="submit" class="btn">Entrar</button>
                     <br>
                 </form>

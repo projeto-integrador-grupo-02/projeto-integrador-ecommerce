@@ -5,10 +5,13 @@ const path = require('path')
 const router = require('./router.js')
 const bodyParser = require('body-parser');
 const servidor = express()
+const session = require('express-session')
 
 servidor.use(bodyParser.json());
 servidor.use(bodyParser.urlencoded({ extended: false }));
-
+servidor.use(session({secret: 'segredo',
+resave: false,
+saveUninitialized: false}))
 
 // Criar o servidor
 

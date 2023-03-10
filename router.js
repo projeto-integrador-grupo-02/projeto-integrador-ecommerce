@@ -2,6 +2,8 @@ const multer = require('multer');
 const express = require('express')
 const bodyParser = require('body-parser')
 
+const logged = require('./src/app/middleware/logged')
+const globalVar = require('./src/app/middleware/globalVar')
 //Criar roteador
 const app = express.Router()
 const path = require('path')
@@ -31,6 +33,9 @@ app.get('/login',PagesController.showLogin);
 
 /* Admin Login */
 app.get('/admin/login', AdminPagesController.showLogin)
+app.post('/admin/login', AdminPagesController.loginControl)
+
+app.use('/admin',logged, globalVar)
 app.get('/admin/register', AdminPagesController.showRegister)
 app.get('/admin/admin-user', AdminPagesController.showControl)
 app.get('/admin/admin-user/:id/edit', AdminPagesController.controlEdit) 

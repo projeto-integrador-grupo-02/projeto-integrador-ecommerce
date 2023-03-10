@@ -5,6 +5,6 @@
 ✔ fazer uma parte no menu de categorias @done(23-03-08 11:56)
 ☐ consertar o css de categorias
 
-☐ Uma página para cadastrar um usuário admin, onde terá um formulário para preencher as informações (Dados básicos - Nome, e-mail, senha).
-☐ Uma página que liste todos os usuários cadastrados e que seja possível excluir os usuários por meio de um botão excluir.
-☐ Uma página que permita alterar as informações de um usuário já cadastrado.
+✔ Uma página para cadastrar um usuário admin, onde terá um formulário para preencher as informações (Dados básicos - Nome, e-mail, senha). @done(23-03-08 16:39)
+✔ Uma página que liste todos os usuários cadastrados e que seja possível excluir os usuários por meio de um botão excluir. @done(23-03-08 16:39)
+✔ Uma página que permita alterar as informações de um usuário já cadastrado. @done(23-03-08 16:39)

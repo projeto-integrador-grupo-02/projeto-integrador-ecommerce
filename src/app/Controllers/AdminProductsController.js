@@ -1,11 +1,10 @@
 const fs = require('fs')
-
 const ProdutosServices = require('../../../services/ProdutosServices')
 
 const AdminProductsController = {
 
   showHomeAdmin: (req, res) => {
-    res.render('dashboard-admin.ejs')
+   res.render('dashboard-admin.ejs')
   },
 
   createProduct: (req, res) => {

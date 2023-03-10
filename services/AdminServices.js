@@ -39,6 +39,13 @@ function loadAdm(idP) {
     return adm
 }
 
+function loadAdmEmail(email) {
+    let adm = admin.find(p => p.email == email)
+
+    return adm
+}
+
+
 function editAdmin() {
     
 }
@@ -62,10 +69,35 @@ function updateAdmin(idP, admData) {
     salvar()
 }
 
+function loginEmail(emailD) {
+    let email = admin.find(p => p.email == emailD)
+
+    return email
+}
+
+function loginPass(email) {
+    let adm = admin.find(p => p.email == email)
+    let passHashed = adm.password
+    
+    return passHashed
+}
+
+function loginName(email) {
+    let adm = admin.find(e => e.email == email)
+    let admLogged = adm.name
+
+    return admLogged
+}  
+
+
 module.exports = {
     listAdmin,
     updateAdmin,
     loadAdm,
     createAdmin,
-    eraseControl
+    eraseControl,
+    loginEmail,
+    loginPass,
+    loginName,
+    loadAdmEmail
 }

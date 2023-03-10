@@ -1,26 +1,14 @@
 [
     {
-        "id": 1,
-        "picture": "http://placehold.it/32x32",
         "name": "Jaqueline Copello",
-        "email": "jaquecopello@nimon.com"
+        "email": "jaque@lol.com",
+        "password": "$2b$10$f3KrsPkv4BWZsRMLDzkj2udYSLw4daQFh0xGA3Yi9HLzAJTtYSSoO",
+        "id": 1
     },
     {
-        "id": 2,
-        "picture": "http://placehold.it/32x32",
-        "name": "Thiago Viana",
-        "email": "thiagojose@nimon.com"
-    },
-    {
-        "id": 3,
-        "picture": "http://placehold.it/32x32",
-        "name": "Eric Azevedo",
-        "email": "azevedoeric@nimon.com"
-    },
-    {
-        "name": "teste massa",
-        "email": "teste@gmail.com",
-        "password": "$2b$10$vMh4SelyoQg7HP.im1OhHOZfYYaHkTqmsiqbHz.LC9lYkYtzCvFsu",
-        "id": 4
+        "name": "Rafael de Almeida",
+        "email": "rafacopelllo@gmail.com",
+        "password": "$2b$10$/KvWnvMGHaOidA9wnYb35OFgV8/w2AOjQ8bt/UWXL4wUggj33QWfG",
+        "id": 2
     }
 ]
