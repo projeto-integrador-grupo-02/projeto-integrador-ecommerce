@@ -5,10 +5,10 @@ const PagesController = {
     showIndex: (req, res) => res.render('home.ejs'),
     showUser: (req, res) => res.render('edituser.ejs'),
     showProducts: (req, res) => res.render('products.ejs'),
-    registerUser: (req, res) => res.render('cadastro.ejs'),
     checkoutUser: (req,res) => res.render('checkout.ejs'),
-    checkoutSucess: (req,res) => res.render('checkoutSucess.ejs'),
-    showLogin:(req,res) => res.render('login.ejs')
+    checkoutSucess: (req,res) => res.render('checkoutSucess.ejs')
+    
+    
 }
 
     module.exports = PagesController

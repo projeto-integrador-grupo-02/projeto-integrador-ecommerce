@@ -1,0 +1,50 @@
+[
+    {
+        "nome": "jose",
+        "email": "jose@gmail.com",
+        "cpf": "4545454",
+        "senha": "KKkk@@123213",
+        "data": "1994-03-19",
+        "id": 1
+    },
+    {
+        "nome": "jose",
+        "email": "jose@gmail.com",
+        "cpf": "4545454",
+        "senha": "KKkk@@123213",
+        "data": "1994-03-19",
+        "id": 2
+    },
+    {
+        "nome": "jose",
+        "email": "josekim@gmail.com",
+        "cpf": "07763388978",
+        "senha": "$2b$10$pMZj0wFZM3Zb.Jn7XToMJOmi1HxcvZSpwUUmRU9fpn7C.ZyGXRvwS",
+        "data": "1994-03-19",
+        "id": 3
+    },
+    {
+        "nome": "jose",
+        "email": "josekim@gmail.com",
+        "cpf": "07763388978",
+        "senha": "$2b$10$HMC1Q2tG2ZzUQQChwGcIXOJzJnSTtx8cJ2c4GFZkNu.UKcqrBwWTy",
+        "data": "1994-03-19",
+        "id": 4
+    },
+    {
+        "nome": "jose",
+        "email": "josekim@gmail.com",
+        "cpf": "07763388978",
+        "senha": "$2b$10$NtFu6RQrxBPGakYUxpl8oerulL0u27XpCyt.p.PW5F5kRAp3Gl6iq",
+        "data": "1994-03-19",
+        "id": 8
+    },
+    {
+        "nome": "jose",
+        "email": "josss@gmail.com",
+        "cpf": "07763388978",
+        "senha": "$2b$10$4g07jLxSpKIvR26PRivKGe/W7Af/vbMKRPRaYRSJMJpcqjjl4uvWu",
+        "data": "1994-03-19",
+        "id": 9
+    }
+]
