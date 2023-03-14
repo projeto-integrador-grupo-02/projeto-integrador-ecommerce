@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "name": "Vela G"
+        "name": "Vela Super"
     },
     {
         "id": 2,
@@ -30,5 +30,9 @@
     {
         "name": "Vela M",
         "id": 11
+    },
+    {
+        "name": "Cheirinho",
+        "id": 12
     }
 ]

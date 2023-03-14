@@ -10,5 +10,11 @@
         "email": "rafacopelllo@gmail.com",
         "password": "$2b$10$/KvWnvMGHaOidA9wnYb35OFgV8/w2AOjQ8bt/UWXL4wUggj33QWfG",
         "id": 2
+    },
+    {
+        "name": "Sergio Moura",
+        "email": "juiz@gmail.com",
+        "password": "$2b$10$y5jZBZ3l1.UtymiqLuS61esJnUNsYtB1UOiY7IQetmUqmn87a9eeG",
+        "id": 3
     }
 ]

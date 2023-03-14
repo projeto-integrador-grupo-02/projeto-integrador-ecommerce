@@ -1,23 +1,13 @@
 [
     {
         "id": 2,
-        "image": "/img/vela-cabra.jpg",
-        "name": "Vela Cabra",
+        "image": "/img/vela-cabrita.jpg",
+        "name": "Vela Cabrita",
         "description": "Vela com cheiro de campo",
-        "categoria": "Vela",
+        "categoria": "Vela G",
         "price": 59.99,
         "quantity": 5,
         "available": true
-    },
-    {
-        "id": 1,
-        "image": "/img/Velas-19.avif",
-        "name": "Vela caramelo e pirulito",
-        "description": "Vela com cheiro de caramelo, cor #33422",
-        "price": 89.99,
-        "quantity": 5,
-        "available": true,
-        "categoria": "Vela"
     },
     {
         "id": 3,
@@ -105,5 +95,14 @@
         "categoria": "Água Perfumada",
         "image": "/img/vela-alice.jpg",
         "id": 12
+    },
+    {
+        "name": "teste",
+        "description": "teste",
+        "price": 1,
+        "quantity": 2,
+        "categoria": "Vela P",
+        "image": "/img/teste.jpg",
+        "id": 13
     }
 ]
