@@ -37,18 +37,29 @@ const bcrypt = require('bcrypt');
             }
             const senhaVerify = bcrypt.compareSync(senha,user.senha);
             if(!senhaVerify){
-                return res.send("falha no login");
+                // return res.send("falha no login");
             }
             try {
-                req.session.userEmail = user.email;
-                // res.locals.userEmail = user.email;
-                console.log(req.session.userEmail);
+                req.session.estaLogado = true
+                req.session.usuarioLogado = user
+                console.log(req.session);
                 res.redirect("/");
                 
             } catch (error) {
                 console.log(error);
             }
 
+
+        },
+        logout:(req,res)=>{
+            try {
+                req.session.estaLogado = false;
+                req.session.usuarioLogado = undefined;
+                res.redirect("/")
+                
+            } catch (error) {
+                console.log(error);
+            }
 
         }
         

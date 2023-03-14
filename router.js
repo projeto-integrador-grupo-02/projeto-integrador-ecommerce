@@ -16,7 +16,7 @@ router.post('/cadastro', AuthController.registerUser)
 router.get('/login',AuthController.showLogin)
 router.post('/login', AuthController.login);
 
-
+router.get('/logout',AuthController.logout);
 
 router.get('/checkout', PagesController.checkoutUser)
 router.post('/checkout/sucess', PagesController.checkoutSucess)
