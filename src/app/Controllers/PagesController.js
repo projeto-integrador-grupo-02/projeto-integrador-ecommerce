@@ -1,8 +1,9 @@
 const path = require('path');
+const produtos = require('../../../databases/products.json');
 
 
 const PagesController = {
-    showIndex: (req, res) => res.render('home.ejs'),
+    showIndex: (req, res) => {res.render('home.ejs',{produtos})},
     showUser: (req, res) => res.render('edituser.ejs'),
     showProducts: (req, res) => res.render('products.ejs'),
     showProduto: (req, res) => res.render('produto.ejs'),
