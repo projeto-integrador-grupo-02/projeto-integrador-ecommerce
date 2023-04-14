@@ -17,6 +17,7 @@
 </head>
 
 <body>
+    <h1><%= produtos[0].name %></h1>
     <%- include("partials/header.ejs") %>
         <main>
             <!-- HERO -->
@@ -68,63 +69,23 @@
                 <div class="offer-content" id="offer">
                     <div class="offer-all">
                         
-
-                        <a href="/produto" onclick="storeDivContent('div1')"> 
+                        <% for(const p of produtos) { %>
+                        <a href="/produtos/<%= p.id %>" onclick="storeDivContent('div1')"> 
                             <div id="div1" class="offer-item">
                                 <div class="offer-img">
-                                    <img src="/img/offers (1).png" alt="" srcset="">
+                                    <img src="<%= p.image %>" alt="" srcset="">
                                 </div>
                                 <div class="offer-desc">
-                                    <p>Ambientador com varetas</p>
+                                    <p><%= p.name %></p>
                                 </div>
                                 <div class="offer-price">
-                                    <span>R$ 350,00</span>
-                                </div>
-                                <div class="offer-parcel">
-                                    <a href="#">7 X R$ 50,00</a>
+                                    <span><%= p.price %></span>
                                 </div>
                                 <a href="#" class="btn" onclick="addToCart(this)">Adicione ao Carrinho</a>
                             </div>
                           </a>
-
-                        <a href="/produto" onclick="storeDivContent('div2')"> 
-                            <div id="div2" class="offer-item">
-                                <div class="offer-img">
-                                    <img src="/img/offers (2).png" alt="" srcset="">
-                                </div>
-                                <div class="offer-desc">
-                                    <p>Spray perfumado</p>
-                                </div>
-                                <div class="offer-price">
-                                    <span>R$ 150,00</span>
-                                </div>
-                                <div class="offer-parcel">
-                                    <a href="#">5 X R$ 30,00</a>
-                                </div>
-                                <a href="#" class="btn" onclick="addToCart(this)">Adicione ao Carrinho</a>
-                            </div>
-                          </a>
-
-                        <a href="/produto" onclick="storeDivContent('div3')"> 
-                            <div id="div3" class="offer-item">
-                                <div class="offer-img">
-                                    <img src="/img/offers (3).png" alt="" srcset="">
-                                </div>
-                                <div class="offer-desc">
-                                    <p>Vela perfumada</p>
-                                </div>
-                                <div class="offer-price">
-                                    <span>R$ 250,00</span>
-                                </div>
-                                <div class="offer-parcel">
-                                    <a href="#">5 X R$ 50,00</a>
-                                </div>
-                                <a href="#" class="btn" onclick="addToCart(this)">Adicione ao Carrinho</a>
-                            </div>
-                          </a>
-                          
-
-                    </div>
+                          <% } %>
+                        </div>
             </section>
 
             <script>
