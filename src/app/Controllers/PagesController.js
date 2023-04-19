@@ -13,7 +13,10 @@ const PagesController = {
     },
     showCarrinho: (req, res) => res.render('carrinho.ejs'),
     addCarrinho: (req, res) => {
-        console.log(req.body)
+       if (req.session.carrinho == undefined){
+        req.session.carrinho = []
+       }
+        req.session.carrinho.push({id: req.body.idProduto, qtd: 1})
         res.redirect("/carrinho")
     },
 
