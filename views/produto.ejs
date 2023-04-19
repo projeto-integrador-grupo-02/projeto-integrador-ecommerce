@@ -25,69 +25,16 @@
     <%- include("partials/header.ejs") %>
 
   <main>
-
     <div>
-      <h2 id="product-name"></h2>
-      <img id="product-image" width="200" height="200">
-      <p id="product-price"></p>
-      <button class="btn-comprar">Comprar</button>
+      <h2 id="product-name"><%= produto.name %></h2>
+      <img id="product-image" src="<%= produto.image %>" alt="<%= produto.name %>" width="200" height="200">
+      <p id="product-price"><%= produto.price %></p>
+      <form method="post" action="/carrinho">
+      <input type="hidden" value="<%= produto.id %>" name="idProduto">
+      <button type="submit" class="btn-comprar" id="comprar
+      -<%= produto.id %>>">Comprar</button>
+      </form>
     </div>
-  
-    <script>
-
-      // Obtenha o conteúdo da div armazenado no armazenamento local
-      var productInfo = JSON.parse(localStorage.getItem('productInfo'));
-
-      // Preencha os elementos HTML com as informações do produto
-      document.getElementById('product-name').textContent = productInfo.name;
-      document.getElementById('product-image').setAttribute('src', productInfo.image);
-      document.getElementById('product-price').textContent = productInfo.price;
-      
-
-      // função para adicionar produto ao carrinho
-      function adicionarAoCarrinho(button) {
-        // Obtém a div do produto
-        const divProduto = button.closest('.product-info');
-
-        // obtém o nome do produto
-        const nomeProduto = document.querySelector('#product-name').textContent;
-
-        // obtém o preço do produto
-        const precoProduto = parseFloat(document.querySelector('#product-price').innerText.replace('R$', ''));
-
-        // obtém a quantidade do produto
-        const quantidadeProduto = 1;
-
-        // cria o objeto do produto
-        const produto = {
-          nome: nomeProduto,
-          preco: precoProduto,
-          quantidade: quantidadeProduto
-        };
-
-        // obtendo informações do carrinho do localStorage
-        let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
-
-        // adicionando produto ao carrinho
-        carrinho.push(produto);
-
-        // armazenando carrinho atualizado no localStorage
-        localStorage.setItem("carrinho", JSON.stringify(carrinho));
-
-        // Mensagem de item adicionado ao carrinho
-        alert('Produto adicionado ao carrinho.')
-      }
-
-      // Adiciona o evento de clique no botão Comprar
-      const botaoComprar = document.querySelector('.btn-comprar');
-      if (botaoComprar) {
-          botaoComprar.addEventListener('click', function() {
-              adicionarAoCarrinho(this);
-          });
-      }
-
-    </script>
-
   </main>
   <%- include("partials/footer.ejs") %>
 </body>
