@@ -13,10 +13,11 @@ const PagesController = require('./src/app/Controllers/PagesController.js')
 app.get('/', PagesController.showIndex);
 app.get('/edituser', PagesController.showUser);
 app.get('/products', PagesController.showProducts)
-app.get('/produto', PagesController.showProduto)
+app.get('/produtos/:id', PagesController.showProduto)
 app.get('/carrinho', PagesController.showCarrinho)
 app.get('/cadastro', PagesController.registerUser)
 app.get('/checkout', PagesController.checkoutUser)
+app.post('/carrinho', PagesController.addCarrinho)
 app.post('/checkout/sucess', PagesController.checkoutSucess)
 
 app.get('/login',PagesController.showLogin);
