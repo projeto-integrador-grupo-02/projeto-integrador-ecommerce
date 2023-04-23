@@ -1,21 +1,32 @@
-let produtos = require('../databases/products.json')
-let categorias = require('../databases/categorias.json')
+/* let produtos = require('../databases/products.json') */
+const {Produto} = require('../databases/models')
+/* let categorias = require('../databases/categorias.json') */
+const {Categoria} = require('../databases/models')
 const path = require('path')
 const fs = require('fs')
 
 function showProdutos() {
-    return produtos
+    return Produto.findAll()
+            .then(data => res.json(data))
 }
 
 function showCategorias() {
-    return categorias
+    return Categoria.findAll()
+            .then(data => res.json(data))
 }
 
-function listProducts(page, perPage) {
+async function listProducts(page, perPage, id) {
     const startIndex = (page - 1) * perPage;
     const endIndex = page * perPage;
-    const produtosData = fs.readFileSync(path.resolve(__dirname, "../databases/products.json"));
-    const produtos = JSON.parse(produtosData);
+    let produtos
+
+    if(id) {
+        produtos = await Produto.findByPk(id, {include: 'categoria'})
+        produtos = [produtos]
+    } else {
+        produtos = await Produto.findAll()
+    }
+
     let produtosPaginados = produtos.slice(startIndex, endIndex);
     const totalPages = Math.ceil(produtos.length / perPage);
 
@@ -25,10 +36,10 @@ function listProducts(page, perPage) {
     }
 }
 
-function listCategorias(page, perPage) {
+async function listCategorias(page, perPage) {
     const startIndex = (page - 1) * perPage;
     const endIndex = page * perPage;
-    const categoriasData = fs.readFileSync(path.resolve(__dirname, "../databases/categorias.json"));
+    const categoriasData = await Categoria.findAll({include: produto})
     const categorias = JSON.parse(categoriasData);
     let categoriasPaginados = categorias.slice(startIndex, endIndex);
     const totalPages = Math.ceil(categorias.length / perPage);

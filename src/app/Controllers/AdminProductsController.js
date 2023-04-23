@@ -1,5 +1,6 @@
 const fs = require('fs')
 const ProdutosServices = require('../../../services/ProdutosServices')
+const {Produto} = require('../../../databases/models')
 
 const AdminProductsController = {
 
@@ -67,15 +68,28 @@ const AdminProductsController = {
     res.redirect('/admin/products')
   },
 
-  listProducts: (req, res) => {
-    const page = parseInt(req.query.page) || 1
-    const perPage = 5
-    const currentPage = parseInt(page)
-    const produtos = ProdutosServices.listProducts(currentPage, perPage)
-    const { produtosPaginados, totalPages } = ProdutosServices.listProducts(page, perPage);
-    res.render('products-list-admin.ejs', { produtos: produtosPaginados, totalPages, currentPage: page })
-
+  listProducts: async (req, res) => {
+    try {
+      const page = parseInt(req.query.page) || 1;
+      const perPage = 5;
+      const currentPage = parseInt(page);
+  
+      const { produtosPaginados, totalPages } = await ProdutosServices.listProducts(
+        currentPage,
+        perPage
+      );
+  
+      res.render("products-list-admin.ejs", {
+        produtos: produtosPaginados,
+        totalPages,
+        currentPage,
+      });
+    } catch (error) {
+      console.log(error);
+      res.status(500).send("Ocorreu um erro ao carregar a lista de produtos.");
+    }
   },
+  
 
   showCategorias: (req,res) => {
     const page = parseInt(req.query.page) || 1

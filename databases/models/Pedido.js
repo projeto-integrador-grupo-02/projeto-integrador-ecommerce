@@ -1,10 +1,25 @@
 module.exports = (sequelize, DataTypes) => {
+    const itens_pedido = sequelize.define(
+        'itens_pedido',
+        {
+            id_pedido: DataTypes.INTEGER,
+            id_produto: DataTypes.INTEGER,
+            quantidade: DataTypes.INTEGER
+        },
+        {
+            timestamps: false,
+            tableName: 'itens_pedido'
+        }
+    )
+    
+    
+    
     const Pedido = sequelize.define('Pedido',
         {
             id_pedido: {
                 type: DataTypes.INTEGER,
                 primaryKey: true,
-                autoIncremente: true,
+                autoIncrement: true,
                 allowNull: false
             },
             id_cliente: {
@@ -36,7 +51,7 @@ module.exports = (sequelize, DataTypes) => {
             {
                 timestamps: false,
                 as: 'produtos',
-                through: 'itens_pedido',
+                through: itens_pedido,
                 foreignKey: 'id_pedido',
                 otherKey: 'id_produto'
             }
