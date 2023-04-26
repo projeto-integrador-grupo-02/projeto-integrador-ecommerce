@@ -1,6 +1,5 @@
-/* let produtos = require('../databases/products.json') */
+
 const {Produto} = require('../databases/models')
-/* let categorias = require('../databases/categorias.json') */
 const {Categoria} = require('../databases/models')
 const path = require('path')
 const fs = require('fs')
@@ -10,10 +9,11 @@ function showProdutos() {
             .then(data => res.json(data))
 }
 
-function showCategorias() {
-    return Categoria.findAll()
-            .then(data => res.json(data))
+async function showCategorias() {
+    const categorias = await Categoria.findAll();
+    return categorias;
 }
+
 
 async function listProducts(page, perPage, id) {
     const startIndex = (page - 1) * perPage;
@@ -56,13 +56,13 @@ function adicionarProduto(produto) {
 
 function createProduct(produto) {
 
-    if (produtos.length > 0) {
-        produto.id = produtos[produtos.length - 1].id + 1
+    if (Produto.length > 0) {
+        produto.id = Produto[Produto.length - 1].id + 1
     } else {
-        produtos.id = 1
+        Produto.id = 1
     }
 
-    produtos.push(produto)
+    Produto.push(produto)
 
     salvar()
 }

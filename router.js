@@ -35,7 +35,7 @@ app.get('/login',PagesController.showLogin);
 app.get('/admin/login', AdminPagesController.showLogin)
 app.post('/admin/login', AdminPagesController.loginControl)
 
-/* app.use('/admin',logged, globalVar) */
+app.use('/admin',logged, globalVar)
 app.get('/admin/register', AdminPagesController.showRegister)
 app.get('/admin/admin-user', AdminPagesController.showControl)
 app.get('/admin/admin-user/:id/edit', AdminPagesController.controlEdit) 

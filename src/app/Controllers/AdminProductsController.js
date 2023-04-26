@@ -1,35 +1,51 @@
 const fs = require('fs')
 const ProdutosServices = require('../../../services/ProdutosServices')
 const {Produto} = require('../../../databases/models')
+const AdminServices = require('../../../services/AdminServices')
 
 const AdminProductsController = {
 
   showHomeAdmin: (req, res) => {
-   res.render('dashboard-admin.ejs')
+    let id = req.params.id
+    let adm = AdminServices.loadAdm(id)
+   res.render('dashboard-admin.ejs', {adm})
   },
 
-  createProduct: (req, res) => {
-    let categorias = ProdutosServices.showCategorias()
-    res.render('create-admin.ejs', {categorias})
-  },
+  createProduct: async (req, res) => {
+    let categorias = await ProdutosServices.showCategorias();
+    res.render('create-admin.ejs', {categorias});
+},
 
-  registerProduct: (req, res) => {
-    let novoNome = req.body.name.replace(' ', '-').toLowerCase() + '.jpg';
-    fs.renameSync(req.file.path, `public/img/${novoNome}`)
 
-    let produto = {
-      name: req.body.name,
-      description: req.body.description,
-      price: Number(req.body.price),
-      quantity: Number(req.body.quantity),
-      categoria: req.body.categoria,
-      image: `/img/${novoNome}`
-    }
-    //salvar obj no array de produtos
-    ProdutosServices.createProduct(produto)
-    res.redirect('/admin/products')
+registerProduct: async (req, res) => {
+  let novoNome = req.body.name.replace(' ', '-').toLowerCase() + '.jpg';
+  fs.renameSync(req.file.path, `public/img/${novoNome}`);
 
-  },
+  let produto = {
+      nome_produto: req.body.name,
+      descricao: req.body.description,
+      preco: Number(req.body.price),
+      quantidade: Number(req.body.quantity),
+      id_categoria: req.body.categoria, 
+      imagem: `/img/${novoNome}`,
+      disponivel: true
+  };
+    
+  const newProduto = await Produto.create({
+      nome_produto: produto.nome_produto,
+      descricao: produto.descricao,
+      preco: produto.preco,
+      quantidade: produto.quantidade,
+      disponivel: produto.disponivel,
+      imagem: produto.imagem,
+      id_categoria: produto.id_categoria
+  });
+
+  res.redirect('/admin/products');
+}
+,
+
+
   editProduct: (req, res) => {
     let id = req.params.id
 
@@ -91,11 +107,11 @@ const AdminProductsController = {
   },
   
 
-  showCategorias: (req,res) => {
+  showCategorias: async (req,res) => {
     const page = parseInt(req.query.page) || 1
     const perPage = 5
     const currentPage = parseInt(page)
-    const categorias = ProdutosServices.listCategorias(currentPage, perPage)
+    const categorias = await ProdutosServices.listCategorias(currentPage, perPage)
     const { categoriasPaginados, totalPages } = ProdutosServices.listCategorias(page, perPage);
     res.render('categorias-list-admin.ejs', { categorias: categoriasPaginados, totalPages, currentPage: page })
   },
