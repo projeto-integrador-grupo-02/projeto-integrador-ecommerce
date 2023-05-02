@@ -26,40 +26,43 @@
 
   <main>
     <h1>Meu Carrinho</h1>
-
-    <table id="cart-table">
-       <thead>
-        <tr>
-          <th>Produto</th>
-          <th>Preço</th>
-          <th>Quantidade</th>
-          <th>Subtotal</th>
-          <th>Ações</th>
-        </tr>
-      </thead>
-
-      <tbody id="cart-body">
-        <% for (let item of carrinho){ %>
-
+    <% if (carrinho.length == 0){ %>
+      <div>Seu Carrinho Está Vazio</div>
+    <%} else {%>
+      <table id="cart-table">
+        <thead>
           <tr>
-           <td><%= item.name %></td>
-           <td>R$ <%= item.price %></td>
-           <td>
-             <input type="number" value="<%= item.qtd %>" min="1">
-           </td>
-           <td>R$ 250,00</td>
-           <td>
-            <form method="post">
-              <input type="hidden" name="idProduto" value="<%= item.id %>">
-              <button>Remover</button>
-            </form>
-           </td>
-         </tr>
+            <th>Produto</th>
+            <th>Preço</th>
+            <th>Quantidade</th>
+            <th>Subtotal</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
 
-        <%}%> 
-      </tbody>
-    </table>
-    <button class="btn-comprar">Finalizar Compra</button>
+        <tbody id="cart-body">
+          <% for (let item of carrinho){ %>
+
+            <tr>
+            <td><%= item.name %></td>
+            <td>R$ <%= item.price %></td>
+            <td>
+              <input type="number" value="<%= item.qtd %>" min="1">
+            </td>
+            <td>R$ <%= item.subtotal %></td>
+            <td>
+              <form method="post">
+                <input type="hidden" name="idProduto" value="<%= item.id %>">
+                <button>Remover</button>
+              </form>
+            </td>
+          </tr>
+
+          <%}%> 
+        </tbody>
+      </table>
+      <button class="btn-comprar">Finalizar Compra</button>
+    <%}%>
   </main>
 
   <%- include("partials/footer.ejs") %>

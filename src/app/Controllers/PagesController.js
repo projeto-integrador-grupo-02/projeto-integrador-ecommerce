@@ -22,9 +22,12 @@ const PagesController = {
                     item.name = produto.name;
                     item.price = produto.price;
                     item.description = produto.description;
+                    item.subtotal = Number(item.qtd) * Number(item.price);
                 return item;
              })
-        } 
+        } else{
+            carrinho = []
+        }
         res.render('carrinho.ejs', {carrinho})
     },
     addCarrinho: (req, res) => {
