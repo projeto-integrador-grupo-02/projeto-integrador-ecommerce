@@ -29,9 +29,16 @@ const PagesController = {
     },
     addCarrinho: (req, res) => {
        if (req.session.carrinho == undefined){
+
         req.session.carrinho = []
        }
-        req.session.carrinho.push({id: req.body.idProduto, qtd: 1})
+       let idProduto = req.body.idProduto;
+       const produto = req.session.carrinho.find(item => item.id==idProduto)
+       if (produto == undefined){
+           req.session.carrinho.push({id: req.body.idProduto, qtd: 1})
+       } else{
+        produto.qtd++
+       }
         res.redirect("/carrinho")
     },
 
