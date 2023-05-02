@@ -26,7 +26,4 @@ servidor.use(express.static(path.join(__dirname, 'public')))
 servidor.use(router)
 
 
-
-
-
 servidor.listen(3002);
