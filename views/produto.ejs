@@ -30,9 +30,9 @@
       <img id="product-image" src="<%= produto.image %>" alt="<%= produto.name %>" width="200" height="200">
       <p id="product-price"><%= produto.price %></p>
       <form method="post" action="/carrinho">
-      <input type="hidden" value="<%= produto.id %>" name="idProduto">
-      <button type="submit" class="btn-comprar" id="comprar
-      -<%= produto.id %>>">Comprar</button>
+        <input type="hidden" value="<%= produto.id %>" name="idProduto">
+        <button type="submit" class="btn-comprar" id="comprar"
+        <%= produto.id %>>">+ Carrinho</button>
       </form>
     </div>
   </main>
