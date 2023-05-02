@@ -1,5 +1,6 @@
 const path = require('path');
 const produtos = require('../../../databases/products.json');
+const session = require('express-session');
 
 
 const PagesController = {
@@ -11,7 +12,21 @@ const PagesController = {
         const produto  = produtos.find(p => p.id== id);
         res.render('produto.ejs',{produto})
     },
-    showCarrinho: (req, res) => res.render('carrinho.ejs'),
+    showCarrinho: (req, res) => {
+        let carrinho = req.session.carrinho
+        if (carrinho != undefined){
+
+            carrinho = carrinho.map(item => {
+                const produto = produtos.find(p => p.id == item.id);
+                    item.image = produto.image;
+                    item.name = produto.name;
+                    item.price = produto.price;
+                    item.description = produto.description;
+                return item;
+             })
+        } 
+        res.render('carrinho.ejs', {carrinho})
+    },
     addCarrinho: (req, res) => {
        if (req.session.carrinho == undefined){
         req.session.carrinho = []
