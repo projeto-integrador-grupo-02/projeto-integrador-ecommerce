@@ -17,6 +17,8 @@ app.get('/produtos/:id', PagesController.showProduto)
 app.get('/carrinho', PagesController.showCarrinho)
 app.get('/cadastro', PagesController.registerUser)
 app.get('/checkout', PagesController.checkoutUser)
+app.get('/carrinho/decrementar', PagesController.decrementarCarrinho)
+app.post('/carrinho/incrementar', PagesController.incrementarCarrinho)
 app.post('/carrinho', PagesController.addCarrinho)
 app.post('/checkout/sucess', PagesController.checkoutSucess)
 
