@@ -47,7 +47,16 @@
             <td><%= item.name %></td>
             <td>R$ <%= item.price %></td>
             <td>
-              <input type="number" value="<%= item.qtd %>" min="1">
+              <%= item.qtd %>
+              <form method="post" action="/carrinho/incrementar">
+                <input type="hidden" value="<%= item.id %>" name="idItem">
+                <button type="submit">+</button>
+              </form>
+              <%= item.qtd %>
+              <form method="post" action="/carrinho/incrementar">
+                <input type="hidden" value="<%= item.id %>" name="idItem">
+                <button type="submit">-</button>
+              </form>
             </td>
             <td>R$ <%= item.subtotal %></td>
             <td>
@@ -61,7 +70,9 @@
           <%}%> 
         </tbody>
       </table>
-      <button class="btn-comprar">Finalizar Compra</button>
+      <form method="post" action="/checkout">
+        <button class="btn-comprar">Finalizar Compra</button>
+      </form>
     <%}%>
   </main>
 
