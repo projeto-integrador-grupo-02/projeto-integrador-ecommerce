@@ -45,6 +45,20 @@ const PagesController = {
         res.redirect("/carrinho")
     },
 
+    incrementarCarrinho: (req, res) => {
+        let carrinho = req.session.carrinho;
+        let item = carrinho.find(item => item.id == req.body.idItem)
+        item.qtd = item.qtd +1
+        res.redirect("/carrinho")
+    },
+
+    decrementarCarrinho: (req, res) => {
+        let carrinho = req.session.carrinho;
+        let item = carrinho.find(item => item.id == req.body.idItem)
+        item.qtd = item.qtd -1
+        res.redirect("/carrinho")
+    },
+    
     registerUser: (req, res) => res.render('cadastro.ejs'),
     checkoutUser: (req,res) => res.render('checkout.ejs'),
     checkoutSucess: (req,res) => res.render('checkoutSucess.ejs'),
