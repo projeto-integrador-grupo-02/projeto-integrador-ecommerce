@@ -55,7 +55,13 @@ const PagesController = {
     decrementarCarrinho: (req, res) => {
         let carrinho = req.session.carrinho;
         let item = carrinho.find(item => item.id == req.body.idItem)
-        item.qtd = item.qtd -1
+            if (item.qtd == 1){
+            carrinho = carrinho.filter(item => item.id != req.body.idItem)
+            req.session.carrinho = carrinho;
+
+        }else{
+            item.qtd = item.qtd -1
+        }
         res.redirect("/carrinho")
     },
     
