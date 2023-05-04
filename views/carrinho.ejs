@@ -52,8 +52,7 @@
                 <input type="hidden" value="<%= item.id %>" name="idItem">
                 <button type="submit">+</button>
               </form>
-              <%= item.qtd %>
-              <form method="post" action="/carrinho/incrementar">
+              <form method="post" action="/carrinho/decrementar">
                 <input type="hidden" value="<%= item.id %>" name="idItem">
                 <button type="submit">-</button>
               </form>
