@@ -16,5 +16,11 @@
         "email": "juiz@gmail.com",
         "password": "$2b$10$y5jZBZ3l1.UtymiqLuS61esJnUNsYtB1UOiY7IQetmUqmn87a9eeG",
         "id": 3
+    },
+    {
+        "name": "joao da silva",
+        "email": "sas@gmail.com",
+        "password": "$2b$10$prngwNSvy/6mpIIEEy/DCuerWVZxX311innsSKX69V00Bqy4siR8i",
+        "id": 4
     }
 ]

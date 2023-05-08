@@ -9,10 +9,7 @@ function showProdutos() {
             .then(data => res.json(data))
 }
 
-async function showCategorias() {
-    const categorias = await Categoria.findAll();
-    return categorias;
-}
+
 
 
 async function listProducts(page, perPage, id) {
@@ -36,19 +33,24 @@ async function listProducts(page, perPage, id) {
     }
 }
 
+async function showCategorias() {
+    const categorias = await Categoria.findAll();
+    return categorias;
+}
+
 async function listCategorias(page, perPage) {
     const startIndex = (page - 1) * perPage;
     const endIndex = page * perPage;
-    const categoriasData = await Categoria.findAll({include: produto})
-    const categorias = JSON.parse(categoriasData);
-    let categoriasPaginados = categorias.slice(startIndex, endIndex);
-    const totalPages = Math.ceil(categorias.length / perPage);
+    const {count, rows} = await Categoria.findAndCountAll({include: 'produto', limit: perPage, offset: startIndex })
+    const categorias = rows.map(categoria => categoria.toJSON());
+    const totalPages = Math.ceil(count / perPage);
 
     return {
-        categoriasPaginados,
+        categorias,
         totalPages
     }
 }
+
 
 function adicionarProduto(produto) {
     produtos.push(produto)
@@ -96,12 +98,6 @@ function loadProduct(idP) {
         throw new Error('Não existe esse produto')
     }
     return produto
-}
-
-function salvar() {
-    const produtosData = path.resolve(__dirname + "/../databases/products.json");
-
-    fs.writeFileSync(produtosData, JSON.stringify(produtos, null, 4));
 }
 
 function salvarCategoria() {

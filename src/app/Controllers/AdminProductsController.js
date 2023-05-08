@@ -111,10 +111,12 @@ registerProduct: async (req, res) => {
     const page = parseInt(req.query.page) || 1
     const perPage = 5
     const currentPage = parseInt(page)
-    const categorias = await ProdutosServices.listCategorias(currentPage, perPage)
-    const { categoriasPaginados, totalPages } = ProdutosServices.listCategorias(page, perPage);
-    res.render('categorias-list-admin.ejs', { categorias: categoriasPaginados, totalPages, currentPage: page })
+    const { categorias, totalPages } = await ProdutosServices.listCategorias(page, perPage);
+    res.render('categorias-list-admin.ejs', { categorias, totalPages,currentPage: page })
   },
+
+
+
 
   editCategoria:(req,res) => {
     let id = req.params.id
