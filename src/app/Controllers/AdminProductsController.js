@@ -1,6 +1,7 @@
 const fs = require('fs')
 const ProdutosServices = require('../../../services/ProdutosServices')
 const {Produto} = require('../../../databases/models')
+const {Categoria} = require('../../../databases/models')
 const AdminServices = require('../../../services/AdminServices')
 
 const AdminProductsController = {
@@ -139,6 +140,7 @@ registerProduct: async (req, res) => {
   },
 
   deleteCategoria: (req,res) => {
+    
     let id = req.params.id
 
     ProdutosServices.eraseCategoria(id)
@@ -152,10 +154,14 @@ registerProduct: async (req, res) => {
     res.render('create-categoria-admin.ejs', {categorias})
   },
 
-  registerCategorias: (req,res) => {
-    let categoria = {
-      name: req.body.name
-    }
+  registerCategorias: async (req,res) => {
+  let categoria = {
+    nome_categoria: req.body.name
+  }
+
+    let newCategoria = await Categoria.create({
+      nome_categoria: categoria.nome_categoria
+    })
 
     ProdutosServices.createCategoria(categoria)
 

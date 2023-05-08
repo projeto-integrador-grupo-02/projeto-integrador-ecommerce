@@ -73,7 +73,9 @@ function adicionarCategoria(categoria) {
     categorias.push(categoria)
 }
 
-function createCategoria(categoria) {
+async function createCategoria(categoria) {
+    const categorias = await Categoria.findAll();
+    
     if (categorias.length > 0) {
         categoria.id = categorias[categorias.length - 1].id + 1
     } else {
@@ -82,7 +84,6 @@ function createCategoria(categoria) {
 
     categorias.push(categoria)
 
-    salvarCategoria()
 }
 
 function loadCategoria(idP) {
@@ -100,11 +101,6 @@ function loadProduct(idP) {
     return produto
 }
 
-function salvarCategoria() {
-    const categoriasData = path.resolve(__dirname + "/../databases/categorias.json");
-
-    fs.writeFileSync(categoriasData, JSON.stringify(categorias, null, 4));
-}
 
 function updateProduct(idP, productData) {
     let produto = produtos.find(p => p.id == idP)
@@ -141,14 +137,13 @@ function eraseProduct(idP) {
     salvar()
 }
 
-function eraseCategoria(idP) {
-    let posicao = categorias.findIndex(p => p.id == idP)
+async function eraseCategoria(idP) {
+    const categorias = await Categoria.findAll();
+    let posicao = categorias.findIndex(p => p.id_categoria == idP)
     if (posicao == -1) {
         throw new Error('Não existe esse produto')
     }
     categorias.splice(posicao, 1)
-
-    salvarCategoria()
 }
 
 const ProdutosServices = {
