@@ -27,6 +27,7 @@
                             <th>Imagem</th>
                             <th>Nome</th>
                             <th>Descrição</th>
+                            <th>Categoria</th>
                             <th>Preço</th>
                             <th>Quantidade</th>
                             <th>Ações</th>
@@ -35,51 +36,28 @@
                     <tbody>
                         <% for (const produto of produtos) { %>
                             <tr>
-                                <li>
-                                    <td>
-                                        <%= produto?.id %>
-                                    </td>
-                                </li>
-                                <li id="m-image">
-                                    <td>
-                                        <img src="<%= produto?.image %>">
-                                    </td>
-                                </li>
-                                <li id="#m-nome">
-                                    <td>
-                                        <%= produto?.name %>
-                                    </td>
-                                </li>
-                                <li id="#m-descricao">
-                                    <td>
-                                        <%= produto?.description %>
-                                    </td>
-                                </li>
-                                <li id="#m-valor">
-                                    <td>
-                                        <%= produto?.price %>
-                                    </td>
-                                </li>
-                                <li id="m-quantidade'">
-                                    <td>
-                                        <%= produto?.quantity %>
-                                    </td>
-                                </li>
-                                <li>
-                                    <td>
-                                        <a href="http://localhost:3002/admin/products/<%= produto.id %>/edit">
-                                            <i class="fa-solid fa-pen-to-square"></i>
-                                        </a>
-                                        <a href="http://localhost:3002/admin/products/<%= produto.id %>/delete">
-                                            <i class="fa-solid fa-trash"></i>
-                                        </a>
-                                    </td>
-                                </li>
-                                <% } %>
+                                <td><%= produto?.id %></td>
+                                <td><img src="<%= produto?.imagem %>"></td>
+                                <td><%= produto?.nome_produto %></td>
+                                <td><%= produto?.descricao %></td>
+                                <td><%= produto?.id_categoria %></td>
+                                <td><%= produto?.preco %></td>
+                                <td><%= produto?.quantidade %></td>
+                                <td>
+                                    <a href="/admin/products/<%= produto.id %>/edit">
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                    </a>
+                                    <a href="/admin/products/<%= produto.id %>/delete">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        <% } %>
+                        
                             </tr>
                     </tbody>
                 </table>
-                <a href="http://localhost:3002/admin/products/create">
+                <a href="/admin/products/create">
                     <button type="button" class="btn">
                         Cadastrar Produto
                     </button>

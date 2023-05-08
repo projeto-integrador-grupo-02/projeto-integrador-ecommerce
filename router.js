@@ -1,12 +1,22 @@
+const multer = require('multer');
 const express = require('express')
+const bodyParser = require('body-parser')
+
+const logged = require('./src/app/middleware/logged')
+const globalVar = require('./src/app/middleware/globalVar')
 //Criar roteador
 const app = express.Router()
 const path = require('path')
+
+app.use(bodyParser.urlencoded({ extended: false }))
+
+const multerMid = multer({dest:'public/img'});
 
 const AdminProductsController = require('./src/app/Controllers/AdminProductsController.js')
 const AdminClientsController = require('./src/app/Controllers/AdminClientsController.js')
 const AdminOrdersController = require('./src/app/Controllers/AdminOrdersController.js')
 const PagesController = require('./src/app/Controllers/PagesController.js')
+const AdminPagesController = require('./src/app/Controllers/AdminPagesController')
 
 
 
@@ -24,16 +34,34 @@ app.post('/checkout/sucess', PagesController.checkoutSucess)
 
 app.get('/login',PagesController.showLogin);
 
+/* Admin Login */
+app.get('/admin/login', AdminPagesController.showLogin)
+app.post('/admin/login', AdminPagesController.loginControl)
+
+/* app.use('/admin',logged, globalVar) */
+app.get('/admin/register', AdminPagesController.showRegister)
+app.get('/admin/admin-user', AdminPagesController.showControl)
+app.get('/admin/admin-user/:id/edit', AdminPagesController.controlEdit) 
+app.get('/admin/admin-user/:id/delete', AdminPagesController.controlDelete)
+app.post('/admin/admin-user/:id/update', AdminPagesController.updateAdmin)
+app.post('/admin/admin-user/store', AdminPagesController.registerControl) 
 /* Admin */
-/* app.get('/admin', AdminProductsController.showIndex) */
+
 app.get('/admin', AdminProductsController.showHomeAdmin)
+
 app.get('/admin/products', AdminProductsController.listProducts)
-/* app.get('/admin/products/:page', AdminProductsController.pagesProducts) */
-app.get('/admin/products/create', AdminProductsController.createProduct)
-app.post('/admin/products/store', AdminProductsController.registerProduct)
+app.get('/admin/products/create',AdminProductsController.createProduct)
+app.post('/admin/products/store',  multerMid.single('image'), AdminProductsController.registerProduct)
 app.get('/admin/products/:id/edit', AdminProductsController.editProduct)
-app.post('/admin/products/:id/update', AdminProductsController.updateProduct)
+app.post('/admin/products/:id/update', multerMid.single('image'), AdminProductsController.updateProduct)
 app.get('/admin/products/:id/delete', AdminProductsController.deleteProduct)
+
+app.get('/admin/products/categorias', AdminProductsController.showCategorias)
+app.get('/admin/products/categorias/create', AdminProductsController.createCategorias)
+app.post('/admin/products/categorias/store', AdminProductsController.registerCategorias)
+app.get('/admin/products/categorias/:id/edit', AdminProductsController.editCategoria)
+app.post('/admin/products/categorias/:id/update', AdminProductsController.updateCategoria)
+app.get('/admin/products/categorias/:id/delete', AdminProductsController.deleteCategoria)
 
 /*Admin clients */
 app.get('/admin/clients', AdminClientsController.listClients)

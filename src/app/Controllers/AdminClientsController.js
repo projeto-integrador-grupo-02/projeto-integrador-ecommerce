@@ -16,10 +16,10 @@ const AdminClientsController = {
       },
     editClients: (req,res) => {
         let id = req.params.id
-        let client = ClientsServices.loadClient(id)
+        let cliente = ClientsServices.loadClient(id)
         let clients = ClientsServices.listarClients()
 
-        res.render('edit-user-admin', {client, clients})
+        res.render('edit-user-admin', {cliente, clients})
 
     },
     updateClients: (req,res) => {

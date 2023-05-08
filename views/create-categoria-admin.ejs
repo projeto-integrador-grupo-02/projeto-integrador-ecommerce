@@ -20,30 +20,11 @@
         <div class="dash-content">
             <div class="content">
             <div class="container-products">
-                <h2 class="title">Cadastrar Produto</h2>
-                <form action="/admin/products/store" method="post" class="create-products" enctype="multipart/form-data">
+                <h2 class="title">Cadastrar Categoria</h2>
+                <form action="/admin/products/categorias/store" method="post" class="create-products">
                     
-                    <input type="file" id="image" name="image" class="image">
-
                     <label for="m-nome">Nome</label>
                     <input type="text" id="name" name="name">
-
-                    <label for="m-descricao">Descrição</label>
-                    <input type="text" id="description" name="description">
-
-                    <label for="m-valor">Valor</label>
-                    <input type="text" id="price" name="price">
-
-                    <label for="m-valor">Categoria</label>
-                    <select name="categoria" id="categoria">
-                        <% for (categoria of categorias) { %>
-                            <option name="categoria" value="<%= categoria.id_categoria %>"><%= categoria.nome_categoria %></option>
-                        <% } %>
-                    </select>
-                    
-
-                    <label for="m-quantidade">Quantidade</label>
-                    <input type="text" id="quantity" name="quantity">
 
                     <button class="btn" id="btnSalvar" type="submit">Salvar</button>
                 </form>
