@@ -57,7 +57,7 @@ CREATE TABLE IF NOT EXISTS `arome`.`enderecos` (
   `estado` VARCHAR(255) NOT NULL,
   `cidade` VARCHAR(255) NOT NULL,
   PRIMARY KEY (`id_endereco`),
-  INDEX `id_cliente` (`id_cliente` ASC) VISIBLE,
+  INDEX `id_cliente` (`id_cliente` ASC),
   CONSTRAINT `enderecos_ibfk_1`
     FOREIGN KEY (`id_cliente`)
     REFERENCES `arome`.`clientes` (`id_cliente`))
@@ -79,9 +79,9 @@ CREATE TABLE IF NOT EXISTS `arome`.`clientes` (
   `id_endereco` INT(11) NULL DEFAULT NULL,
   `data_nascimento` DATE NULL DEFAULT NULL,
   PRIMARY KEY (`id_cliente`),
-  UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE,
-  UNIQUE INDEX `telefone_UNIQUE` (`telefone` ASC) VISIBLE,
-  INDEX `id_endereco_idx` (`id_endereco` ASC) VISIBLE,
+  UNIQUE INDEX `email_UNIQUE` (`email` ASC),
+  UNIQUE INDEX `telefone_UNIQUE` (`telefone` ASC),
+  INDEX `id_endereco_idx` (`id_endereco` ASC),
   CONSTRAINT `id_endereco`
     FOREIGN KEY (`id_endereco`)
     REFERENCES `arome`.`enderecos` (`id_endereco`)
@@ -102,7 +102,7 @@ CREATE TABLE IF NOT EXISTS `arome`.`pedidos` (
   `status_pedido` VARCHAR(50) NOT NULL,
   `total_pedido` DECIMAL(10,2) NOT NULL,
   PRIMARY KEY (`id_pedido`),
-  INDEX `id_cliente` (`id_cliente` ASC) VISIBLE,
+  INDEX `id_cliente` (`id_cliente` ASC),
   CONSTRAINT `pedidos_ibfk_1`
     FOREIGN KEY (`id_cliente`)
     REFERENCES `arome`.`clientes` (`id_cliente`))
@@ -124,7 +124,7 @@ CREATE TABLE IF NOT EXISTS `arome`.`produtos` (
   `disponivel` TINYINT(4) NOT NULL,
   `imagem` VARCHAR(45) NULL DEFAULT NULL,
   PRIMARY KEY (`id_produto`),
-  INDEX `id_categoria` (`id_categoria` ASC) VISIBLE,
+  INDEX `id_categoria` (`id_categoria` ASC),
   CONSTRAINT `produtos_ibfk_1`
     FOREIGN KEY (`id_categoria`)
     REFERENCES `arome`.`categorias` (`id_categoria`))
@@ -142,7 +142,7 @@ CREATE TABLE IF NOT EXISTS `arome`.`itens_pedido` (
   `quantidade` INT(11) NOT NULL,
   `preco_unitario` DECIMAL(10,2) NOT NULL,
   PRIMARY KEY (`id_pedido`, `id_produto`),
-  INDEX `id_produto` (`id_produto` ASC) VISIBLE,
+  INDEX `id_produto` (`id_produto` ASC),
   CONSTRAINT `itens_pedido_ibfk_1`
     FOREIGN KEY (`id_pedido`)
     REFERENCES `arome`.`pedidos` (`id_pedido`),
@@ -160,7 +160,7 @@ CREATE TABLE IF NOT EXISTS `arome`.`produto_categoria` (
   `id_produto` INT(11) NOT NULL,
   `id_categoria` INT(11) NOT NULL,
   PRIMARY KEY (`id_produto`, `id_categoria`),
-  INDEX `id_categoria_idx` (`id_categoria` ASC) VISIBLE,
+  INDEX `id_categoria_idx` (`id_categoria` ASC),
   CONSTRAINT `id_categoria`
     FOREIGN KEY (`id_categoria`)
     REFERENCES `arome`.`categorias` (`id_categoria`)
