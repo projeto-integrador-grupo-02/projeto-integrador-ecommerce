@@ -78,9 +78,9 @@ registerProduct: async (req, res) => {
 
   },
 
-  deleteProduct: (req, res) => {
+  deleteProduct: async (req, res) => {
     let id = req.params.id
-    ProdutosServices.eraseProduct(id)
+    await ProdutosServices.eraseProduct(id)
 
     res.redirect('/admin/products')
   },
@@ -139,11 +139,11 @@ registerProduct: async (req, res) => {
     res.redirect('/admin/products/categorias')
   },
 
-  deleteCategoria: (req,res) => {
+  deleteCategoria: async (req,res) => {
     
     let id = req.params.id
 
-    ProdutosServices.eraseCategoria(id)
+    await ProdutosServices.eraseCategoria(id)
 
     res.redirect('/admin/products/categorias')
 
