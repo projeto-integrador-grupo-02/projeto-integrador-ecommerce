@@ -36,28 +36,28 @@
                         <tr>
                             <li>
                                 <td id="id-pedido">
-                                    <%= order?.id %>
+                                    <%= order?.id_pedido %>
                                     <span id="detalhes-pedidos"><a href="/admin/orders/<%= order.id_pedido %>/list">Ver detalhes</a></span>
                                 </td>
                             </li>
                             <li id="contact-person">
                                 <td>
-                                    <%= order?.contactPerson %>
+                                    <%= order?.id_cliente %>
                                 </td>
                             </li>
                             <li id="data">
                                 <td>
-                                    <%= order?.dataOrder %>
+                                    <%= order?.data_pedido %>
                                 </td>
                             </li>
                             <li id="amount">
                                 <td>
-                                    <%= order?.amount %>
+                                    <%= order?.total_pedido %>
                                 </td>
                             </li>
                             <li id="status">
                                 <td>
-                                    <%= order?.status %>
+                                    <%= order?.status_pedido %>
                                 </td>
                             </li>
                         </tr>

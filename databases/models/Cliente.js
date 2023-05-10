@@ -44,13 +44,13 @@ module.exports = (sequelize, DataTypes) => {
         )
 
         Cliente.associate = (models) => {
-            Cliente.belongsToMany(models.Pedido, {
+            /* Cliente.belongsToMany(models.Pedido, {
                 as: 'pedidos',
-                through: 'itens_pedido',
+                through: 'pedidos',
                 foreignKey: 'id_cliente',
                 otherKey: 'id_pedido',
                 timestamps: false
-            })
+            }) */
         }
 
 

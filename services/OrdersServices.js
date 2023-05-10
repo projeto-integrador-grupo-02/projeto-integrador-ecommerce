@@ -39,16 +39,20 @@ function loadProductClient(idP) {
     return produtos.filter(p => idP.includes(p.id))
 }
 
-async function loadItemsClient(idP) {
-    const order = await Pedido.findOne({where: {id_pedido: idP}})
-    
-    if(!order) {
-        return []
+async function loadItemsClient(id_pedido) {
+    const orders = await Pedido.findAll({ include: ['produtos'], where: { id_pedido } });
+    console.log(orders[0].produtos[0]);
+  
+    if (!orders) {
+      return [];
     }
-
-    const items = order.items.map(idI => products.find(prod => prod.id == idI))
-    return items
-}
+  
+    /* const orderIds = orders.map((order) => order.id_pedido);
+    const items = await Produto.findAll({ where: { id_produto: orderIds } }); */
+  const itens = orders[0]
+    return itens
+  }
+  
 
 
 module.exports = {

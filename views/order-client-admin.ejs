@@ -70,19 +70,19 @@
                     </tr>
                         <tr>
 
-                            <% for (const item of items) { %>
+                            <% for (const item of items.produtos) { %>
                                 <tr>
                                     <td>
-                                        
+                                        <%= item?.quantidade %>
                                     </td>
                                 <td>
-                                    <%= item?.name %>
+                                    <%= item?.nome_produto %>
                                 </td>
                                 <td>
                                     <img src="<%= item?.image %>">
                                 </td>
                                 <td id="price">
-                                    <%= item?.price %>
+                                    <%= item?.preco%>
                                 </td>
                             </tr>
                         </tr>

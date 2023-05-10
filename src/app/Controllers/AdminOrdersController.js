@@ -25,7 +25,7 @@ const AdminOrdersController = {
     listOrderClient: async (req, res) => {
         let id = req.params.id
         let order = await OrdersServices.loadOrder(id)
-        let client = await ClientsServices.loadClient(order.contactPerson)
+        let client = await ClientsServices.loadClient(order.id_cliente)
         let usuario = await client.nome + ' ' + client.sobrenome
         let items = await OrdersServices.loadItemsClient(id)
        
