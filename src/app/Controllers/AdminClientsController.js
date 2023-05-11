@@ -3,16 +3,21 @@ const ClientsServices = require('../../../services/ClientsServices')
 
 const AdminClientsController = {
     
-    listClients: (req, res) => {
+    listClients: async (req, res) => {
+
+        try {
+            const page = parseInt(req.query.page) || 1
+            const perPage = 5
+            const currentPage = parseInt(page)
+            const { clientsPaginados, totalPages } = await ClientsServices.listClients(currentPage, perPage);
+            const pedidos = await ClientsServices.pedidosLink()
         
-        const pedidos = ClientsServices.pedidosLink()
-        const page = parseInt(req.query.page) || 1
-        const perPage = 5
-        const currentPage = parseInt(page)
-        const clients = ClientsServices.listClients(currentPage, perPage)
-        const { clientsPaginados, totalPages } = ClientsServices.listClients(page, perPage);
-        res.render('clients-list-adm.ejs', { clients: clientsPaginados, totalPages, currentPage: page, pedidos})
-    
+            res.render('clients-list-adm.ejs', { clients: clientsPaginados, totalPages, currentPage, pedidos})
+        } catch {
+            console.log(error);
+            res.status(500).send("Ocorreu um erro ao carregar a lista de clientes.");
+        }
+        
       },
     editClients: (req,res) => {
         let id = req.params.id
