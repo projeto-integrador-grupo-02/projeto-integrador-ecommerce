@@ -1,14 +1,13 @@
-const clients = require('../databases/usuarios.json')
-const orders = require('../databases/pedidos.json')
-const products = require('../databases/products.json')
+const {Cliente} = require('../databases/models')
+const {Pedido} = require('../databases/models')
+const {Produto} = require('../databases/models')
 const path = require('path')
 const fs = require('fs')
 
-function listOrders(page, perPage) {
+async function listOrders(page, perPage) {
     const startIndex = (page - 1) * perPage;
     const endIndex = page * perPage;
-    const ordersData = fs.readFileSync(path.resolve(__dirname, "../databases/pedidos.json"));
-    const orders = JSON.parse(ordersData);
+    const orders = await Pedido.findAll()
     let ordersPaginados = orders.slice(startIndex, endIndex);
     const totalPages = Math.ceil(orders.length / perPage);
     return {
@@ -17,8 +16,8 @@ function listOrders(page, perPage) {
     }
 }
 
-function loadOrder(idP) {
-    let order = orders.find(p => p.id == idP)
+async function loadOrder(idP) {
+    let order = await Pedido.findOne({where: {id_pedido: idP}})
 
     if (order == undefined) {
         throw new Error('Não existe esse pedido')
@@ -27,8 +26,8 @@ function loadOrder(idP) {
 
 }
 
-function loadIdClient(idP) {
-    let idClient = orders.find(p => p.contactPerson == idP)
+async function loadIdClient(idP) {
+    let idClient = await Cliente.findOne({where: {id_cliente: idP}})
 
     return idClient
 }
@@ -40,8 +39,8 @@ function loadProductClient(idP) {
     return produtos.filter(p => idP.includes(p.id))
 }
 
-function loadItemsClient(idP) {
-    const order = orders.find(o => o.id == idP)
+async function loadItemsClient(idP) {
+    const order = await Pedido.findOne({where: {id_pedido: idP}})
     
     if(!order) {
         return []

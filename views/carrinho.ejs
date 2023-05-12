@@ -59,9 +59,9 @@
             </td>
             <td>R$ <%= item.subtotal %></td>
             <td>
-              <form method="post">
-                <input type="hidden" name="idProduto" value="<%= item.id %>">
-                <button>Remover</button>
+              <form method="post" action="/carrinho/decrementar">
+                <input type="hidden" value="<%= item.id %>" name="idItem">
+                <button type="submit">Remover</button>
               </form>
             </td>
           </tr>

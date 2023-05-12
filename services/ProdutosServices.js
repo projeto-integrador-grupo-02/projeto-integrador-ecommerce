@@ -92,9 +92,8 @@ function loadCategoria(idP) {
     return categoria
 }
 
-function loadProduct(idP) {
-    let produto = produtos.find(p => p.id == idP)
-
+async function loadProduct(idP) {
+    let produto = await Produto.findOne({where: {id_produto: idP}})
     if (produto == undefined) {
         throw new Error('Não existe esse produto')
     }
@@ -127,23 +126,12 @@ function updateCategoria(idP, categoriaData) {
     salvarCategoria()
 }
 
-function eraseProduct(idP) {
-    let posicao = produtos.findIndex(p => p.id == idP)
-    if (posicao == -1) {
-        throw new Error('Não existe esse produto')
-    }
-    produtos.splice(posicao, 1)
-
-    salvar()
+async function eraseProduct(idP) {
+    await Produto.destroy({where: {id_produto: idP}})
 }
 
 async function eraseCategoria(idP) {
-    const categorias = await Categoria.findAll();
-    let posicao = categorias.findIndex(p => p.id_categoria == idP)
-    if (posicao == -1) {
-        throw new Error('Não existe esse produto')
-    }
-    categorias.splice(posicao, 1)
+    await Categoria.destroy({where: {id_categoria: idP}})
 }
 
 const ProdutosServices = {

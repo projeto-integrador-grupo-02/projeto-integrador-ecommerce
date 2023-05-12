@@ -1,12 +1,11 @@
-const clients = require('../databases/usuarios.json')
-const pedidos = require('../databases/pedidos.json')
+const {Cliente} = require('../databases/models')
+const {Pedido} = require('../databases/models')
 const path = require('path')
 const fs = require('fs')
 
 
-function listarClients() {
-    const clientsData = fs.readFileSync(path.resolve(__dirname, "../databases/usuarios.json"));
-    const clients = JSON.parse(clientsData);
+async function listarClients() {
+    const clients = await Cliente.findAll()
 
     return clients
 }
@@ -27,11 +26,10 @@ function salvar() {
     fs.writeFileSync(clientsData, JSON.stringify(clients, null, 4));
 }
 
-function listClients(page, perPage) {
+async function listClients(page, perPage) {
     const startIndex = (page - 1) * perPage;
     const endIndex = page * perPage;
-    const clientsData = fs.readFileSync(path.resolve(__dirname, "../databases/usuarios.json"));
-    const clients = JSON.parse(clientsData);
+    const clients = await Cliente.findAll()
     let clientsPaginados = clients.slice(startIndex, endIndex);
     const totalPages = Math.ceil(clients.length / perPage);
     return {
@@ -41,13 +39,12 @@ function listClients(page, perPage) {
 }
 
 function pedidosLink() {
-    const pedidosData = fs.readFileSync(path.resolve(__dirname, "../databases/pedidos.json"));
-    const pedidos = JSON.parse(pedidosData);
+    const pedidos = Pedido.findAll()
     return pedidos
 }
 
-function loadClient(idP) {
-    let cliente = clients.find((p) => p.id == idP)
+async function loadClient(idP) {
+    let cliente = await Cliente.findOne({where: {id_cliente: idP}})
     if (cliente == undefined) {
         throw new Error('Não existe esse cliente')
     }
