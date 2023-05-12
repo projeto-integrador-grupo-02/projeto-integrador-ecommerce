@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "name": "Vela Super"
+    },
+    {
+        "id": 2,
+        "name": "Aromatizante"
+    },
+    {
+        "id": 3,
+        "name": "Água Perfumada"
+    },
+    {
+        "id": 4,
+        "name": "Sabonete Líquido"
+    },
+    {
+        "id": 5,
+        "name": "Sais de Banhos"
+    },
+    {
+        "id": 6,
+        "name": "Óleo bifásico"
+    },
+    {
+        "name": "Vela P",
+        "id": 10
+    },
+    {
+        "name": "Vela M",
+        "id": 11
+    },
+    {
+        "name": "Cheirinho",
+        "id": 12
+    }
+]

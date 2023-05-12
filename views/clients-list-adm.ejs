@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script src="/js/admin-products.js" defer></script>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/admin.css">
+        <link rel="stylesheet" href="/css/main-css.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+            integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <script src="https://kit.fontawesome.com/4917086014.js" crossorigin="anonymous"></script>
+        <title>Administração</title>
+    </head>
+
+    <body>
+        
+        <%- include('partials/menu-admin.ejs')%>
+
+            <div class="container-products">
+                <h2 class="title">Controle de Clientes</h2>
+                <input type="search" class="busca" placeholder="Buscar cliente" oninput="search()">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Id_Cliente</th>
+                            <th>Nome</th>
+                            <th>Total em compras</th>
+                            <th>Ordens</th>
+                            <th>E-mail</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for (const cliente of clients) { %>
+                            <tr>
+                                <li id="id">
+                                    <td>
+                                        <%= cliente?.id_cliente %>
+                                    </td>
+                                </li>
+                                <li id="name">
+                                    <td>
+                                        <%= cliente?.nome + ' ' + cliente?.sobrenome %>
+                                    </td>
+                                </li>
+                                <li id="balance">
+                                    <!-- <td>
+                                        <%= cliente?.balance %>
+                                    </td> -->
+                                </li>
+                                <li id="pedidos">
+                                    <td>
+                                        <% const clientePedidos = pedidos.filter(pedido => pedido.contactPerson === cliente.id); %>
+                                        <% for (const pedido of clientePedidos) { %>
+                                            <a href=""><%= pedido?.id %></a>
+                                        <% } %>
+                                    </td>
+                                </li>
+                                <li id="email">
+                                    <td>
+                                        <%= cliente?.email %>
+                                    </td>
+                                </li>
+                                <li>
+                                    <td>
+                                        <a href="http://localhost:3002/admin/clients/<%= cliente.id %>/edit">
+                                            <i class="fa-solid fa-pen-to-square"></i>
+                                        </a>
+                                        <a href="http://localhost:3002/admin/clients/<%= cliente.id %>/delete">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </a>
+                                    </td>
+                                </li>
+                                <% } %>
+                            </tr>
+                    </tbody>
+                </table>
+                    
+                <%- include('partials/paginacao.ejs')%>
+                
+            </div>
+            <%- include('partials/script-admin.ejs')%>
+    </body>
+
+</html>

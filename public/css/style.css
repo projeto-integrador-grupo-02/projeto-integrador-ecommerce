@@ -48,6 +48,9 @@
     --z-tooltip: 10;
 
 }
+h1 {
+    font-family: var(--font-cursive);
+}
 html {
     scroll-behavior: smooth;
     font-size: 24px;
@@ -151,6 +154,7 @@ ul {
 
 
 .hero {
+    padding-top: 60PX;
     width: 100%;
 }
 
@@ -195,6 +199,7 @@ ul {
 
 .offer {
     width: 100%;
+    padding-bottom: 80px;
 }
 
 
@@ -202,6 +207,7 @@ ul {
 .offer-content {
    
     margin-top: var(--mb-3);
+    padding-bottom: 80px;
     
 }
 
@@ -311,7 +317,7 @@ ul {
     cursor: pointer;
 }*/
 
-/*.offer-item .offer-img {
+/*.offer-item .offer-img 
     height: 200px;
     display: flex;
     align-items: flex-end;

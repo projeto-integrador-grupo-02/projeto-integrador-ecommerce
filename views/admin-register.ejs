@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale-1.0">
+    <title>Document</title>
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
+        <%- include('partials/head-admin.ejs')%>
+    <link rel="stylesheet" href="/css/admin-login.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+<body>
+    <%- include('partials/menu-admin.ejs')%>
+    <div id="divcenter-container">
+        <div id="login-container">
+            <img class='admin-package' src="/img/pngegg.png" alt="" srcset="">
+            <h1>Cadastro de administrador</h1>
+            <form id="login" action='/admin/admin-user/store' method="post" class="create-products">
+                <input type="text" name="name" id="name" placeholder="Nome Completo" autocomplete="off">
+                <input type="email" name="email" id="email" placeholder="E-mail" autocomplete="off">
+                <input type="password" id="password" name ="password" placeholder="Senha" autocomplete="off">
+                <!-- <input type="password" id="password" name ="password" placeholder="Confirmar senha" autocomplete="off"> -->
+                <button type="submit" class="btn">Registrar</button>
+                <br>
+            </form>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

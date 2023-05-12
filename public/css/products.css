@@ -1,0 +1,159 @@
+*{
+    margin: auto;
+    padding: 100%;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Dosis', 'san-serif';
+  }
+  
+  body{
+      background-color: #f6eddc;
+      font-family:  'Dosis', sans-serif;
+      font-style: normal;
+      font-weight: 200;
+    }
+  
+   main article img {
+      width: 200px;
+      text-align: center;
+  }
+  article {
+    color: rgb(91, 83, 83);
+    border: none;
+    padding: 10px 20px;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    font-family: 'Dosis', 'san-serif';
+    padding-bottom: 60px;
+  }
+  
+  main {
+    text-align: center;
+  }
+  
+  * {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Dosis', 'san-serif';
+  }
+  
+  header{ 
+    width: 100%; 
+    height: auto; 
+    background-color: #f6eddc;
+  }
+  
+     .header_in { 
+        width: 100%; 
+        height: 30px;
+        display: flex; 
+        align-items: center; 
+        justify-content: space-between; 
+    }
+    .header_in ul li{
+        display: inline-block;
+        list-style: none;
+        margin: 10px 30px;
+        padding: 20px 0;
+    
+    }
+  
+    .header_in ul li a{
+        text-decoration: none;
+        color: #586875;
+      
+        
+    }
+    .header_in li a:hover{
+            color: white;
+            transition: all 0.4s ease 0s;
+    }
+  
+  
+    .logoheader{
+        position: relative;
+        width: 50px;  
+        top: 28px;
+        left: 120px;
+    }
+    .carrinho{
+        width: 22px;
+       
+    }
+    .login{
+       width: 22px;
+      
+    }
+    .cadastro{
+        width: 22px;
+        
+    }
+    .lojas{
+        width: 22px;
+        
+    }
+  
+    .buscar{
+        width: 300px;
+        height: 25px;
+        right: 880px;   
+    }
+    .buscarimg{
+        position: absolute;
+        top: 10px;
+        right: 880px;
+        cursor: pointer;
+        transition: .3s;
+        width: 22px;
+        
+    }
+    
+  
+    nav{
+        width: 100%;
+        height: 75px;
+        line-height: 75px;
+        padding: 0px 100px;
+        
+        background-image: linear-gradient(#f6eddc,#ba944b);
+  
+    }
+  
+  
+    nav ul{
+        float: right;
+    }
+    nav li{
+        display: inline-block;
+        list-style: none;
+    }
+    nav li a{
+        font-size: 18px;
+        text-transform: uppercase;
+        padding: 0px 30px;
+        color: #586875;
+        text-decoration: none;
+    }
+  
+    nav li a:hover{
+        color: white;
+        transition: all 0.4s ease 0s;
+  
+    }
+  
+   .header_in .a{
+    margin-left: 190px;
+    position: absolute;
+    margin-top: 80px;
+    font-family: 'Tangerine';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+    padding-bottom: 10px;
+    color: #586875;
+    
+  }

@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Jaqueline Copello",
+        "email": "jaque@lol.com",
+        "password": "$2b$10$f3KrsPkv4BWZsRMLDzkj2udYSLw4daQFh0xGA3Yi9HLzAJTtYSSoO",
+        "id": 1
+    },
+    {
+        "name": "Rafael de Almeida",
+        "email": "rafacopelllo@gmail.com",
+        "password": "$2b$10$/KvWnvMGHaOidA9wnYb35OFgV8/w2AOjQ8bt/UWXL4wUggj33QWfG",
+        "id": 2
+    },
+    {
+        "name": "Sergio Moura",
+        "email": "juiz@gmail.com",
+        "password": "$2b$10$y5jZBZ3l1.UtymiqLuS61esJnUNsYtB1UOiY7IQetmUqmn87a9eeG",
+        "id": 3
+    },
+    {
+        "name": "joao da silva",
+        "email": "sas@gmail.com",
+        "password": "$2b$10$prngwNSvy/6mpIIEEy/DCuerWVZxX311innsSKX69V00Bqy4siR8i",
+        "id": 4
+    }
+]
