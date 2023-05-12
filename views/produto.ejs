@@ -25,19 +25,16 @@
     <%- include("partials/header.ejs") %>
 
   <main>
-
-       <div class="producto-card1">
-        <div class="producto-card1-img">
-          <img src="/img/AA6250C23_1V01 (1).png" alt="produto">
-        </div>
-        <div class="producto-card1-text">
-          <h3>Vela Perfumada</h3>
-          <p>Vela perfumada com aroma de rosa branca</p>
-          <p>R$ 250,00</p>
-          <button class="btn-comprar">Comprar</button>
-        </div>
-      </div>
-
+    <div>
+      <h2 id="product-name"><%= produto.name %></h2>
+      <img id="product-image" src="<%= produto.image %>" alt="<%= produto.name %>" width="200" height="200">
+      <p id="product-price"><%= produto.price %></p>
+      <form method="post" action="/carrinho">
+        <input type="hidden" value="<%= produto.id %>" name="idProduto">
+        <button type="submit" class="btn-comprar" id="comprar"
+        <%= produto.id %>>Carrinho</button>
+      </form>
+    </div>
   </main>
   <%- include("partials/footer.ejs") %>
 </body>

@@ -67,58 +67,82 @@
                 <h1 class="title-container">Encontre o seu produto favorito</h1>
                 <div class="offer-content" id="offer">
                     <div class="offer-all">
-                        <div class="offer-item">
-                            <div class="offer-img">
-                                <img src="/img/offers (1).png" alt="" srcset="">
+                        
+                        <% for(const p of produtos) { %>
+                        <a href="/produtos/<%= p.id %>" onclick="storeDivContent('div1')"> 
+                            <div id="div1" class="offer-item">
+                                <div class="offer-img">
+                                    <img src="<%= p.image %>" alt="" srcset="">
+                                </div>
+                                <div class="offer-desc">
+                                    <p><%= p.name %></p>
+                                </div>
+                                <div class="offer-price">
+                                    <span><%= p.price %></span>
+                                </div>
+                                <a href="/produtos/<%= p.id %>" class="btn" onclick="addToCart(this)">Adicione ao Carrinho</a>
                             </div>
-                            <div class="offer-desc">
-                                <p>Ambientador com varetas</p>
-                            </div>
-                            <div class="offer-price">
-                                <span>R$ 350,00</span>
-                            </div>
-                            <div class="offer-parcel">
-                                <a href="#">7 X R$ 50,00</a>
-                            </div>
-                            <a href="#" class="btn">Adicione ao Carrinho</a>
+                          </a>
+                          <% } %>
                         </div>
-                        <div class="offer-item">
-                            <div class="offer-img">
-                                <img src="/img/offers (2).png" alt="" srcset="">
-                            </div>
-                            <div class="offer-desc">
-                                <p>Spray perfumado</p>
-                            </div>
-                            <div class="offer-price">
-                                <span>R$ 150,00</span>
-                            </div>
-                            <div class="offer-parcel">
-                                <a href="#">5 X R$ 30,00</a>
-                            </div>
-                            <a href="#" class="btn">Adicione ao Carrinho</a>
-                        </div>
-
-
-                        <div class="offer-item">
-                            <div class="offer-img">
-                                <img src="/img/offers (3).png" alt="" srcset="">
-                            </div>
-                            <div class="offer-desc">
-                                <p>Vela perfumada</p>
-                            </div>
-                            <div class="offer-price">
-                                <span>R$ 250,00</span>
-                            </div>
-                            <div class="offer-parcel">
-                                <a href="#">5 X R$ 50,00</a>
-                            </div>
-                            <a href="#" class="btn">Adicione ao Carrinho</a>
-                        </div>
-
-                    </div>
             </section>
 
+            <script>
 
+                //Função para mandar o produto para a página do produto
+                function storeDivContent(divId) {
+                // obtém o conteúdo da div usando seu ID
+                var divContent = document.getElementById(divId);
+
+                // obtém as informações relevantes da div clicada
+                var name = divContent.querySelector('.offer-desc p').textContent;
+                var price = divContent.querySelector('.offer-price span').textContent;
+                var image = divContent.querySelector('.offer-img img').src;
+
+                // Cria um objeto para armazenar as informações relevantes da div clicada
+                var productInfo = {
+                    name: name,
+                    price: price,
+                    image: image,
+                    divContent: divContent.innerHTML
+                };
+                  
+                  // Armazena o conteúdo da div no armazenamento local para uso posterior na página de destino
+                  localStorage.setItem('productInfo', JSON.stringify(productInfo));
+                }
+
+                //função para adicionar produto ao carrinho:
+                function addToCart(button) {
+                    // obtém a div do produto
+                const divProduto = button.closest('.offer-item');
+
+                // obtém o nome do produto
+                const nomeProduto = divProduto.querySelector('.offer-desc p').textContent;
+
+                // obtém o preço do produto
+                const precoProduto = parseFloat(divProduto.querySelector('.offer-price span').innerText.replace('R$', ''));
+
+                // obtém a quantidade do produto
+                const quantidadeProduto = 1;
+                // cria o objeto do produto
+                const produto = {
+                    nome: nomeProduto,
+                    preco: precoProduto,
+                    quantidade: quantidadeProduto
+                };
+
+                // obtém informações do carrinho do localStorage
+                let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+
+                // adiciona produto ao carrinho
+                carrinho.push(produto);
+
+                // armazena carrinho atualizado no localStorage
+                localStorage.setItem("carrinho", JSON.stringify(carrinho));
+
+                }
+
+              </script>
 
 
             <!--

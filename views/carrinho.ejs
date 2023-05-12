@@ -26,44 +26,53 @@
 
   <main>
     <h1>Meu Carrinho</h1>
+    <% if (carrinho.length == 0){ %>
+      <div>Seu Carrinho Está Vazio</div>
+    <%} else {%>
+      <table id="cart-table">
+        <thead>
+          <tr>
+            <th>Produto</th>
+            <th>Preço</th>
+            <th>Quantidade</th>
+            <th>Subtotal</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
 
-    <table>
-      <thead>
-        <tr>
-          <th>Produto</th>
-          <th>Preço</th>
-          <th>Quantidade</th>
-          <th>Subtotal</th>
-          <th>Ações</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Vela Perfumada</td>
-          <td>R$ 250,00</td>
-          <td>
-            <input type="number" value="1" min="1">
-          </td>
-          <td>R$ 250,00</td>
-          <td>
-            <button>Remover</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+        <tbody id="cart-body">
+          <% for (let item of carrinho){ %>
 
-    <div class="producto-card1">
-      <div class="producto-card1-img">
-        <img src="/img/AA6250C23_1V01 (1).png" alt="produto">
-      </div>
-      <div class="producto-card1-text">
-        <h3>Vela Perfumada</h3>
-        <p>Vela perfumada com aroma de rosa branca</p>
-        <p>R$ 250,00</p>
+            <tr>
+            <td><%= item.name %></td>
+            <td>R$ <%= item.price %></td>
+            <td>
+              <%= item.qtd %>
+              <form method="post" action="/carrinho/incrementar">
+                <input type="hidden" value="<%= item.id %>" name="idItem">
+                <button type="submit">+</button>
+              </form>
+              <form method="post" action="/carrinho/decrementar">
+                <input type="hidden" value="<%= item.id %>" name="idItem">
+                <button type="submit">-</button>
+              </form>
+            </td>
+            <td>R$ <%= item.subtotal %></td>
+            <td>
+              <form method="post" action="/carrinho/decrementar">
+                <input type="hidden" value="<%= item.id %>" name="idItem">
+                <button type="submit">Remover</button>
+              </form>
+            </td>
+          </tr>
+
+          <%}%> 
+        </tbody>
+      </table>
+      <form method="post" action="/checkout">
         <button class="btn-comprar">Finalizar Compra</button>
-      </div>
-    </div>
-
+      </form>
+    <%}%>
   </main>
 
   <%- include("partials/footer.ejs") %>

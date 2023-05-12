@@ -23,10 +23,13 @@ const AdminPagesController = require('./src/app/Controllers/AdminPagesController
 app.get('/', PagesController.showIndex);
 app.get('/edituser', PagesController.showUser);
 app.get('/products', PagesController.showProducts)
-app.get('/produto', PagesController.showProduto)
+app.get('/produtos/:id', PagesController.showProduto)
 app.get('/carrinho', PagesController.showCarrinho)
 app.get('/cadastro', PagesController.registerUser)
 app.get('/checkout', PagesController.checkoutUser)
+app.post('/carrinho/decrementar', PagesController.decrementarCarrinho)
+app.post('/carrinho/incrementar', PagesController.incrementarCarrinho)
+app.post('/carrinho', PagesController.addCarrinho)
 app.post('/checkout/sucess', PagesController.checkoutSucess)
 
 app.get('/login',PagesController.showLogin);
