@@ -26,5 +26,5 @@ servidor.use(router)
 
 
 servidor.listen(3002, () => { 
-    console.log('ouvindo na porta')
+    console.log('rodando na porta 3002')
 });

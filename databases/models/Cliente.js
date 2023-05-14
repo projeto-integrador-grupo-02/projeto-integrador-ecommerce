@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
             id_cliente: {
                 type: DataTypes.INTEGER,
                 primaryKey: true,
-                autoIncremente: true,
+                autoIncrement: true,
                 allowNull: false
             },
             nome: {
@@ -14,11 +14,11 @@ module.exports = (sequelize, DataTypes) => {
             },
             sobrenome: {
                 type: DataTypes.STRING(255),
-                allowNull: false
+                // allowNull: false
             },
             telefone: {
                 type: DataTypes.STRING(15),
-                allowNull: false
+                // allowNull: false
             },
             email: {
                 type: DataTypes.STRING(115),

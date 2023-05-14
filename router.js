@@ -26,6 +26,7 @@ app.get('/products', PagesController.showProducts)
 app.get('/produtos/:id', PagesController.showProduto)
 app.get('/carrinho', PagesController.showCarrinho)
 app.get('/cadastro', PagesController.registerUser)
+app.post('/cadastro', PagesController.createUser)
 app.get('/checkout', PagesController.checkoutUser)
 app.post('/carrinho/decrementar', PagesController.decrementarCarrinho)
 app.post('/carrinho/incrementar', PagesController.incrementarCarrinho)
@@ -33,7 +34,7 @@ app.post('/carrinho', PagesController.addCarrinho)
 app.post('/checkout/sucess', PagesController.checkoutSucess)
 
 app.get('/login',PagesController.showLogin);
-
+app.post('/login',PagesController.login);
 /* Admin Login */
 app.get('/admin/login', AdminPagesController.showLogin)
 app.post('/admin/login', AdminPagesController.loginControl)
