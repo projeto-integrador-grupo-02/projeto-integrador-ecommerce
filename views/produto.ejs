@@ -26,13 +26,13 @@
 
   <main>
     <div>
-      <h2 id="product-name"><%= produto.name %></h2>
-      <img id="product-image" src="<%= produto.image %>" alt="<%= produto.name %>" width="200" height="200">
-      <p id="product-price"><%= produto.price %></p>
+      <h2 id="product-name"><%= produto.nome_produto %></h2>
+      <img id="product-image" src="<%= produto.imagem %>" alt="<%= produto.nome_produto %>" width="200" height="200">
+      <p id="product-price"><%= produto.preco %></p>
       <form method="post" action="/carrinho">
-        <input type="hidden" value="<%= produto.id %>" name="idProduto">
+        <input type="hidden" value="<%= produto.id_produto %>" name="idProduto">
         <button type="submit" class="btn-comprar" id="comprar"
-        <%= produto.id %>>Carrinho</button>
+        <%= produto.id_produto %>>Carrinho</button>
       </form>
     </div>
   </main>

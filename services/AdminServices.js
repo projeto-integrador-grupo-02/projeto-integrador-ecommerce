@@ -1,4 +1,4 @@
-const admin = require('../databases/administradores.json')
+const {Administrador} = require('../databases/models')
 const path = require('path')
 const fs = require('fs')
 
@@ -8,13 +8,21 @@ function salvar() {
     fs.writeFileSync(adminData, JSON.stringify(admin, null, 4));
 }
 
-function listAdmin(page, perPage) {
+async function listAdmin(page, perPage, id) {
     const startIndex = (page - 1) * perPage;
     const endIndex = page * perPage;
-    const adminData = fs.readFileSync(path.resolve(__dirname, "../databases/administradores.json"));
-    const admin = JSON.parse(adminData);
+    let admin
+
+    if(id) {
+        admin = await Administrador.findByPk(id)
+        admin = [admin]
+    } else {
+        admin = await Administrador.findAll()
+    }
+
     let AdminPaginados = admin.slice(startIndex, endIndex);
     const totalPages = Math.ceil(admin.length / perPage);
+
     return {
         AdminPaginados,
         totalPages
