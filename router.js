@@ -8,6 +8,7 @@ const globalVar = require('./src/app/middleware/globalVar')
 const app = express.Router()
 const path = require('path')
 
+
 app.use(bodyParser.urlencoded({ extended: false }))
 
 const multerMid = multer({dest:'public/img'});
@@ -26,15 +27,16 @@ app.get('/products', PagesController.showProducts)
 app.get('/produtos/:id', PagesController.showProduto)
 app.get('/carrinho', PagesController.showCarrinho)
 app.get('/cadastro', PagesController.registerUser)
+app.post('/cadastro', PagesController.createUser)
 app.get('/checkout', PagesController.checkoutUser)
 app.post('/checkout', PagesController.checkoutBuy)
 app.post('/carrinho/decrementar', PagesController.decrementarCarrinho)
 app.post('/carrinho/incrementar', PagesController.incrementarCarrinho)
 app.post('/carrinho', PagesController.addCarrinho)
 app.post('/checkout/sucess', PagesController.checkoutSucess)
-
 app.get('/login',PagesController.showLogin);
-
+app.post('/login',PagesController.login);
+app.get('/logout',PagesController.logout)
 /* Admin Login */
 app.get('/admin/login', AdminPagesController.showLogin)
 app.post('/admin/login', AdminPagesController.loginControl)

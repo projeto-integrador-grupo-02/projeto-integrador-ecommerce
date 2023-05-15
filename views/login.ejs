@@ -16,9 +16,9 @@
 <div id="divcenter-container">   
     <div id="login-container">
         <h1>Já sou Cadastrado</h1>
-    <form id="login" >
+    <form id="login" action="/login" method="POST">
         <input type="email" name="email" id="email" placeholder="E-mail" autocomplete="off">
-        <input type="password" id="password" placeholder="Senha" autocomplete="off">
+        <input type="password" name="password" id="password" placeholder="Senha" autocomplete="off">
         <!-- <input type="submit" value="Entrar"> -->
         <!-- <button type="submit" class="btn">Entrar</button> -->
         <button type="submit" class="btn">Entrar</button>
@@ -41,7 +41,5 @@
     </div>
 </div>
 <%- include("partials/footer.ejs") %>
-<script type="module" src="./js/loginValidate.js"></script>
-
 </body>
 </html>

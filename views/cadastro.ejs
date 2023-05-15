@@ -10,16 +10,16 @@
 </head>
 <body>
     <div>
-        
-    <form id="cadastro" >
+       
+    <form id="cadastro" action = '/cadastro' method="POST"  >
         <h1>Cadastre seus dados</h1>
             <input type="text" name="nome" id="nome" placeholder="Nome">
             <input  name="email" id="email" placeholder="E-mail" autocomplete="off">
             <input type="text" id="cpf" placeholder="CPF" autocomplete="off">
             <input 
                 type="password"
-                name="senha" 
-                id="senha" 
+                name="password" 
+                id="password" 
                 placeholder="Digite a senha" 
                 pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[$*&@#])[0-9a-zA-Z$*&@#]{8,12}$"
                 title="Sua senha precisa ter entre 8 e 12 caracteres, deve conter ao menos uma letra minúscula,
