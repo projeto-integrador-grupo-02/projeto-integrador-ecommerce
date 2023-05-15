@@ -8,6 +8,7 @@ const globalVar = require('./src/app/middleware/globalVar')
 const app = express.Router()
 const path = require('path')
 
+
 app.use(bodyParser.urlencoded({ extended: false }))
 
 const multerMid = multer({dest:'public/img'});

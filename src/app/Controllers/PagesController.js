@@ -21,9 +21,11 @@ const PagesController = {
                 currentPage,
                 perPage
             );
-
+            const formattedProducts = produtosPaginados.map(product => {
+                return product.dataValues
+            })
             res.render("home.ejs", {
-                produtos: produtosPaginados,
+                produtos: formattedProducts,
                 totalPages,
                 currentPage,
             });
@@ -127,6 +129,9 @@ const PagesController = {
     },
     checkoutUser: (req, res) => res.render('checkout.ejs'),
     checkoutSucess: (req, res) => res.render('checkoutSucess.ejs'),
+    checkoutBuy: (req, res) => {
+        console.log(req.session)
+    },
     showLogin: (req, res) => res.render('login.ejs'),
     login: async (req, res) => {
         
