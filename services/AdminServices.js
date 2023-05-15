@@ -41,8 +41,8 @@ function createAdmin(adm) {
     salvar()
 }
 
-function loadAdm(idP) {
-    let adm = admin.find(p => p.id == idP)
+async function loadAdm(id_admin) {
+    admin = await Administrador.findOne(id_admin)
 
     return adm
 }
