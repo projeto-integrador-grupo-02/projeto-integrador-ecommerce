@@ -3,12 +3,7 @@ const { Produtos } = require('../../../databases/models')
 const session = require('express-session');
 const Cliente = require('../../../databases/models/Cliente');
 const ProdutosServices = require('../../../services/ProdutosServices');
-
-
 const { listarClients, createClient,loginClient } = require('../../../services/ClientsServices')
-
-
-
 
 const PagesController = {
     showIndex: async (req, res) => {
@@ -16,7 +11,6 @@ const PagesController = {
             const page = parseInt(req.query.page) || 1;
             const perPage = 5;
             const currentPage = parseInt(page);
-
             const { produtosPaginados, totalPages } = await ProdutosServices.listProducts(
                 currentPage,
                 perPage
@@ -25,6 +19,7 @@ const PagesController = {
                 return product.dataValues
             })
             res.render("home.ejs", {
+                usuarioLogado: res.locals.usuarioLogado,
                 produtos: formattedProducts,
                 totalPages,
                 currentPage,
@@ -112,17 +107,15 @@ const PagesController = {
 
     registerUser: (req, res) => res.render('cadastro.ejs'),
     createUser: async (req, res) => {
-
         try {
-
             await createClient(data = {
                 nome: req.body.nome,
                 email: req.body.email,
-                senha_cliente: req.body.senha,
+                senha_cliente: req.body.password,
                 data_nascimento: req.body.data
             })
-
-            res.render('home.ejs')
+            console.log(req.body, 'req body no cadastro')
+            PagesController.login(req, res)
         } catch (error) {
             console.log(error)
         }
@@ -132,31 +125,43 @@ const PagesController = {
     checkoutBuy: (req, res) => {
         console.log(req.session)
     },
-    showLogin: (req, res) => res.render('login.ejs'),
+  
     login: async (req, res) => {
-        
+        console.log(req.body, 'req no login')
         try {
-           
            const user =  await loginClient(data = {
-                
                 email: req.body.email,
-                senha_cliente: req.body.senha,
-                
+                senha_cliente: req.body.password,
             })
-            if(!user) res.render('login.ejs');
 
+            if(!user) res.render('login.ejs');
             req.session.user = {
-                id: user._id,
+                id: user.id_cliente,
                 nome: user.nome,
                 email: user.email,
                 data_nascimento: user.data_nascimento
             };
-
-            res.render('home.ejs')
+            res.redirect('/')
         } catch (error) {
             console.log(error)
         }
-    }
+    },
+    showLogin: (req, res) => {
+        const loginFunction = PagesController.login    
+        res.render('login.ejs', {loginFunction})
+    },
+    logout:(req, res)=>{
+        req.session.destroy((err) => {
+            if (err) {
+              console.error('Erro ao fazer logout:', err);
+            } else {
+              console.log('Logout bem-sucedido');
+            }
+            // Redirecionar para a página de login ou página inicial
+            res.redirect('/');
+          });
+    },
+    
 
 }
 

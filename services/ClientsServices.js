@@ -68,16 +68,16 @@ async function loginClient(data) {
 
     console.log("data", data)
     try {
-        const user = await Cliente.findAll({
+        const user = await Cliente.findOne({
             where: {
                 email: data.email,
                 senha_cliente: data.senha_cliente
             }
 
         });
-        console.log(user[0])
+        console.log(user)
 
-        if (user[0]) {
+        if (user) {
             console.log("Login bem-sucedido!");
             // Faça qualquer ação necessária após o login bem-sucedido
             return user;

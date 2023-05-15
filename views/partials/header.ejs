@@ -1,27 +1,59 @@
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/header.css">
-    <link rel="stylesheet" href="/css/footer.css">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/header.css">
+<link rel="stylesheet" href="/css/footer.css">
 <header>
     <div class="header_in">
-        <img src="/img/logoArome2.png" class="logoheader" alt="logo header">
-        <h1 class="logo">Arome</h1>
+
         <ul>
-            <input type="text" placeholder="Buscar" class="buscar">
-            <button><img src="/img/search.png" alt="buscar" class="buscarimg"></button>
-            <li><a href="#" class="active">Lojas <img src="/img/lojas.png" alt="lojas" class="lojas"></a>
+            <div class="buscar-wrapper">
+                <img src="/img/logoArome2.png" class="logoheader" alt="logo header">
+                <input type="text" placeholder="Buscar" class="buscar">
+                <a><img src="/img/search.png" alt="buscar" class="buscarimg"></a>
+            </div>
+
+            <li>
+                <a href="#" class="active">
+                <img src="/img/lojas.png" alt="lojas" class="lojas"> Lojas </a>
             </li>
-            <li><a href="http://localhost:3002/cadastro" class="active">Cadastre-se / Login <img src="/img/cadastro.png"
-                        alt="cadastro" class="cadastro"></a></li>
-            <li><a href="http://localhost:3002/edituser" class="active">Área do cliente <img src="/img/login.png"
-                        alt="login" class="login"></a></li>
-            <li><a href="http://localhost:3002/carrinho"active">Carrinho <img src="/img/carrinho.png" alt="carrinho" class="carrinho"></a>
+
+            <!-- IF ELSE BLOCK -->
+            <% if(usuarioLogado) { %>
+
+                <li>
+                    <a href="/admin">
+                        <%= locals.usuarioLogado.nome %>
+                    </a>
+                </li>
+                <li>
+                    <a href="/logout">Logout</a>
+                </li>
+
+            <% } else { %>
+                    <li>
+                        <a href="http://localhost:3002/login" class="active"><img src="/img/cadastro.png" alt="cadastro"
+                                class="cadastro">Cadastre-se / Login </a>
+                    </li>
+            <% } %>
+            <!-- CLOSE IF ELSE BLOCK -->
+
+            <li>
+                <a href="http://localhost:3002/edituser" class="active">
+                    <img src="/img/login.png" alt="login" class="login">Área do cliente 
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:3002/carrinho" class="active">
+                    <img src="/img/carrinho.png" alt="carrinho" class="carrinho">Carrinho 
+                </a>
             </li>
         </ul>
     </div>
 
 </header>
 <nav>
-
+    <div class="logo-wrapper">
+        <h1 class="logo">Arome</h1>
+    </div>
     <ul id="menu-h">
         <li><a href="http://localhost:3002/">HOME</a></li>
         <li><a href="http://">VELAS</a></li>

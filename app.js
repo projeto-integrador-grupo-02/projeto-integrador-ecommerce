@@ -11,9 +11,15 @@ const session = require('express-session')
 servidor.use(cors());
 servidor.use(bodyParser.json());
 servidor.use(bodyParser.urlencoded({ extended: false }));
-servidor.use(session({secret: 'segredo',
-resave: false,
-saveUninitialized: false}))
+servidor.use(session({
+    secret: 'SEGREDO',
+    resave: false,
+    saveUninitialized: true
+}))
+servidor.use(function adicionaUserNoRender(req, res, next) {
+    res.locals.usuarioLogado = req.session?.user
+    next()
+})
 
 // Criar o servidor
 
